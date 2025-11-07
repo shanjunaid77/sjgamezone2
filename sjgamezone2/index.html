@@ -1,62 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SJ Game Zone</title>
-  <style>
-    /* Base styles */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      color: #fff;
-      text-align: center;
-      background: linear-gradient(135deg, #0d1117, #1a1f2b, #0d1117);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SJ Game Zone - Your Gaming Hub</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS for a sleek gaming look */
+        body {
+            font-family: "Inter", sans-serif;
+        }
+        .hero-bg {
+            background-image: url('https://placehold.co/1200x600/1e293b/ffffff?text=SJ+Game+Zone+-+Get+Ready+to+Play');
+            background-size: cover;
+            background-position: center;
+            min-height: 50vh;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#00ADB5', /* Cyan/Teal accent */
+                        'secondary-dark': '#222831', /* Dark Grey background */
+                        'bg-dark': '#1A1A2E', /* Deep space blue/purple */
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-bg-dark text-white min-h-screen flex flex-col">
 
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
+    <!-- Header / Navigation -->
+    <header class="bg-secondary-dark shadow-xl sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="0index.html" class="flex items-center space-x-2">
+                <!-- Assuming logo.png is in the same directory -->
+                <img src="logo.png" onerror="this.onerror=null; this.src='https://placehold.co/40x40/00ADB5/FFFFFF?text=L'" alt="Logo" class="w-10 h-10 rounded-full shadow-lg">
+                <span class="text-3xl font-extrabold text-primary tracking-widest">SJ Game Zone</span>
+            </a>
+            <nav class="space-x-6 hidden md:flex">
+                <a href="0index.html" class="text-white hover:text-primary transition duration-200">Home</a>
+                <a href="#games" class="text-white hover:text-primary transition duration-200">Games</a>
+                <a href="#" class="text-white hover:text-primary transition duration-200">Leaderboards</a>
+                <a href="#" class="text-white hover:text-primary transition duration-200">Community</a>
+            </nav>
+        </div>
+    </header>
 
-    header {
-      padding: 20px;
-    }
+    <!-- Hero Section -->
+    <div class="hero-bg flex items-center justify-center text-center p-8">
+        <div class="bg-black/50 p-8 rounded-xl shadow-2xl backdrop-blur-sm">
+            <h1 class="text-5xl md:text-7xl font-black mb-4 text-white uppercase">
+                Ready. Set. <span class="text-primary">Play.</span>
+            </h1>
+            <p class="text-xl text-gray-200 mb-8">
+                Featuring the best classics from your collection.
+            </p>
+            <a href="#games" class="bg-primary hover:bg-cyan-600 text-black font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 transform hover:scale-105 inline-block">
+                Explore Games
+            </a>
+        </div>
+    </div>
 
-    header img {
-      height: 60px;
-      border-radius: 12px;
-      vertical-align: middle;
-      margin-right: 10px;
-    }
+    <!-- Featured Games Section -->
+    <main id="games" class="flex-grow container mx-auto px-4 py-16">
+        <h2 class="text-4xl font-bold text-center mb-12 text-primary">Your Classics Reimagined</h2>
 
-    h1 {
-      display: inline-block;
-      margin: 0;
-      vertical-align: middle;
-    }
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-    main {
-      padding: 20px;
-    }
+            <!-- Game Card 1: GTA: Vice City -->
+            <div class="bg-secondary-dark rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300">
+                <img src="gtavc.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x350/111827/FFFFFF?text=GTA+Vice+City+Cover'; this.alt='GTA Vice City';" alt="GTA Vice City" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-primary mb-3">Grand Theft Auto: Vice City</h3>
+                    <p class="text-gray-400 mb-4 text-sm">
+                        Relive the 80's. Drive fast, own the city, and climb the criminal ranks in this iconic open-world experience.
+                    </p>
+                    <a href="gtavc.html" class="block w-full text-center bg-primary text-black font-bold py-2 rounded-lg hover:bg-cyan-600 transition duration-300">
+                        Launch Vice City
+                    </a>
+                </div>
+            </div>
 
-    h2 {
-      margin-top: 20px;
-    }
+            <!-- Game Card 2: NFS Underground 2 -->
+            <div class="bg-secondary-dark rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300">
+                <img src="nfs.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x350/111827/FFFFFF?text=NFS+Underground+2+Cover'; this.alt='Need for Speed Underground 2';" alt="Need for Speed Underground 2" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-primary mb-3">Need for Speed: Underground 2</h3>
+                    <p class="text-gray-400 mb-4 text-sm">
+                        Tune your ride, hit the streets, and dominate the underground racing scene. The night belongs to you.
+                    </p>
+                    <a href="nfs2.html" class="block w-full text-center bg-primary text-black font-bold py-2 rounded-lg hover:bg-cyan-600 transition duration-300">
+                        Launch NFS 2
+                    </a>
+                </div>
+            </div>
 
-    img.game-img {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 12px;
-      margin: 15px 0;
-    }
+            <!-- Placeholder Card 3: GitHub Link -->
+            <div class="bg-secondary-dark rounded-xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition duration-300 flex flex-col justify-center items-center p-6 text-center">
+                <div class="text-6xl mb-4 text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16 mx-auto" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.087-.744.084-.73.084-.73 1.205.084 1.838 1.233 1.838 1.233 1.07 1.838 2.809 1.305 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.333-5.467-5.931 0-1.311.469-2.381 1.233-3.221-.124-.303-.535-1.524.111-3.176 0 0 1.006-.322 3.303 1.232 1.07-.298 2.173-.446 3.286-.451 1.113.005 2.216.153 3.286.451 2.296-1.554 3.303-1.232 3.303-1.232.645 1.652.234 2.873.111 3.176.764.84 1.233 1.911 1.233 3.221 0 4.609-2.806 5.624-5.479 5.923.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.808 24 17.319 24 12 24 5.373 18.627 0 12 0Z"/></svg>
+                </div>
+                <h3 class="text-2xl font-semibold text-white mb-3">Contribute on GitHub</h3>
+                <p class="text-gray-400 mb-4 text-sm">
+                    View the source code for this collection and submit your own game files!
+                </p>
+                <!-- NOTE: You should replace 'shanjunaid77/sjgamezone' with your actual repository path -->
+                <a href="https://github.com/shanjunaid77/sjgamezone" target="_blank" class="block w-full text-center border-2 border-primary text-primary font-bold py-2 rounded-lg hover:bg-primary hover:text-black transition duration-300">
+                    Visit Repo
+                </a>
+            </div>
 
-    .btn {
-      display: inline-block;
-      background: #00bfff;
-      color: #fff;
-      padding: 12px 25px;
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary-dark p-6 mt-12 text-center text-gray-500">
+        <p>&copy; 2025 SJ Game Zone. All titles are properties of their respective owners. Designed for file demonstration.</p>
+    </footer>
+
+</body>
+</html>
