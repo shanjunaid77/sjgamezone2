@@ -4,281 +4,118 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <title>SJ Game Zone | PC Game Library: GTA V, FIFA 23, Red Dead Redemption 2</title>
-    <meta name="description" content="SJ Game Zone offers a curated digital library for top PC titles. Community verified repository." />
-    <meta name="keywords" content="GTA 5 PC, Red Dead Redemption 2 Library, FIFA 23 PC access, PC game repository, SJ Game Zone" />
-    <link rel="icon" type="image/png" href="logo.png" />
-    <link rel="canonical" href="https://sjgamezone.neocities.org/index.html" />
+    <title>SJ Game Zone | Digital Repository</title>
     
-    <meta property="og:title" content="SJ Game Zone | PC Game Library" />
-    <meta property="og:description" content="Explore the best and latest PC game titles within our digital library." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://sjgamezone.neocities.org/index.html" />
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=Orbitron:wght@400;900&display=swap" rel="stylesheet">
+    
     <script src="games.js"></script>
 
     <style>
         :root {
-          --color-primary:#3b82f6;
-          --color-secondary:#ef4444;
-          --color-neon:#38bdf8;
-          --color-heading-white:#FFFFFF;
-          --bg-dark:#050a16;
-          --bg-light:#1f2937;
-          --font-display:'Orbitron', sans-serif;
-          --font-body:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+            --color-primary: #3b82f6;
+            --color-secondary: #ef4444;
+            --color-neon: #38bdf8;
+            --bg-dark: #050a16;
         }
 
-        /* --- 1. CRITICAL BACKGROUND FIX --- */
-        /* We set the image on the HTML tag and Body to ensure it covers the viewport */
+        /* VERCEL OPTIMIZED BACKGROUND */
         html, body {
-          height: 100%;
-          margin: 0;
-          padding: 0;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: var(--bg-dark);
         }
 
         body {
-          font-family: var(--font-body);
-          background-color: var(--bg-dark);
-          /* THE IMAGE PATH: Ensure this file is named exactly bg.jpg */
-          background-image: url('bg.jpg'); 
-          background-size: cover;
-          background-position: center center;
-          background-attachment: fixed;
-          background-repeat: no-repeat;
-          color: #e6eef8;
-          /* Ensure content doesn't get cut off */
-          min-height: 100vh;
-          display: flex;
-          flex-direction: column;
+            /* Vercel handles relative paths well, but ensure bg.jpg is in the same folder */
+            background-image: url('./bg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            font-family: 'Inter', sans-serif;
+            color: white;
         }
 
-        /* --- 2. THE BLUR LAYER --- */
-        /* This layer sits ON TOP of the background image but BEHIND the text */
-        .bg-blur {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(5, 10, 22, 0.45); /* Dark tint to see text better */
-          backdrop-filter: blur(10px) brightness(0.7);
-          -webkit-backdrop-filter: blur(10px) brightness(0.7); 
-          z-index: -1; /* Keep behind everything */
-          pointer-events: none;
+        /* THE OVERLAY (Ensures image is visible but blurred) */
+        .bg-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 10, 22, 0.5); 
+            backdrop-filter: blur(12px) brightness(0.6);
+            -webkit-backdrop-filter: blur(12px) brightness(0.6);
+            z-index: -1;
         }
 
-        /* --- 3. UI COMPONENTS --- */
-        .sj-cyber-glow {
-          font-family: var(--font-display);
-          color: #ffffff; 
-          text-shadow: 0 0 5px var(--color-neon), 0 0 15px rgba(56, 189, 248, 0.5);
-          -webkit-text-stroke: 1px var(--bg-dark);
+        .cyber-header {
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 15px var(--color-neon);
         }
 
-        .logo-pulse {
+        .nav-link {
             transition: all 0.3s ease;
-            border-color: var(--color-secondary); 
-            box-shadow: 0 0 10px 2px rgba(239, 68, 68, 0.4); 
-            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        .top-btn { transition: all 0.3s ease; position: relative; overflow: hidden; }
-        .active-btn {
-            background: linear-gradient(135deg, var(--color-neon) 0%, var(--color-primary) 100%) !important;
-            box-shadow: 0 0 25px 5px var(--color-neon);
-            color: var(--bg-dark) !important;
-            border: 2px solid white;
+        .nav-link.active {
+            background: var(--color-primary);
+            box-shadow: 0 0 20px var(--color-primary);
+            border-color: white;
         }
 
         .game-card {
-          background: rgba(255, 255, 255, 0.03); 
-          border: 1px solid rgba(255, 255, 255, 0.1); 
-          transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          display: flex; 
-          flex-direction: column; 
-          padding: 1rem;
-          backdrop-filter: blur(4px);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
+
         .game-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
-          border-color: var(--color-neon); 
-          background: rgba(255, 255, 255, 0.07);
+            transform: translateY(-5px);
+            border-color: var(--color-neon);
+            background: rgba(255, 255, 255, 0.1);
         }
-
-        .game-thumb { 
-            height: 240px; 
-            object-fit: cover; 
-            border-radius: 8px; 
-            border: 2px solid var(--color-secondary); 
-            box-shadow: 0 0 10px rgba(239, 68, 68, 0.2);
-        }
-
-        .get-entry-btn {
-          background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%);
-          padding: 10px 20px; 
-          border-radius: 9999px; 
-          font-weight: 700;
-          text-align: center; 
-          color: white; 
-          transition: all 0.3s;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        .get-entry-btn:hover { 
-            background: #3b82f6; 
-            box-shadow: 0 0 15px var(--color-neon);
-            transform: scale(1.05);
-        }
-
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
-        .reveal.visible { opacity: 1; transform: none; }
-
-        .pager { background: rgba(0, 0, 0, 0.5); padding: 8px; border-radius: 12px; gap: 8px; border: 1px solid rgba(56, 189, 248, 0.2); }
-        .pager a { padding: 0.5rem 1rem; color: var(--color-neon); border-radius: 6px; transition: 0.2s; }
-        .pager a.current { background: var(--color-neon); color: var(--bg-dark); font-weight: 900; }
-        
-        #placeholder-container { display: none; flex-direction: column; align-items: center; padding: 3rem; border: 2px dashed #4b5563; border-radius: 20px; }
     </style>
 </head>
-<body class="p-6 sm:p-12">
-    <div class="bg-blur" aria-hidden="true"></div>
+<body class="p-4 md:p-12">
 
-    <header class="text-center mb-16">
-        <a href="index.html" class="inline-block relative logo-link">
-          <img src="logo.png" alt="SJ Game Zone" class="mx-auto mb-6 w-32 h-32 object-cover logo-pulse"/>
-        </a>
-        <h1 class="text-4xl sm:text-6xl font-extrabold uppercase sj-cyber-glow tracking-widest">SJ GAME ZONE</h1>
-        <p class="mt-5 text-xl text-white font-bold tracking-widest">// GLOBAL DIGITAL REPOSITORY & GAME LIBRARY //</p>
-        <p class="mt-5 text-sm text-gray-400 max-w-2xl mx-auto">Community Verified Catalog. The ultimate archive for high-fidelity PC entries. Report metadata issues: <a href="https://www.instagram.com/sjvisualflowstudios/" target="_blank" class="text-blue-400 hover:text-red-400">@sjvisualflowstudios</a></p>
+    <div class="bg-overlay"></div>
+
+    <header class="text-center mb-12">
+        <img src="logo.png" alt="Logo" class="w-24 h-24 mx-auto mb-4 rounded-full border-2 border-blue-500 shadow-lg shadow-blue-500/50">
+        <h1 class="text-4xl md:text-6xl font-black cyber-header tracking-tighter">SJ GAME ZONE</h1>
+        <p class="text-blue-400 font-bold mt-2 tracking-widest uppercase">Digital Repository</p>
     </header>
 
-    <nav class="flex justify-center gap-4 sm:gap-8 mb-12">
-        <a href="index.html" class="top-btn active-btn px-8 py-3 rounded-xl font-bold uppercase tracking-widest">LIBRARY</a>
-        <a href="software.html" class="top-btn bg-gray-800 hover:bg-green-600 px-8 py-3 rounded-xl font-bold text-white uppercase tracking-widest">UTILITIES</a>
-        <a href="windows.html" class="top-btn bg-gray-800 hover:bg-red-600 px-8 py-3 rounded-xl font-bold text-white uppercase tracking-widest">SYSTEM OS</a>
+    <nav class="flex justify-center gap-4 mb-16">
+        <a href="index.html" class="nav-link active px-6 py-2 rounded-full font-bold">LIBRARY</a>
+        <a href="software.html" class="nav-link bg-gray-900/50 hover:bg-gray-800 px-6 py-2 rounded-full font-bold">UTILITIES</a>
+        <a href="windows.html" class="nav-link bg-gray-900/50 hover:bg-gray-800 px-6 py-2 rounded-full font-bold">SYSTEM OS</a>
     </nav>
 
     <main class="container mx-auto">
-        <div class="flex flex-col sm:flex-row justify-between items-center mb-10">
-            <h2 class="text-2xl sm:text-3xl font-extrabold uppercase text-white tracking-wide">Digital Catalog</h2>
-            <div class="w-full sm:w-96 mt-6 sm:mt-0 relative">
-                <input id="searchInput" placeholder="Search library database..." class="w-full bg-black/50 border-2 border-red-600/50 text-white px-6 py-3 rounded-full focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/50 transition-all" />
+        <div id="gamesGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             </div>
-        </div>
-
-        <div id="gamesGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-10"></div>
-
-        <div id="placeholder-container">
-            <p id="placeholder-message" class="text-gray-400 text-xl font-bold uppercase tracking-widest"></p>
-        </div>
-
-        <div id="pagination-container" class="mt-20 text-center">
-          <nav class="pager inline-flex items-center">
-            <a href="#" class="opacity-30 pointer-events-none">« PREV</a>
-            <a href="index.html" class="current">1</a>
-            <a href="page2.html">2</a>
-            <a href="page3.html">3</a>
-            <a href="page4.html">4</a>
-            <a href="page5.html">5</a>
-            <a href="page2.html">NEXT »</a>
-          </nav>
-        </div>
     </main>
 
-    <footer class="text-center mt-32 pb-12 opacity-80">
-      <p class="text-gray-400 text-sm">&copy; 2025 <strong class="text-blue-300">SJ GAME ZONE</strong> — ARCHIVE PROJECT</p>
-      <div class="mt-4 space-x-6 text-xs uppercase tracking-widest">
-        <a href="about.html" class="hover:text-blue-400">Library Info</a> 
-        <span class="text-gray-700">|</span>
-        <a href="privacy.html" class="hover:text-blue-400">Security Policy</a> 
-        <span class="text-gray-700">|</span>
-        <a href="disclaimer.html" class="hover:text-blue-400">Terms of Service</a>
-      </div>
-      <p class="mt-6 text-[10px] text-gray-600 max-w-xl mx-auto uppercase">Metadata and directory entries are provided for verification and community archival purposes only.</p>
-    </footer>
-
     <script>
-        // Scroll Reveal Logic
-        const observer = new IntersectionObserver((entries)=>{
-          entries.forEach(e=>{
-            if(e.isIntersecting){
-              e.target.classList.add('visible'); 
-              observer.unobserve(e.target); 
-            }
-          });
-        },{threshold:0.1});
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.getElementById('searchInput');
-            const gamesGrid = document.getElementById('gamesGrid');
-            const placeholderContainer = document.getElementById('placeholder-container');
-            const placeholderMessage = document.getElementById('placeholder-message');
-            const paginationContainer = document.getElementById('pagination-container');
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('gamesGrid');
             
-            const pageIndex = 1;
-            const itemsPerPage = 15; 
+            // Fallback data if games.js is missing
+            const displayData = typeof allGames !== 'undefined' ? allGames : [
+                { title: "Sample Game", desc: "If you see this, games.js is missing.", img: "https://via.placeholder.com/300x400", link: "#" }
+            ];
 
-            function createCard(item, delay) {
-                const accentColor = (item.id % 2 === 0) ? 'text-red-400' : 'text-blue-400';
-                return `
-                    <article class="game-card rounded-2xl reveal" style="transition-delay: ${delay}ms;">
-                        <a href="${item.link}" class="flex flex-col h-full">
-                            <img src="${item.img}" alt="${item.title}" class="game-thumb mb-5 w-full" loading="lazy"/>
-                            <h3 class="text-base font-black ${accentColor} uppercase leading-tight tracking-tighter">${item.title}</h3>
-                            <p class="text-gray-500 text-xs mt-3 flex-grow line-clamp-3">${item.desc}</p>
-                            <div class="mt-5">
-                                <div class="get-entry-btn text-xs uppercase tracking-tighter">View Repository</div>
-                            </div>
-                        </a>
-                    </article>
-                `;
-            }
-
-            function renderItems(data, isSearching) {
-                gamesGrid.innerHTML = '';
-                if (data.length === 0) {
-                    gamesGrid.style.display = 'none';
-                    placeholderContainer.style.display = 'flex';
-                    placeholderMessage.textContent = isSearching ? "NO ENTRIES FOUND IN DATABASE" : "REMAINING SLOTS EMPTY";
-                    paginationContainer.style.display = 'none';
-                    return;
-                }
-                gamesGrid.style.display = 'grid';
-                placeholderContainer.style.display = 'none';
-                paginationContainer.style.display = isSearching ? 'none' : 'block';
-                
-                let stagger = 0;
-                data.forEach(item => {
-                    gamesGrid.insertAdjacentHTML('beforeend', createCard(item, stagger));
-                    stagger += 40; 
-                });
-                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-            }
-            
-            function handleSearch(val) {
-                if (typeof allGames === 'undefined') return;
-                const term = val.toLowerCase().trim();
-                if (term === '') {
-                    const start = (pageIndex - 1) * itemsPerPage;
-                    renderItems(allGames.slice(start, start + itemsPerPage), false);
-                    return;
-                }
-                const filtered = allGames.filter(g => g.title.toLowerCase().includes(term) || g.desc.toLowerCase().includes(term));
-                renderItems(filtered, true);
-            }
-            
-            // Initialization
-            if (typeof allGames !== 'undefined') {
-                const start = (pageIndex - 1) * itemsPerPage;
-                renderItems(allGames.slice(start, start + itemsPerPage), false);
-            } else {
-                gamesGrid.innerHTML = '<p class="text-red-500 col-span-full text-center font-bold">CRITICAL: Database (games.js) not detected.</p>';
-            }
-
-            searchInput.addEventListener('input', (e) => handleSearch(e.target.value));
+            grid.innerHTML = displayData.map(game => `
+                <div class="game-card p-4 rounded-2xl">
+                    <img src="${game.img}" class="w-full h-64 object-cover rounded-xl mb-4 border border-gray-700">
+                    <h3 class="text-xl font-bold text-blue-400 mb-2">${game.title}</h3>
+                    <p class="text-gray-400 text-sm mb-4 line-clamp-2">${game.desc}</p>
+                    <a href="${game.link}" class="block text-center bg-blue-600 hover:bg-blue-500 py-2 rounded-lg font-bold transition">VIEW ENTRY</a>
+                </div>
+            `).join('');
         });
     </script>
 </body>
