@@ -375,7 +375,16 @@ const allGames = [
         tags: "tekken 7 pc download fighting game action martial arts tournament kazuya heihachi",
         titleColorClass: "text-red-400"
     },
+  {
+    id: 42, 
+    title: "Resident Evil 5",
+    link: "re5.html",
+    img: "re5.jpg", 
+    desc: "Experience the fear that you can't forget in full HD. Cooperation is key in this bio-organic thriller set in Africa.",
+    tags: "resident evil 5, re5, horror, action, capcom"
+},
 ];
+
 
 
 
