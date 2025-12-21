@@ -1,6 +1,6 @@
 const allGames = [
    {
-    id: 10, // Adjust ID based on your current list
+    id: 40, // Adjust ID based on your current list
     title: "Cricket 24",
     link: "cricket24.html",
     img: "cricket2024.jpg", 
@@ -368,6 +368,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
 ];
+
 
 
 
