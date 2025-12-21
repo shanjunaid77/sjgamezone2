@@ -17,21 +17,22 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="games.js"></script>
     <script src="software.js"></script>
+    <script src="windows.js"></script>
 
     <style>
         :root {
           --color-primary:#3b82f6;
           --color-secondary:#ef4444;
           --color-neon:#38bdf8;
-          --color-heading-white:#FFFFFF;
           --bg-dark:#050a16;
           --bg-light:#1f2937;
           --font-display:'Orbitron', sans-serif;
           --font-body:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
         }
 
-        /* --- BACKGROUND FIX --- */
         body {
           font-family: var(--font-body);
           margin: 0;
@@ -45,7 +46,6 @@
           min-height: 100vh;
         }
 
-        /* --- BLUR LAYER FIX --- */
         .bg-blur {
           position: fixed;
           inset: 0;
@@ -56,38 +56,32 @@
           pointer-events: none;
         }
 
-        /* --- CONTENT LAYER --- */
         header, main, footer, .nav-container {
             position: relative;
             z-index: 10;
         }
 
-        /* --- CYBER GLOW & LOGO --- */
         .sj-cyber-glow {
           font-family: var(--font-display);
           color: #ffffff; 
           text-shadow: 0 0 5px var(--color-neon), 0 0 15px rgba(56, 189, 248, 0.5);
-          -webkit-text-stroke: 1px var(--bg-dark);
         }
+
         .logo-pulse {
             transition: all 0.3s ease;
             border-color: var(--color-secondary); 
             box-shadow: 0 0 10px 2px rgba(239, 68, 68, 0.4); 
         }
-        .logo-link:hover .logo-pulse {
-            box-shadow: 0 0 20px 5px rgba(239, 68, 68, 0.8);
-            transform: scale(1.05);
-        }
 
-        /* --- BUTTONS --- */
         .top-btn { transition: all 0.3s ease; }
         .active-btn {
-            background: linear-gradient(135deg, #22c55e 0%, #15803d 100%) !important; /* Green for Software */
+            background: linear-gradient(135deg, #22c55e 0%, #15803d 100%) !important;
             box-shadow: 0 0 25px 5px #22c55e;
             color: white !important;
             border: 2px solid white;
             position: relative;
         }
+
         @keyframes ripple-glow {
             0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); transform: scale(0.95); }
             100% { box-shadow: 0 0 0 30px rgba(34, 197, 94, 0); transform: scale(1.05); }
@@ -97,7 +91,6 @@
             animation: ripple-glow 3s infinite; z-index: -1;
         }
 
-        /* --- CARDS --- */
         .software-card {
           background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.4)); 
           border: 2px solid var(--bg-light); 
@@ -118,16 +111,13 @@
         }
         .download-button:hover { background: #60a5fa; transform: translateY(-2px); }
 
-        /* --- UTILS --- */
-        .software-link-wrapper h3 { min-height: 2.8rem; margin-top: 0.75rem; }
-        .software-link-wrapper p { font-size: 0.875rem; margin-bottom: 1.25rem; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
         .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease; }
         .reveal.visible { opacity: 1; transform: none; }
 
-        /* --- PAGER --- */
         .pager { background: rgba(0, 0, 0, 0.3); padding: 5px; border-radius: 8px; gap: 5px; }
         .pager a { padding: 0.6rem 0.9rem; color: var(--color-neon); border-radius: 4px; }
         .pager a.current { background: var(--color-neon); color: var(--bg-dark); font-weight: 900; }
+        
         #placeholder-container { display: none; flex-direction: column; align-items: center; padding: 2rem; border: 2px dashed #4b5563; border-radius: 12px; margin-top: 2rem; }
     </style>
 </head>
@@ -136,11 +126,11 @@
 
     <header class="text-center mb-16">
         <a href="index.html" class="inline-block relative logo-link">
-          <img src="logo.png" alt="SJ Software Zone logo" class="mx-auto mb-6 rounded-full border-4 w-32 h-32 object-cover logo-pulse"/>
+          <img src="logo.png" alt="SJ logo" class="mx-auto mb-6 rounded-full border-4 w-32 h-32 object-cover logo-pulse"/>
         </a>
         <h1 class="text-4xl sm:text-6xl font-extrabold uppercase sj-cyber-glow tracking-wider">SJ SOFTWARE ZONE</h1>
         <p class="mt-5 text-xl text-white font-bold tracking-widest">// GLOBAL DIGITAL REPOSITORY & UTILITY LIBRARY //</p>
-        <p class="mt-5 text-sm text-gray-400 max-w-2xl mx-auto">Community Verified Catalog. The ultimate archive for **IDM, Adobe Creative Cloud, and System Tools**. Report issues: <a href="https://www.instagram.com/sjvisualflowstudios/" target="_blank" class="text-blue-400 hover:text-red-400">@sjvisualflowstudios</a></p>
+        <p class="mt-5 text-sm text-gray-400 max-w-2xl mx-auto">Community Verified. Search across **Games, Utilities, and OS**. Report issues: <span class="text-blue-400 hover:text-red-400 cursor-pointer">@sjvisualflowstudios</span></p>
     </header>
 
     <nav class="nav-container flex justify-center gap-6 mb-10">
@@ -153,7 +143,7 @@
         <div class="flex flex-col sm:flex-row justify-between items-center mb-10">
             <h2 class="text-2xl sm:text-3xl font-extrabold uppercase text-white">Software Catalog</h2>
             <div class="w-full sm:w-96 mt-6 sm:mt-0 relative">
-                <input id="searchInput" placeholder="Search software..." class="w-full bg-gray-900 border-2 border-red-600 text-white px-5 py-3 rounded-full focus:outline-none focus:ring-4 focus:ring-blue-500" />
+                <input id="searchInput" placeholder="Search EVERYTHING (Games, OS, Apps)..." class="w-full bg-gray-900 border-2 border-red-600 text-white px-5 py-3 rounded-full focus:outline-none focus:ring-4 focus:ring-blue-500" />
             </div>
         </div>
 
@@ -176,14 +166,10 @@
 
     <footer class="text-center mt-20 pb-10">
       <p class="text-gray-400">&copy; 2025 <strong class="text-blue-300">SJ Software Zone</strong> | Created by <span class="text-blue-400">SJ Visual Flow Studios</span></p>
-      <div class="mt-4 space-x-6 text-sm">
-        <a href="about.html" class="hover:text-blue-400">About Us</a> <span>|</span>
-        <a href="privacy.html" class="hover:text-blue-400">Privacy Policy</a> <span>|</span>
-        <a href="disclaimer.html" class="hover:text-blue-400">Terms of Use</a>
-      </div>
     </footer>
 
     <script>
+        // --- ANIMATION OBSERVER ---
         const io = new IntersectionObserver((entries)=>{
           entries.forEach(e=>{
             if(e.isIntersecting){
@@ -201,63 +187,73 @@
             const paginationContainer = document.getElementById('pagination-container');
             
             const pageIndex = 1;
-            const softwarePerPage = 15; 
+            const itemsPerPage = 15; 
+
+            // --- MERGE ALL ARRAYS INTO ONE GLOBAL SEARCH DATABASE ---
+            let globalDB = [];
+            if (typeof allSoftwares !== 'undefined') globalDB = [...allSoftwares];
+            if (typeof allGames !== 'undefined') globalDB = [...globalDB, ...allGames];
+            if (typeof allWindows !== 'undefined') globalDB = [...globalDB, ...allWindows];
 
             function generateCardHTML(item, delay) {
-                const color = (item.id % 2 === 0) ? 'text-red-400' : 'text-blue-400';
+                const color = (item.id % 2 === 0) ? 'text-blue-400' : 'text-red-400';
                 return `
                     <article class="software-card rounded-xl reveal" style="transition-delay: ${delay}ms;">
-                        <a href="${item.link}" class="block h-full software-link-wrapper">
+                        <a href="${item.link}" class="block h-full flex flex-col">
                             <img src="${item.img}" alt="${item.title}" class="software-thumb mb-4 w-full" loading="lazy"/>
-                            <h3 class="text-lg font-bold ${color} uppercase leading-snug">${item.title}</h3>
-                            <p class="text-gray-400 mt-2 flex-grow">${item.desc}</p>
-                            <div class="mt-auto pt-4">
-                                <div class="download-button">DOWNLOAD NOW</div>
+                            <h3 class="text-lg font-bold ${color} uppercase leading-snug min-h-[3rem]">${item.title}</h3>
+                            <p class="text-gray-400 mt-2 text-sm line-clamp-3 mb-4">${item.desc}</p>
+                            <div class="mt-auto">
+                                <div class="download-button">ACCESS FILE</div>
                             </div>
                         </a>
                     </article>
                 `;
             }
 
-            function displaySoftware(itemsToShow, isSearch) {
+            function displayItems(items, isSearch) {
                 softwareGrid.innerHTML = '';
-                if (itemsToShow.length === 0) {
+                if (items.length === 0) {
                     softwareGrid.style.display = 'none';
                     placeholderContainer.style.display = 'flex';
-                    placeholderMessage.textContent = isSearch ? "No software found." : "Repository update in progress.";
+                    placeholderMessage.textContent = isSearch ? "Nothing found in global database." : "Repository is empty.";
                     paginationContainer.style.display = 'none';
                     return;
                 }
                 softwareGrid.style.display = 'grid';
                 placeholderContainer.style.display = 'none';
                 paginationContainer.style.display = isSearch ? 'none' : 'block';
+
                 let delay = 0;
-                itemsToShow.forEach(item => {
+                items.forEach(item => {
                     softwareGrid.insertAdjacentHTML('beforeend', generateCardHTML(item, delay));
                     delay += 50; 
                 });
                 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
             }
             
-            function performGlobalSearch(query) {
-                if (typeof allSoftwares === 'undefined') return;
+            function performSearch(query) {
                 const q = query.toLowerCase().trim();
-                if (q.length === 0) {
-                    const startIndex = (pageIndex - 1) * softwarePerPage;
-                    displaySoftware(allSoftwares.slice(startIndex, startIndex + softwarePerPage), false);
+                if (q === '') {
+                    // Show only Software default view if empty
+                    const start = (pageIndex - 1) * itemsPerPage;
+                    displayItems(allSoftwares.slice(start, start + itemsPerPage), false);
                     return;
                 }
-                const filtered = allSoftwares.filter(s => s.title.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q));
-                displaySoftware(filtered, true);
+                const filtered = globalDB.filter(s => 
+                    s.title.toLowerCase().includes(q) || 
+                    s.desc.toLowerCase().includes(q)
+                );
+                displayItems(filtered, true);
             }
             
-            // Note: This expects 'allSoftwares' to be defined in software.js
+            // Initial Load: Show first 15 softwares
             if (typeof allSoftwares !== 'undefined') {
-                const startIndex = (pageIndex - 1) * softwarePerPage;
-                displaySoftware(allSoftwares.slice(startIndex, startIndex + softwarePerPage), false);
+                const start = (pageIndex - 1) * itemsPerPage;
+                displayItems(allSoftwares.slice(start, start + itemsPerPage), false);
             }
 
-            searchInput.addEventListener('input', () => performGlobalSearch(searchInput.value));
+            searchInput.addEventListener('input', () => performSearch(searchInput.value));
         });
     </script>
 </body>
