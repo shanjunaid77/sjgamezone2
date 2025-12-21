@@ -1,4 +1,12 @@
 const allGames = [
+    {
+    id: 46, 
+    title: "Marvel's Spider-Man 2",
+    link: "spiderman2.html",
+    img: "spiderman2.jpg", 
+    desc: "Nine months after the events of Spider-Man: Miles Morales, Peter Parker and Miles Morales must stop Kraven the Hunter and the monstrous Venom.",
+    tags: "spider-man 2, marvel, peter parker, miles morales, insomniac games, venom"
+},
 {
     id: 45, 
     title: "GTA Vice City: Next Gen Edition",
@@ -408,6 +416,7 @@ const allGames = [
     tags: "resident evil 4 remake, re4, horror, capcom, leon kennedy"
 },
 ];
+
 
 
 
