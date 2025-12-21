@@ -383,7 +383,16 @@ const allGames = [
     desc: "Experience the fear that you can't forget in full HD. Cooperation is key in this bio-organic thriller set in Africa.",
     tags: "resident evil 5, re5, horror, action, capcom"
 },
+  {
+    id: 43, 
+    title: "Resident Evil 4 Remake",
+    link: "re4remake.html",
+    img: "re4.jpg", 
+    desc: "Survival is just the beginning. A complete reimagining of the 2005 classic with modernized gameplay and terrifyingly detailed graphics.",
+    tags: "resident evil 4 remake, re4, horror, capcom, leon kennedy"
+},
 ];
+
 
 
 
