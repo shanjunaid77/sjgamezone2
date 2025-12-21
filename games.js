@@ -1,5 +1,13 @@
 const allGames = [
   {
+    id: 4, 
+    title: "Tekken 8",
+    link: "tekken8.html",
+    img: "tekken8.jpg", 
+    desc: "The next chapter in the legendary fighting game franchise. Experience stunning visuals and a new aggressive combat system with Jin and Kazuya.",
+    tags: "tekken 8, t8, fighting game, bandai namco, jin kazama"
+},
+  {
     id: 41, 
     title: "GTA San Andreas: Retextured",
     link: "gtasaretextured.html",
@@ -392,6 +400,7 @@ const allGames = [
     tags: "resident evil 4 remake, re4, horror, capcom, leon kennedy"
 },
 ];
+
 
 
 
