@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>SJ Software Zone | Professional PC Utilities: IDM, Photoshop, Premiere Pro</title>
+    <meta name="description" content="SJ Software Zone offers a curated digital library for essential PC utilities and professional software. Community verified repository." />
+    <meta name="keywords" content="IDM download, Photoshop PC, Premiere Pro library, PC software repository, SJ Software Zone" />
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="canonical" href="https://sjgamezone.neocities.org/software.html" />
+    
+    <meta property="og:title" content="SJ Software Zone | PC Software Library" />
+    <meta property="og:description" content="Explore the best and latest professional PC software within our digital library." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sjgamezone.neocities.org/software.html" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="software.js"></script>
+
+    <style>
+        :root {
+          --color-primary:#3b82f6;
+          --color-secondary:#ef4444;
+          --color-neon:#38bdf8;
+          --color-heading-white:#FFFFFF;
+          --bg-dark:#050a16;
+          --bg-light:#1f2937;
+          --font-display:'Orbitron', sans-serif;
+          --font-body:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+        }
+
+        /* --- BACKGROUND FIX --- */
+        body {
+          font-family: var(--font-body);
+          margin: 0;
+          background-color: var(--bg-dark);
+          background-image: url('bg.jpg'); 
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+          background-repeat: no-repeat;
+          color: #e6eef8;
+          min-height: 100vh;
+        }
+
+        /* --- BLUR LAYER FIX --- */
+        .bg-blur {
+          position: fixed;
+          inset: 0;
+          background: rgba(5, 10, 22, 0.5); 
+          backdrop-filter: blur(8px) brightness(0.7);
+          -webkit-backdrop-filter: blur(8px) brightness(0.7); 
+          z-index: -1;
+          pointer-events: none;
+        }
+
+        /* --- CONTENT LAYER --- */
+        header, main, footer, .nav-container {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* --- CYBER GLOW & LOGO --- */
+        .sj-cyber-glow {
+          font-family: var(--font-display);
+          color: #ffffff; 
+          text-shadow: 0 0 5px var(--color-neon), 0 0 15px rgba(56, 189, 248, 0.5);
+          -webkit-text-stroke: 1px var(--bg-dark);
+        }
+        .logo-pulse {
+            transition: all 0.3s ease;
+            border-color: var(--color-secondary); 
+            box-shadow: 0 0 10px 2px rgba(239, 68, 68, 0.4); 
+        }
+        .logo-link:hover .logo-pulse {
+            box-shadow: 0 0 20px 5px rgba(239, 68, 68, 0.8);
+            transform: scale(1.05);
+        }
+
+        /* --- BUTTONS --- */
+        .top-btn { transition: all 0.3s ease; }
+        .active-btn {
+            background: linear-gradient(135deg, #22c55e 0%, #15803d 100%) !important; /* Green for Software */
+            box-shadow: 0 0 25px 5px #22c55e;
+            color: white !important;
+            border: 2px solid white;
+            position: relative;
+        }
+        @keyframes ripple-glow {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); transform: scale(0.95); }
+            100% { box-shadow: 0 0 0 30px rgba(34, 197, 94, 0); transform: scale(1.05); }
+        }
+        .active-btn::after {
+            content: ''; position: absolute; inset: -5px; border-radius: 12px;
+            animation: ripple-glow 3s infinite; z-index: -1;
+        }
+
+        /* --- CARDS --- */
+        .software-card {
+          background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.4)); 
+          border: 2px solid var(--bg-light); 
+          transition: all 0.3s ease;
+          display: flex; flex-direction: column; padding: 1rem;
+        }
+        .software-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 0 30px var(--color-neon);
+          border-color: var(--color-neon); 
+        }
+        .software-thumb { height: 240px; object-fit: cover; border-radius: 8px; border: 3px solid var(--color-secondary); }
+
+        .download-button {
+          background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%);
+          padding: 12px 30px; border-radius: 9999px; font-weight: 700;
+          text-align: center; color: white; transition: all 0.3s;
+        }
+        .download-button:hover { background: #60a5fa; transform: translateY(-2px); }
+
+        /* --- UTILS --- */
+        .software-link-wrapper h3 { min-height: 2.8rem; margin-top: 0.75rem; }
+        .software-link-wrapper p { font-size: 0.875rem; margin-bottom: 1.25rem; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease; }
+        .reveal.visible { opacity: 1; transform: none; }
+
+        /* --- PAGER --- */
+        .pager { background: rgba(0, 0, 0, 0.3); padding: 5px; border-radius: 8px; gap: 5px; }
+        .pager a { padding: 0.6rem 0.9rem; color: var(--color-neon); border-radius: 4px; }
+        .pager a.current { background: var(--color-neon); color: var(--bg-dark); font-weight: 900; }
+        #placeholder-container { display: none; flex-direction: column; align-items: center; padding: 2rem; border: 2px dashed #4b5563; border-radius: 12px; margin-top: 2rem; }
+    </style>
+</head>
+<body class="p-6 sm:p-12">
+    <div class="bg-blur" aria-hidden="true"></div>
+
+    <header class="text-center mb-16">
+        <a href="index.html" class="inline-block relative logo-link">
+          <img src="logo.png" alt="SJ Software Zone logo" class="mx-auto mb-6 rounded-full border-4 w-32 h-32 object-cover logo-pulse"/>
+        </a>
+        <h1 class="text-4xl sm:text-6xl font-extrabold uppercase sj-cyber-glow tracking-wider">SJ SOFTWARE ZONE</h1>
+        <p class="mt-5 text-xl text-white font-bold tracking-widest">// GLOBAL DIGITAL REPOSITORY & UTILITY LIBRARY //</p>
+        <p class="mt-5 text-sm text-gray-400 max-w-2xl mx-auto">Community Verified Catalog. The ultimate archive for **IDM, Adobe Creative Cloud, and System Tools**. Report issues: <a href="https://www.instagram.com/sjvisualflowstudios/" target="_blank" class="text-blue-400 hover:text-red-400">@sjvisualflowstudios</a></p>
+    </header>
+
+    <nav class="nav-container flex justify-center gap-6 mb-10">
+        <a href="index.html" class="top-btn bg-gray-800 px-6 py-3 rounded-lg font-bold text-white uppercase hover:bg-blue-600">LIBRARY</a>
+        <a href="software.html" class="top-btn active-btn px-6 py-3 rounded-lg font-bold uppercase">UTILITIES</a>
+        <a href="windows.html" class="top-btn bg-red-600 px-6 py-3 rounded-lg font-bold text-white uppercase hover:bg-red-500">SYSTEM OS</a>
+    </nav>
+
+    <main class="container mx-auto">
+        <div class="flex flex-col sm:flex-row justify-between items-center mb-10">
+            <h2 class="text-2xl sm:text-3xl font-extrabold uppercase text-white">Software Catalog</h2>
+            <div class="w-full sm:w-96 mt-6 sm:mt-0 relative">
+                <input id="searchInput" placeholder="Search software..." class="w-full bg-gray-900 border-2 border-red-600 text-white px-5 py-3 rounded-full focus:outline-none focus:ring-4 focus:ring-blue-500" />
+            </div>
+        </div>
+
+        <div id="softwareGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8"></div>
+
+        <div id="placeholder-container">
+            <p id="placeholder-message" class="text-gray-400 text-xl"></p>
+        </div>
+
+        <div id="pagination-container" class="mt-16 text-center">
+          <nav class="pager inline-flex items-center text-xl font-semibold">
+            <a href="#" class="opacity-50 pointer-events-none">« Prev</a>
+            <a href="software.html" class="current">1</a>
+            <a href="soft-page2.html">2</a>
+            <a href="soft-page3.html">3</a>
+            <a href="soft-page2.html">Next »</a>
+          </nav>
+        </div>
+    </main>
+
+    <footer class="text-center mt-20 pb-10">
+      <p class="text-gray-400">&copy; 2025 <strong class="text-blue-300">SJ Software Zone</strong> | Created by <span class="text-blue-400">SJ Visual Flow Studios</span></p>
+      <div class="mt-4 space-x-6 text-sm">
+        <a href="about.html" class="hover:text-blue-400">About Us</a> <span>|</span>
+        <a href="privacy.html" class="hover:text-blue-400">Privacy Policy</a> <span>|</span>
+        <a href="disclaimer.html" class="hover:text-blue-400">Terms of Use</a>
+      </div>
+    </footer>
+
+    <script>
+        const io = new IntersectionObserver((entries)=>{
+          entries.forEach(e=>{
+            if(e.isIntersecting){
+              e.target.classList.add('visible'); 
+              io.unobserve(e.target); 
+            }
+          });
+        },{threshold:0.1});
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const softwareGrid = document.getElementById('softwareGrid');
+            const placeholderContainer = document.getElementById('placeholder-container');
+            const placeholderMessage = document.getElementById('placeholder-message');
+            const paginationContainer = document.getElementById('pagination-container');
+            
+            const pageIndex = 1;
+            const softwarePerPage = 15; 
+
+            function generateCardHTML(item, delay) {
+                const color = (item.id % 2 === 0) ? 'text-red-400' : 'text-blue-400';
+                return `
+                    <article class="software-card rounded-xl reveal" style="transition-delay: ${delay}ms;">
+                        <a href="${item.link}" class="block h-full software-link-wrapper">
+                            <img src="${item.img}" alt="${item.title}" class="software-thumb mb-4 w-full" loading="lazy"/>
+                            <h3 class="text-lg font-bold ${color} uppercase leading-snug">${item.title}</h3>
+                            <p class="text-gray-400 mt-2 flex-grow">${item.desc}</p>
+                            <div class="mt-auto pt-4">
+                                <div class="download-button">DOWNLOAD NOW</div>
+                            </div>
+                        </a>
+                    </article>
+                `;
+            }
+
+            function displaySoftware(itemsToShow, isSearch) {
+                softwareGrid.innerHTML = '';
+                if (itemsToShow.length === 0) {
+                    softwareGrid.style.display = 'none';
+                    placeholderContainer.style.display = 'flex';
+                    placeholderMessage.textContent = isSearch ? "No software found." : "Repository update in progress.";
+                    paginationContainer.style.display = 'none';
+                    return;
+                }
+                softwareGrid.style.display = 'grid';
+                placeholderContainer.style.display = 'none';
+                paginationContainer.style.display = isSearch ? 'none' : 'block';
+                let delay = 0;
+                itemsToShow.forEach(item => {
+                    softwareGrid.insertAdjacentHTML('beforeend', generateCardHTML(item, delay));
+                    delay += 50; 
+                });
+                document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+            }
+            
+            function performGlobalSearch(query) {
+                if (typeof allSoftwares === 'undefined') return;
+                const q = query.toLowerCase().trim();
+                if (q.length === 0) {
+                    const startIndex = (pageIndex - 1) * softwarePerPage;
+                    displaySoftware(allSoftwares.slice(startIndex, startIndex + softwarePerPage), false);
+                    return;
+                }
+                const filtered = allSoftwares.filter(s => s.title.toLowerCase().includes(q) || s.desc.toLowerCase().includes(q));
+                displaySoftware(filtered, true);
+            }
+            
+            // Note: This expects 'allSoftwares' to be defined in software.js
+            if (typeof allSoftwares !== 'undefined') {
+                const startIndex = (pageIndex - 1) * softwarePerPage;
+                displaySoftware(allSoftwares.slice(startIndex, startIndex + softwarePerPage), false);
+            }
+
+            searchInput.addEventListener('input', () => performGlobalSearch(searchInput.value));
+        });
+    </script>
+</body>
+</html>
