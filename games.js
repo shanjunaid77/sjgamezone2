@@ -1,30 +1,30 @@
 const allGames = [
-   {
-    id: 47, 
-    title: "FIFA 23",
-    link: "fifa23.html",
-    img: "fifa23.jpg", 
-    desc: "Experience the World's Game with HyperMotion2 Technology, both men's and women's FIFA World Cup, and cross-play features.",
-    tags: "fifa 23, football, soccer, ea sports, sports, f23"
-},
     {
-    id: 46, 
-    title: "Marvel's Spider-Man 2",
-    link: "spiderman2.html",
-    img: "spiderman2.jpg", 
-    desc: "Nine months after the events of Spider-Man: Miles Morales, Peter Parker and Miles Morales must stop Kraven the Hunter and the monstrous Venom.",
-    tags: "spider-man 2, marvel, peter parker, miles morales, insomniac games, venom"
-},
-{
-    id: 45, 
-    title: "GTA Vice City: Next Gen Edition",
-    link: "gtavcng.html",
-    img: "gtavcng.jpg", 
-    desc: "Experience the 80s like never before. Built on the RAGE engine, this overhaul brings modern physics, lighting, and textures to Tommy Vercetti's empire.",
-    tags: "gta vice city, next gen, vcnge, rockstar games, open world, mods"
-},
+        id: 1, 
+        title: "FIFA 23",
+        link: "fifa23.html",
+        img: "fifa23.jpg", 
+        desc: "Digital Athletics Repository: Experience the World's Game with HyperMotion2 technology. Features men's and women's World Cup simulation data.",
+        tags: "fifa 23, football, soccer, ea sports, sports, f23"
+    },
     {
-        id: 39,
+        id: 2, 
+        title: "Marvel's Spider-Man 2",
+        link: "spiderman2.html",
+        img: "spiderman2.jpg", 
+        desc: "Urban Heroic Archive: Nine months after Miles Morales, Peter and Miles must stop Kraven and the monstrous Venom simulation.",
+        tags: "spider-man 2, marvel, peter parker, miles morales, insomniac games, venom"
+    },
+    {
+        id: 3, 
+        title: "GTA Vice City: Next Gen Edition",
+        link: "gtavcng.html",
+        img: "gtavcng.jpg", 
+        desc: "Engine Overhaul Repository: Experience the 80s rebuilt on the RAGE engine. Features modern physics, lighting, and textures for Tommy Vercetti's empire.",
+        tags: "gta vice city, next gen, vcnge, rockstar games, open world, mods"
+    },
+    {
+        id: 4,
         title: "TEKKEN 7",
         link: "tekken7.html",
         img: "tekken7.jpg",
@@ -32,32 +32,32 @@ const allGames = [
         tags: "tekken 7 pc download fighting game action martial arts tournament kazuya heihachi",
         titleColorClass: "text-red-400"
     },
-  {
-    id: 44, 
-    title: "Tekken 8",
-    link: "tekken8.html",
-    img: "tekken8.jpg", 
-    desc: "The next chapter in the legendary fighting game franchise. Experience stunning visuals and a new aggressive combat system with Jin and Kazuya.",
-    tags: "tekken 8, t8, fighting game, bandai namco, jin kazama"
-},
-  {
-    id: 41, 
-    title: "GTA San Andreas: Retextured",
-    link: "gtasaretextured.html",
-    img: "gtasaretextured.jpg", 
-    desc: "The definitive way to play a classic. Featuring 4K textures, modern lighting, and enhanced draw distances while keeping the original feel.",
-    tags: "gta sa, san andreas, retextured, rockstar games, open world"
-},
-   {
-    id: 40, // Adjust ID based on your current list
-    title: "Cricket 24",
-    link: "cricket24.html",
-    img: "cricket2024.jpg", 
-    desc: "The most realistic cricket simulation ever. Featuring licensed teams from around the globe and advanced Pro-Team modes.",
-    tags: "cricket 24, sports, big ant studios, cricket pc"
+    {
+        id: 5, 
+        title: "Tekken 8",
+        link: "tekken8.html",
+        img: "tekken8.jpg", 
+        desc: "Next-Gen Combat Archive: Legendary fighting franchise entry. Experience aggressive combat systems and stunning visual fidelity with Jin and Kazuya.",
+        tags: "tekken 8, t8, fighting game, bandai namco, jin kazama"
     },
     {
-        id: 1,
+        id: 6, 
+        title: "GTA San Andreas: Retextured",
+        link: "gtasaretextured.html",
+        img: "gtasaretextured.jpg", 
+        desc: "Legacy Digital Enhancement: The definitive way to play a classic. Featuring 4K textures and enhanced draw distances for the San Andreas simulation.",
+        tags: "gta sa, san andreas, retextured, rockstar games, open world"
+    },
+    {
+        id: 7,
+        title: "Cricket 24",
+        link: "cricket24.html",
+        img: "cricket2024.jpg", 
+        desc: "Sports Simulation Archive: The most realistic cricket simulation ever. Featuring licensed global teams and advanced Pro-Team technical modes.",
+        tags: "cricket 24, sports, big ant studios, cricket pc"
+    },
+    {
+        id: 8,
         title: "GHOST OF TSUSHIMA",
         link: "ghostoftsushima.html",
         img: "ghostoftsushima.jpg",
@@ -66,7 +66,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
     {
-        id: 2,
+        id: 9,
         title: "RED DEAD REDEMPTION 2",
         link: "rdr2.html",
         img: "rdr2.jpg",
@@ -74,10 +74,8 @@ const allGames = [
         tags: "red dead redemption 2 western adventure arthur morgan",
         titleColorClass: "text-blue-400"
     },
-
-    // --- GTA Series ---
     {
-        id: 3,
+        id: 10,
         title: "GTA: VICE CITY",
         link: "gtavc.html",
         img: "gtavc.jpg",
@@ -86,7 +84,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
     {
-        id: 4,
+        id: 11,
         title: "GTA: SAN ANDREAS",
         link: "gtasanandreas.html",
         img: "gtasa1.jpg",
@@ -95,7 +93,7 @@ const allGames = [
         titleColorClass: "text-blue-400"
     },
     {
-        id: 5,
+        id: 12,
         title: "GTA IV",
         link: "gta4.html",
         img: "gta4.jpg",
@@ -104,7 +102,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
     {
-        id: 6,
+        id: 13,
         title: "GRAND THEFT AUTO V",
         link: "gta5.html",
         img: "gta5.jpg",
@@ -113,7 +111,7 @@ const allGames = [
         titleColorClass: "text-blue-400"
     },
     {
-        id: 7,
+        id: 14,
         title: "GTA V REDUX ENHANCED",
         link: "gta5redux.html",
         img: "gta5redux2.jpg",
@@ -121,9 +119,8 @@ const allGames = [
         tags: "gta 5 redux enhanced edition pc download open world action adventure mod graphics realistic",
         titleColorClass: "text-red-400"
     },
-
     {
-        id: 8,
+        id: 15,
         title: "THE LAST OF US PART II",
         link: "lastofuspart2.html",
         img: "lastofusp2.jpg",
@@ -132,7 +129,7 @@ const allGames = [
         titleColorClass: "text-blue-400"
     },
     {
-        id: 9,
+        id: 16,
         title: "THE LAST OF US PART I",
         link: "lastofuspart1.html",
         img: "lastofuspart1.jpg",
@@ -140,10 +137,8 @@ const allGames = [
         tags: "the last of us tlou joel ellie horror survival",
         titleColorClass: "text-red-400"
     },
-
-    // --- Assassin's Creed Series ---
     {
-        id: 10,
+        id: 17,
         title: "ASSASSIN'S CREED 1",
         link: "assassinscreed1.html",
         img: "assassincreed1.jpg",
@@ -152,7 +147,7 @@ const allGames = [
         titleColorClass: "text-blue-400"
     },
     {
-        id: 11,
+        id: 18,
         title: "ASSASSIN'S CREED 2",
         link: "assassinscreed2.html",
         img: "assassincreed22.jpg",
@@ -161,7 +156,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
     {
-        id: 12,
+        id: 19,
         title: "ASSASSIN'S CREED 3",
         link: "assassinscreed3.html",
         img: "assassinscreed3.jpg",
@@ -170,7 +165,7 @@ const allGames = [
         titleColorClass: "text-blue-400"
     },
     {
-        id: 13,
+        id: 20,
         title: "ASSASSIN'S CREED VALHALLA",
         link: "valhalla.html",
         img: "acvalhalla1.jpg",
@@ -178,10 +173,8 @@ const allGames = [
         tags: "assassins creed valhalla viking rpg open world",
         titleColorClass: "text-red-400"
     },
-
-    // --- Far Cry Series ---
     {
-        id: 14,
+        id: 21,
         title: "FAR CRY 1",
         link: "farcry1.html",
         img: "farcry1.jpg",
@@ -190,7 +183,7 @@ const allGames = [
         titleColorClass: "text-blue-400"
     },
     {
-        id: 15,
+        id: 22,
         title: "FAR CRY 2",
         link: "farcry2.html",
         img: "farcry2.jpg",
@@ -199,7 +192,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
     {
-        id: 16,
+        id: 23,
         title: "FAR CRY 3",
         link: "farcry3.html",
         img: "farcry3.jpg",
@@ -208,7 +201,7 @@ const allGames = [
         titleColorClass: "text-blue-400"
     },
     {
-        id: 17,
+        id: 24,
         title: "FAR CRY 4 GOLD",
         link: "farcry4.html",
         img: "farcry4.jpg",
@@ -217,7 +210,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
     {
-        id: 18,
+        id: 25,
         title: "FAR CRY 5",
         link: "farcry5.html",
         img: "farcry5.jpg",
@@ -226,7 +219,7 @@ const allGames = [
         titleColorClass: "text-blue-400"
     },
     {
-        id: 19,
+        id: 26,
         title: "FAR CRY 6",
         link: "farcry6.html",
         img: "farcry6-1.jpg",
@@ -234,10 +227,8 @@ const allGames = [
         tags: "far cry 6 ubisoft action shooter tropical open world",
         titleColorClass: "text-red-400"
     },
-
-    // --- Other Hits ---
     {
-        id: 20,
+        id: 27,
         title: "UNCHARTED 4",
         link: "uncharted.html",
         img: "uncharted.jpg",
@@ -246,7 +237,7 @@ const allGames = [
         titleColorClass: "text-blue-400"
     },
     {
-        id: 21,
+        id: 28,
         title: "CYBERPUNK 2077",
         link: "cyberpunk2077.html",
         img: "cyberpunk2077.jpg",
@@ -255,7 +246,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
     {
-        id: 22,
+        id: 29,
         title: "MAX PAYNE 3",
         link: "maxpayne3.html",
         img: "maxpayne3.jpg",
@@ -264,7 +255,7 @@ const allGames = [
         titleColorClass: "text-blue-400"
     },
     {
-        id: 23,
+        id: 30,
         title: "WATCH DOGS (2014)",
         link: "watchdogs1.html",
         img: "watchdogs1.jpg",
@@ -273,7 +264,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
     {
-        id: 24,
+        id: 31,
         title: "IGI 2: COVERT STRIKE",
         link: "igi2.html",
         img: "igi2.jpg",
@@ -282,7 +273,7 @@ const allGames = [
         titleColorClass: "text-blue-400"
     },
     {
-        id: 25,
+        id: 32,
         title: "PROJECT IGI 1",
         link: "igi1.html",
         img: "igi1.jpg",
@@ -291,7 +282,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
     {
-        id: 26,
+        id: 33,
         title: "HITMAN: BLOOD MONEY",
         link: "hitman1.html",
         img: "hitman1.jpg",
@@ -300,7 +291,7 @@ const allGames = [
         titleColorClass: "text-blue-400"
     },
     {
-        id: 27,
+        id: 34,
         title: "DYING LIGHT",
         link: "dyinglight.html",
         img: "dyinglight.jpg",
@@ -309,7 +300,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
     {
-        id: 28,
+        id: 35,
         title: "HOGWARTS LEGACY",
         link: "hogwartslegacy.html",
         img: "hogwartslegacy1.jpg",
@@ -318,7 +309,7 @@ const allGames = [
         titleColorClass: "text-blue-400"
     },
     {
-        id: 29,
+        id: 36,
         title: "MAX PAYNE 1",
         link: "maxpayne1.html",
         img: "maxpayne1.jpg",
@@ -327,7 +318,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
     {
-        id: 30,
+        id: 37,
         title: "MAX PAYNE 2",
         link: "maxpayne2.html",
         img: "maxpayne2.jpg",
@@ -336,7 +327,7 @@ const allGames = [
         titleColorClass: "text-blue-400"
     },
     {
-        id: 31,
+        id: 38,
         title: "NFS II SPECIAL EDITION",
         link: "nfs2.html",
         img: "nfs.jpg",
@@ -345,7 +336,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
     {
-        id: 32,
+        id: 39,
         title: "NEED FOR SPEED SHIFT",
         link: "nfsshift.html",
         img: "nfsshift1.jpg",
@@ -354,7 +345,7 @@ const allGames = [
         titleColorClass: "text-blue-400"
     },
     {
-        id: 33,
+        id: 40,
         title: "NFS MOST WANTED 2005",
         link: "nfsmw.html",
         img: "nfsmw.jpg",
@@ -363,7 +354,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
     {
-        id: 34,
+        id: 41,
         title: "NFS MOST WANTED 2012",
         link: "nfsmw2012.html",
         img: "nfsmw2012.jpg",
@@ -372,7 +363,7 @@ const allGames = [
         titleColorClass: "text-blue-400"
     },
     {
-        id: 35,
+        id: 42,
         title: "NEED FOR SPEED RIVALS",
         link: "nfsrivals.html",
         img: "nfsrivals.jpg",
@@ -381,7 +372,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
     {
-        id: 36,
+        id: 43,
         title: "FORZA HORIZON 5",
         link: "forzahorizon5.html",
         img: "forzahorizon5.jpg",
@@ -390,7 +381,7 @@ const allGames = [
         titleColorClass: "text-blue-400"
     },
     {
-        id: 37,
+        id: 44,
         title: "FORZA HORIZON 4",
         link: "forzahorizon4.html",
         img: "forzahorizon4.jpg",
@@ -399,7 +390,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
     {
-        id: 38,
+        id: 45,
         title: "LARA CROFT: OSIRIS",
         link: "laracrofttos.html",
         img: "laracrofttos.jpg",
@@ -407,35 +398,20 @@ const allGames = [
         tags: "lara croft temple of osiris pc download adventure puzzles egypt treasures action",
         titleColorClass: "text-blue-400"
     },
-  {
-    id: 42, 
-    title: "Resident Evil 5",
-    link: "re5.html",
-    img: "re5.jpg", 
-    desc: "Experience the fear that you can't forget in full HD. Cooperation is key in this bio-organic thriller set in Africa.",
-    tags: "resident evil 5, re5, horror, action, capcom"
-},
-  {
-    id: 43, 
-    title: "Resident Evil 4 Remake",
-    link: "re4remake.html",
-    img: "re4.jpg", 
-    desc: "Survival is just the beginning. A complete reimagining of the 2005 classic with modernized gameplay and terrifyingly detailed graphics.",
-    tags: "resident evil 4 remake, re4, horror, capcom, leon kennedy"
-},
+    {
+        id: 46, 
+        title: "Resident Evil 5",
+        link: "re5.html",
+        img: "re5.jpg", 
+        desc: "Bio-Organic Thriller Archive: Experience the fear in full HD. Cooperation-based survival simulation set in a digital African environment.",
+        tags: "resident evil 5, re5, horror, action, capcom"
+    },
+    {
+        id: 47, 
+        title: "Resident Evil 4 Remake",
+        link: "re4remake.html",
+        img: "re4.jpg", 
+        desc: "Modernized Survival Repository: A reimagining of the classic 2005 simulation. Features terrifyingly detailed graphics and updated mission data.",
+        tags: "resident evil 4 remake, re4, horror, capcom, leon kennedy"
+    }
 ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
