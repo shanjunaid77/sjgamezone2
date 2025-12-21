@@ -40,10 +40,9 @@
             border-radius: 20px;
         }
 
-        /* 🖼️ LARGER IMAGE SIZING */
         .game-card-img {
             width: 100%;
-            height: 450px; /* Increased from 300px to 450px */
+            height: 500px; 
             object-fit: cover;
             border: 3px solid #ffd700;
             border-radius: 16px;
@@ -66,6 +65,14 @@
             background: rgba(255, 215, 0, 0.15);
             border-radius: 10px;
         }
+
+        .spec-label {
+            color: #fb923c; /* orange-400 */
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -73,46 +80,85 @@
 
     <header class="flex flex-col items-center pt-12 pb-14 px-4">
         <a href="index.html">
-            <img src="logo.png" alt="SJ Logo" class="w-24 h-24 rounded-full border-2 border-orange-500 mb-6 transition-transform hover:scale-110 shadow-[0_0_20px_rgba(255,140,0,0.5)]">
+            <img src="logo.png" alt="SJ Logo" class="w-32 h-32 rounded-full border-2 border-orange-500 mb-6 transition-transform hover:scale-110 shadow-lg">
         </a>
-        <h1 class="text-4xl md:text-5xl font-black title-glow uppercase text-center tracking-tighter">ASSASSIN'S CREED VALHALLA</h1>
-        <p class="text-orange-400 font-bold tracking-[0.4em] mt-4 text-sm md:text-lg text-center">PREMIUM DIGITAL REPOSITORY</p>
+        <h1 class="text-4xl md:text-6xl font-black title-glow uppercase text-center tracking-tighter">ASSASSIN'S CREED VALHALLA</h1>
+        <p class="text-orange-400 font-bold tracking-[0.4em] mt-4 text-sm md:text-lg text-center uppercase">Premium Digital Repository</p>
     </header>
 
-    <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-10 pb-24">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-10 pb-12">
         
         <div class="lg:w-[70%] w-full">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                <img src="acvalhalla1.jpg" class="game-card-img" alt="Gameplay View 1">
-                <img src="acvalhalla2.jpg" class="game-card-img" alt="Gameplay View 2">
+                <img src="acvalhalla1.jpg" class="game-card-img" alt="Gameplay 1">
+                <img src="acvalhalla2.jpg" class="game-card-img" alt="Gameplay 2">
             </div>
 
-            <div class="glass-panel p-8 md:p-12 text-center">
+            <div class="glass-panel p-8 md:p-12 text-center mb-10">
                 <h2 class="text-3xl font-bold text-yellow-500 mb-6 uppercase tracking-widest border-b border-yellow-500/20 pb-4 inline-block">Technical Overview</h2>
                 <p class="text-gray-200 leading-relaxed text-xl mb-10">
-                    Lead your Viking clan to glory in the Dark Ages of England. This digital entry provides high-fidelity access to the complete Valhalla saga, optimized for modern hardware performance with all expansion data included.
+                    Become Eivor, a mighty Viking raider, and lead your clan from the harsh shores of Norway to a new home amid the lush farmlands of ninth-century England. This digital archive includes the base game plus all massive expansions.
                 </p>
                 
                 <a href="https://shrinkme.click/Assassinvalhalla" target="_blank" 
-                   class="inline-block bg-gradient-to-r from-orange-600 to-yellow-500 text-black font-black py-5 px-14 rounded-full text-2xl uppercase shadow-[0_0_30px_rgba(255,140,0,0.6)] hover:brightness-125 transition-all">
+                   class="inline-block bg-gradient-to-r from-orange-600 to-yellow-500 text-black font-black py-5 px-14 rounded-full text-2xl uppercase shadow-xl hover:brightness-125 transition-all">
                     🚀 Initialize Access (65GB)
                 </a>
             </div>
 
-            <div class="grid grid-cols-2 gap-6 mt-8">
-                <div class="glass-panel p-6 text-center">
-                    <p class="text-orange-400 text-sm font-bold uppercase tracking-widest mb-1">Architecture</p>
-                    <p class="text-lg font-bold">v1.7.0 Optimized</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-panel p-8">
+                    <h3 class="text-xl font-black text-yellow-500 mb-6 uppercase tracking-widest border-b border-yellow-500/20 pb-2">System Requirements</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="spec-label">Operating System</p>
+                            <p class="text-gray-200">Windows 10 / 11 (64-bit only)</p>
+                        </div>
+                        <div>
+                            <p class="spec-label">Processor (CPU)</p>
+                            <p class="text-gray-200">AMD Ryzen 5 1600 / Intel Core i7-4790</p>
+                        </div>
+                        <div>
+                            <p class="spec-label">Memory (RAM)</p>
+                            <p class="text-gray-200">8 GB (Dual-channel mode)</p>
+                        </div>
+                        <div>
+                            <p class="spec-label">Graphics (GPU)</p>
+                            <p class="text-gray-200">AMD RX 570 / NVIDIA GeForce GTX 1060</p>
+                        </div>
+                        <div>
+                            <p class="spec-label">Storage</p>
+                            <p class="text-gray-200">65 GB Available Space (SSD Recommended)</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="glass-panel p-6 text-center">
-                    <p class="text-orange-400 text-sm font-bold uppercase tracking-widest mb-1">Status</p>
-                    <p class="text-lg font-bold">Verified Archive</p>
+
+                <div class="glass-panel p-8">
+                    <h3 class="text-xl font-black text-yellow-500 mb-6 uppercase tracking-widest border-b border-yellow-500/20 pb-2">Archive Features</h3>
+                    <ul class="space-y-4 text-gray-200">
+                        <li class="flex items-start gap-3">
+                            <span class="text-orange-500 text-xl">✔</span>
+                            <span>Includes **Dawn of Ragnarök** & **Siege of Paris** DLCs.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-orange-500 text-xl">✔</span>
+                            <span>Pre-patched to version **v1.7.0** for maximum stability.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-orange-500 text-xl">✔</span>
+                            <span>High-resolution texture packs integrated.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-orange-500 text-xl">✔</span>
+                            <span>Optimized for ultra-wide monitors and 4K output.</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
 
         <aside class="lg:w-[30%] w-full">
-            <div class="glass-panel p-6">
+            <div class="glass-panel p-6 sticky top-6">
                 <h2 class="text-xl font-black text-yellow-500 mb-8 border-b border-yellow-500/30 pb-3 text-center uppercase tracking-widest">More Entries</h2>
                 
                 <div class="flex flex-col gap-4">
@@ -147,7 +193,7 @@
         </aside>
     </div>
 
-    <footer class="text-center py-16 text-gray-500 text-sm border-t border-white/5">
+    <footer class="text-center py-12 text-gray-500 text-sm border-t border-white/5">
         <p>© 2025 SJ Game Zone | SJ Visual Flow Studios | Digital Archive managed by Shan Junaid</p>
     </footer>
 </body>
