@@ -23,5 +23,6 @@ const allSoftware = [
         img: "premierepro.jpg",
         desc: "Professional video editing software used by filmmakers and content creators. Edit videos, add effects, transitions, and export in high quality.",
         tags: "premiere pro, adobe, video editing, filmmaking software"
-    }
+    },
 ];
+
