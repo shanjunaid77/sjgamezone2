@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Assassin's Creed Valhalla | Official Digital Entry – SJ Game Zone</title>
+<meta name="description" content="Explore Assassin's Creed Valhalla at SJ Game Zone. View system requirements, key features, and access the official digital repository for the complete Viking saga.">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+/* 🛡️ STYLE PRESERVED EXACTLY AS REQUESTED */
+body {
+   font-family: 'Inter', sans-serif;
+   margin: 0;
+   padding: 0;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   background-color: #0a0a0a;
+   background-image: url('acvalhalla2.jpg'); 
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}
+
+.bg-blur {
+   position: fixed;
+   top:0; left:0; right:0; bottom:0;
+   backdrop-filter: blur(4px) brightness(0.5);
+   z-index: -1;
+}
+
+.title-glow {
+  font-family: 'Audiowide', cursive;
+  color: #fff;
+  text-shadow: 0 0 10px #ff8c00, 0 0 30px #ffd700, 0 0 50px #ffffff;
+  letter-spacing: 3px;
+  transition: text-shadow 0.3s ease;
+}
+
+.title-glow:hover {
+  text-shadow: 0 0 20px #ffd700, 0 0 45px #ff8c00, 0 0 80px #ffffff;
+}
+
+.subtitle-simple {
+  color: #fff;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+  font-size: 1.25rem;
+}
+
+.main-content {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   max-width: 900px;
+   width: 100%;
+   text-align: center;
+   margin-top: 50px;
+}
+
+.desc-text { 
+  color:#dcdcdc; 
+  max-width:700px; 
+  margin-bottom:2rem; 
+  line-height:1.75; 
+  text-shadow: 0 0 6px rgba(255, 140, 0, 0.4);
+  text-align: center;
+}
+
+.btn-main {
+  background: linear-gradient(90deg, #ff8c00, #ffd700, #ff8c00);
+  background-size: 300% 300%;
+  color:#000;
+  border:3px solid #ffd700;
+  border-radius:9999px;
+  font-size:1.3rem;
+  font-weight:900;
+  padding:18px 70px;
+  text-transform:uppercase;
+  box-shadow:0 0 30px rgba(255,140,0,0.9);
+  transition: all 0.4s cubic-bezier(0.25,0.8,0.25,1);
+  animation: gradientShift 5s infinite ease-in-out;
+  margin-top:2rem;
+  display:inline-block;
+}
+
+.btn-main:hover { 
+  transform: translateY(-4px) scale(1.04); 
+  box-shadow: 0 8px 45px rgba(255, 215, 0,1); 
+  border-color:#ffffff; 
+}
+
+@keyframes gradientShift { 
+  0% {background-position:0% 50%;} 
+  50% {background-position:100% 50%;} 
+  100% {background-position:0% 50%;} 
+}
+
+.game-img {
+  width: 100%;
+  max-width: 380px; 
+  height: 480px;     
+  object-fit: cover; 
+  border-radius: 12px;
+  border: 4px solid #ffd700; 
+  box-shadow: 0 0 25px #ffd700, 0 0 40px #00bfff; 
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+}
+
+.image-grid > div {
+  flex: 1 1 380px;
+  display: flex;
+  justify-content: center;
+}
+
+.info-box { 
+  background: rgba(0,0,0,0.75);
+  border:1px solid #ffd700; 
+  border-radius:16px; 
+  padding:2rem; 
+  color:#e2e8f0; 
+  text-align:left; 
+  margin-top:3rem; 
+  backdrop-filter: blur(4px); 
+  box-shadow:0 0 15px #ffd700,0 0 30px #00bfff, inset 0 0 10px rgba(255,255,255,0.1);
+}
+
+.info-box h2 { 
+  color:#ffd700; 
+  margin-bottom:1.2rem; 
+  font-size:1.5rem; 
+  border-bottom:2px solid rgba(255,140,0,0.4);
+  padding-bottom:0.5rem; 
+  font-weight:bold; 
+}
+
+.header-logo { 
+  width:100px; 
+  height:100px; 
+  border-radius:50%; 
+  margin-bottom:1rem; 
+  border:3px solid #ff8c00;
+  box-shadow:0 0 15px rgba(255,140,0,0.8); 
+  transition: transform 0.3s; 
+}
+
+.header-logo:hover { transform: rotate(5deg) scale(1.05); }
+
+.btn-home { 
+  background-color:#ff8c00; 
+  color:#fff; 
+  border:2px solid #ffd700; 
+  border-radius:8px; 
+  font-size:1rem; 
+  font-weight:700; 
+  padding:10px 25px; 
+  text-transform:uppercase; 
+  box-shadow:0 0 15px rgba(255,140,0,0.7); 
+  transition:all 0.3s ease; 
+  margin-top:3rem; 
+  display:inline-block; 
+}
+
+.btn-home:hover { background-color:#ffd700; box-shadow:0 0 20px #ff8c00; transform:translateY(-2px); }
+</style>
+</head>
+
+<body>
+<div class="bg-blur"></div>
+<div class="main-content">
+<header class="mb-8 flex flex-col items-center">
+  <a href="index.html"><img src="logo.png" alt="SJ Game Zone Logo" class="header-logo"></a>
+  <h1 class="text-6xl md:text-7xl font-extrabold title-glow mt-2">ASSASSIN'S CREED VALHALLA</h1>
+  <h2 class="subtitle-simple text-xl md:text-2xl">Definitive Edition | Full Post-Launch Content | Optimized for Modern PC Systems (65 GB)</h2>
+</header>
+
+<div class="image-grid mb-10 px-4">
+  <div><img src="acvalhalla1.jpg" alt="AC Valhalla Cinematic" class="game-img"></div>
+  <div><img src="acvalhalla2.jpg" alt="AC Valhalla Visuals" class="game-img"></div>
+</div>
+
+<p class="desc-text mx-auto px-4">
+Step into the role of Eivor, a legendary Viking raider on a quest for glory. Explore England's Dark Ages, raid your enemies, grow your settlement, and build your political power in the ultimate Assassin's Creed experience.
+</p>
+
+<a href="https://shrinkme.click/Assassinvalhalla" target="_blank" class="btn-main">
+  🚀 ACCESS DIGITAL LIBRARY ENTRY (65GB)
+</a>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 px-4">
+<div class="info-box">
+<h2>💠 Game Overview</h2>
+<ul class="list-disc list-inside space-y-2">
+<li><strong>Epic Viking Saga:</strong> Lead your clan from the harsh shores of Norway to a new home in England.</li>
+<li><strong>Vibrant Open World:</strong> Discover the mystery and beauty of the four kingdoms of England.</li>
+<li><strong>Advanced Combat:</strong> Dual-wield powerful weapons and master visceral Viking combat styles.</li>
+<li><strong>Player Agency:</strong> Every choice you make in combat and conversation shapes your legacy.</li>
+<li><strong>Performance Ready:</strong> Fully benchmarked for high-fidelity PC performance.</li>
+</ul>
+</div>
+
+<div class="info-box">
+<h2>⚙️ System Requirements</h2>
+<ul class="list-disc list-inside space-y-2">
+<li><strong>OS:</strong> Windows 10/11 (64-bit required)</li>
+<li><strong>Processor:</strong> Intel Core i5-4460 / AMD Ryzen 3 1200</li>
+<li><strong>Memory:</strong> 8 GB Dual Channel RAM</li>
+<li><strong>Graphics:</strong> NVIDIA GeForce GTX 960 / AMD R9 380</li>
+<li><strong>Storage:</strong> 50 GB SSD Recommended</li>
+<li><strong>DirectX:</strong> Version 12 (Feature Level 12_0)</li>
+</ul>
+</div>
+</div>
+
+<section style="text-align:center; margin-top:60px; padding:20px; color:white; font-family:Arial, sans-serif;">
+<h2 style="font-size:24px; margin-bottom:30px;">🎮 Explore the Full Catalog</h2>
+<div style="display:flex; justify-content:center; flex-wrap:wrap; gap:25px;">
+<a href="cyberpunk2077.html" style="text-decoration:none; color:white; width:150px;">
+<img src="Cyberpunk2077.jpg" alt="Cyberpunk 2077 Entry" style="width:150px; height:200px; object-fit:cover; border-radius:10px; border:2px solid #ffd700; box-shadow:0 0 15px rgba(255,215,0,0.4);">
+<p style="margin-top:10px;">Cyberpunk 2077</p>
+</a>
+<a href="rdr2.html" style="text-decoration:none; color:white; width:150px;">
+<img src="rdr2.jpg" alt="RDR2 Entry" style="width:150px; height:200px; object-fit:cover; border-radius:10px; border:2px solid #ffd700; box-shadow:0 0 15px rgba(255,215,0,0.4);">
+<p style="margin-top:10px;">Red Dead Redemption 2</p>
+</a>
+<a href="gta5.html" style="text-decoration:none; color:white; width:150px;">
+<img src="gta5.jpg" alt="GTA V Entry" style="width:150px; height:200px; object-fit:cover; border-radius:10px; border:2px solid #ffd700; box-shadow:0 0 15px rgba(255,215,0,0.4);">
+<p style="margin-top:10px;">GTA V</p>
+</a>
+</div>
+</section>
+
+<a href="index.html" class="btn-home">&larr; RETURN TO CATALOG</a>
+
+<footer style="text-align:center; color:white; padding:20px; margin-top:40px; font-family:Arial, sans-serif;">
+<p>SJ Game Zone is a community-driven repository providing digital entries for performance testing and archival purposes.</p>
+<p>© 2025 <strong>SJ Game Zone</strong> | <strong>SJ Visual Flow Studios</strong> Managed by <strong>Shan Junaid</strong></p>
+</footer>
+</div>
+</body>
+</html>
