@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assassin's Creed Valhalla | Digital Archive – SJ Game Zone</title>
-    <meta name="description" content="Official digital entry for Assassin's Creed Valhalla. View technical specifications and system requirements.">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
@@ -12,117 +11,136 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            margin: 0;
-            background-color: #0a0a0a;
-            background-image: url('acvalhalla2.jpg'); 
+            background-color: #050505;
+            color: white;
+            background-image: url('acvalhalla2.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            color: white;
         }
 
-        .bg-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(10, 10, 10, 0.6);
-            backdrop-filter: blur(6px);
-            z-index: -1;
+        .glass-effect {
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 215, 0, 0.2);
         }
 
         .title-glow {
             font-family: 'Audiowide', cursive;
-            text-shadow: 0 0 15px #ff8c00, 0 0 30px #ffd700;
+            text-shadow: 0 0 20px #ff8c00, 0 0 40px #ffd700;
         }
 
-        .game-card-img {
-            width: 100%;
-            max-width: 400px;
-            height: 500px;
-            object-fit: cover;
-            border: 3px solid #ffd700;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        .game-img-hero {
+            border: 2px solid #ffd700;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .game-img-hero:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+        }
+
+        .sidebar-item:hover img {
+            border-color: #ff8c00;
+            transform: translateY(-2px);
         }
 
         .btn-access {
-            background: linear-gradient(90deg, #ff8c00, #ffd700);
-            color: #000;
-            padding: 16px 40px;
-            border-radius: 50px;
-            font-weight: 900;
-            text-transform: uppercase;
-            box-shadow: 0 0 20px rgba(255, 140, 0, 0.6);
-            transition: 0.3s;
+            background: linear-gradient(90deg, #ff8c00, #ffd700, #ff8c00);
+            background-size: 200% auto;
+            transition: 0.5s;
+            color: black;
         }
 
         .btn-access:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 35px rgba(255, 215, 0, 0.8);
-        }
-
-        .info-panel {
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 16px;
-            padding: 24px;
+            background-position: right center;
+            box-shadow: 0 0 30px rgba(255, 140, 0, 0.8);
         }
     </style>
 </head>
-<body class="flex flex-col items-center p-6 sm:p-12">
-    <div class="bg-overlay"></div>
+<body class="min-h-screen flex flex-col items-center">
 
-    <header class="text-center mb-12">
-        <a href="index.html">
-            <img src="logo.png" alt="SJ Logo" class="w-24 h-24 rounded-full border-2 border-orange-500 mx-auto mb-4 hover:rotate-6 transition-transform">
+    <header class="w-full py-8 text-center glass-effect border-b border-yellow-600/30 mb-8">
+        <a href="index.html" class="inline-block mb-4">
+            <img src="logo.png" alt="SJ Logo" class="w-20 h-20 rounded-full border-2 border-orange-500 hover:scale-110 transition-transform">
         </a>
-        <h1 class="text-5xl sm:text-7xl font-black title-glow uppercase">Assassin's Creed Valhalla</h1>
-        <p class="text-xl text-orange-300 mt-2 font-bold tracking-widest uppercase">Definitive Digital Repository Entry</p>
+        <h1 class="text-4xl md:text-6xl font-black title-glow tracking-tighter uppercase">Assassin's Creed Valhalla</h1>
+        <p class="text-orange-400 font-bold tracking-[0.2em] mt-2">DEFINITIVE DIGITAL REPOSITORY</p>
     </header>
 
-    <div class="flex flex-wrap justify-center gap-8 mb-12">
-        <img src="acvalhalla1.jpg" alt="In-game Visual 1" class="game-card-img">
-        <img src="acvalhalla2.jpg" alt="In-game Visual 2" class="game-card-img">
-    </div>
-
-    <div class="max-w-4xl w-full text-center">
-        <p class="text-gray-300 text-lg leading-relaxed mb-10">
-            Embark on a legendary Viking journey as Eivor. This digital entry provides technical access to the complete Dark Ages experience, including all post-launch expansions and system-specific optimizations.
-        </p>
-
-        <a href="https://shrinkme.click/Assassinvalhalla" target="_blank" class="btn-access text-xl">
-            🚀 Initialize Library Access (65GB)
-        </a>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 text-left">
-            <div class="info-panel">
-                <h2 class="text-2xl font-bold text-orange-400 mb-4 border-b border-orange-400 pb-2">Entry Features</h2>
-                <ul class="space-y-3 text-gray-200">
-                    <li>• Complete Edition (v1.7.0 Optimized)</li>
-                    <li>• All Story Expansions & DLCs Included</li>
-                    <li>• High-Fidelity Performance Patches</li>
-                    <li>• Multi-Language Support Integrated</li>
-                </ul>
+    <main class="container mx-auto px-4 flex flex-col lg:flex-row gap-8 mb-20">
+        
+        <div class="lg:w-3/4 space-y-8">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <img src="acvalhalla1.jpg" alt="Viking Raid" class="game-img-hero w-full h-[450px] object-cover rounded-xl">
+                <img src="acvalhalla2.jpg" alt="Eivor Saga" class="game-img-hero w-full h-[450px] object-cover rounded-xl">
             </div>
 
-            <div class="info-panel">
-                <h2 class="text-2xl font-bold text-orange-400 mb-4 border-b border-orange-400 pb-2">Technical Specs</h2>
-                <ul class="space-y-3 text-gray-200">
-                    <li><strong>OS:</strong> Windows 10/11 (64-bit)</li>
-                    <li><strong>GPU:</strong> GTX 1060 / RX 570 (Minimum)</li>
-                    <li><strong>RAM:</strong> 8GB (Dual Channel Preferred)</li>
-                    <li><strong>Space:</strong> 65GB Available Storage</li>
-                </ul>
+            <div class="glass-effect p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold text-orange-400 mb-4 border-b border-orange-400/30 pb-2">Technical Overview</h2>
+                <p class="text-gray-300 leading-relaxed text-lg">
+                    Embark on a legendary Viking journey as Eivor. This digital entry provides technical access to the complete Dark Ages experience, including all post-launch expansions and system-specific optimizations. Explore a vast open world, lead epic raids, and build your settlement to grow your influence.
+                </p>
+                
+                <div class="mt-8 text-center">
+                    <a href="https://shrinkme.click/Assassinvalhalla" target="_blank" class="btn-access inline-block px-12 py-4 rounded-full font-black text-xl uppercase tracking-wider">
+                        🚀 Initialize Library Access (65GB)
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-effect p-6 rounded-xl">
+                    <h3 class="text-xl font-bold text-yellow-500 mb-3">System Requirements</h3>
+                    <ul class="text-sm space-y-2 text-gray-300">
+                        <li><strong>OS:</strong> Windows 10/11 (64-bit)</li>
+                        <li><strong>CPU:</strong> Ryzen 5 1600 / i7-4790</li>
+                        <li><strong>RAM:</strong> 8 GB (Dual Channel)</li>
+                        <li><strong>GPU:</strong> GTX 1060 / RX 570</li>
+                        <li><strong>Storage:</strong> 65 GB SSD</li>
+                    </ul>
+                </div>
+                <div class="glass-effect p-6 rounded-xl">
+                    <h3 class="text-xl font-bold text-yellow-500 mb-3">Archive Features</h3>
+                    <ul class="text-sm space-y-2 text-gray-300">
+                        <li>• Version 1.7.0 Fully Optimized</li>
+                        <li>• Includes 'Dawn of Ragnarök' DLC</li>
+                        <li>• Direct Integration Patches</li>
+                        <li>• Multi-Language UI Support</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
 
-    <footer class="mt-20 text-center border-t border-gray-800 pt-10 w-full">
-        <a href="index.html" class="text-orange-400 hover:text-white transition-colors font-bold uppercase tracking-widest">
-            ← Return to Library Index
-        </a>
-        <p class="text-gray-500 mt-6 text-sm">
-            © 2025 SJ Game Zone | SJ Visual Flow Studios | For performance testing purposes.
-        </p>
+        <aside class="lg:w-1/4 space-y-6">
+            <h2 class="text-xl font-black text-center text-white bg-orange-600/50 py-2 rounded-t-lg border-b-2 border-orange-500">RELATED ENTRIES</h2>
+            
+            <div class="glass-effect p-4 rounded-b-lg space-y-6">
+                <a href="ghostoftsushima.html" class="sidebar-item block group">
+                    <img src="ghostoftsushima.jpg" alt="Ghost of Tsushima" class="w-full h-32 object-cover rounded-lg border-2 border-transparent transition-all">
+                    <p class="mt-2 text-center font-bold text-gray-200 group-hover:text-orange-400">Ghost of Tsushima</p>
+                </a>
+
+                <a href="rdr2.html" class="sidebar-item block group">
+                    <img src="rdr2.jpg" alt="RDR2" class="w-full h-32 object-cover rounded-lg border-2 border-transparent transition-all">
+                    <p class="mt-2 text-center font-bold text-gray-200 group-hover:text-orange-400">Red Dead Redemption 2</p>
+                </a>
+
+                <a href="cyberpunk2077.html" class="sidebar-item block group">
+                    <img src="Cyberpunk2077.jpg" alt="Cyberpunk" class="w-full h-32 object-cover rounded-lg border-2 border-transparent transition-all">
+                    <p class="mt-2 text-center font-bold text-gray-200 group-hover:text-orange-400">Cyberpunk 2077</p>
+                </a>
+
+                <a href="index.html" class="block text-center text-xs font-bold text-orange-500 hover:underline pt-4 uppercase">View Full Catalog →</a>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="w-full py-10 glass-effect border-t border-yellow-600/30 text-center">
+        <p class="text-gray-400 text-sm">© 2025 SJ Game Zone | SJ Visual Flow Studios | For performance testing purposes only.</p>
     </footer>
+
 </body>
 </html>
