@@ -3,7 +3,7 @@ const allGames = [
     id: 10, // Adjust ID based on your current list
     title: "Cricket 24",
     link: "cricket24.html",
-    img: "cricket24.jpg", 
+    img: "cricket2024.jpg", 
     desc: "The most realistic cricket simulation ever. Featuring licensed teams from around the globe and advanced Pro-Team modes.",
     tags: "cricket 24, sports, big ant studios, cricket pc"
 },
@@ -368,6 +368,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
 ];
+
 
 
 
