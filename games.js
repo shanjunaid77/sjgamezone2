@@ -192,7 +192,7 @@ const allGames = [
         id: 21,
         title: "CYBERPUNK 2077",
         link: "cyberpunk2077.html",
-        img: "Cyberpunk2077.jpg",
+        img: "cyberpunk2077.jpg",
         desc: "Night City Digital Simulation: A sprawling sci-fi repository featuring ray-tracing technology and deep narrative branches.",
         tags: "cyberpunk 2077 cd projekt red sci-fi rpg open world",
         titleColorClass: "text-red-400"
@@ -360,3 +360,4 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
 ];
+
