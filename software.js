@@ -1,5 +1,5 @@
 // software.js - Central Data Store for SJ Software Zone
-const allSoftware = [
+const allSoftwares = [
     {
         id: 1,
         title: "Internet Download Manager (IDM)",
@@ -25,4 +25,5 @@ const allSoftware = [
         tags: "premiere pro, adobe, video editing, filmmaking software"
     },
 ];
+
 
