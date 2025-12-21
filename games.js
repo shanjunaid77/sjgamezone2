@@ -23,6 +23,15 @@ const allGames = [
     desc: "Experience the 80s like never before. Built on the RAGE engine, this overhaul brings modern physics, lighting, and textures to Tommy Vercetti's empire.",
     tags: "gta vice city, next gen, vcnge, rockstar games, open world, mods"
 },
+    {
+        id: 39,
+        title: "TEKKEN 7",
+        link: "tekken7.html",
+        img: "tekken7.jpg",
+        desc: "Mishima Saga Repository: Competitive martial arts simulation. High-frame-rate technical archive for performance fighting mechanics.",
+        tags: "tekken 7 pc download fighting game action martial arts tournament kazuya heihachi",
+        titleColorClass: "text-red-400"
+    },
   {
     id: 44, 
     title: "Tekken 8",
@@ -398,15 +407,6 @@ const allGames = [
         tags: "lara croft temple of osiris pc download adventure puzzles egypt treasures action",
         titleColorClass: "text-blue-400"
     },
-    {
-        id: 39,
-        title: "TEKKEN 7",
-        link: "tekken7.html",
-        img: "tekken7.jpg",
-        desc: "Mishima Saga Repository: Competitive martial arts simulation. High-frame-rate technical archive for performance fighting mechanics.",
-        tags: "tekken 7 pc download fighting game action martial arts tournament kazuya heihachi",
-        titleColorClass: "text-red-400"
-    },
   {
     id: 42, 
     title: "Resident Evil 5",
@@ -424,6 +424,7 @@ const allGames = [
     tags: "resident evil 4 remake, re4, horror, capcom, leon kennedy"
 },
 ];
+
 
 
 
