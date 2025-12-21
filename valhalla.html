@@ -18,15 +18,13 @@
             background-position: center;
             background-attachment: fixed;
             color: white;
-            overflow-x: hidden;
         }
 
-        /* The Original Background Blur Overlay */
         .bg-blur-overlay {
             position: fixed;
             inset: 0;
-            backdrop-filter: blur(8px) brightness(0.3);
-            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px) brightness(0.3);
+            background: rgba(0, 0, 0, 0.5);
             z-index: -1;
         }
 
@@ -35,136 +33,117 @@
             text-shadow: 0 0 15px #ff8c00, 0 0 30px #ffd700;
         }
 
-        /* Sidebar Container */
         .glass-panel {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
             border: 1px solid rgba(255, 215, 0, 0.2);
-            border-radius: 20px;
+            border-radius: 16px;
         }
 
+        /* Fixed Image Sizing */
         .game-card-img {
             width: 100%;
-            height: 400px;
+            height: 300px; /* Precise height */
             object-fit: cover;
             border: 2px solid #ffd700;
-            border-radius: 15px;
-            transition: 0.3s;
-        }
-
-        .game-card-img:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
-        }
-
-        .sidebar-item {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            gap: 12px;
             border-radius: 12px;
-            transition: 0.2s;
-            border: 1px solid transparent;
-        }
-
-        .sidebar-item:hover {
-            background: rgba(255, 215, 0, 0.1);
-            border-color: #ffd700;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
 
         .sidebar-thumb {
             width: 60px;
-            height: 80px;
+            height: 75px;
             object-fit: cover;
-            border-radius: 6px;
+            border-radius: 4px;
+        }
+
+        .sidebar-item:hover {
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 8px;
         }
     </style>
 </head>
-<body class="p-4 md:p-10">
+<body class="min-h-screen">
     <div class="bg-blur-overlay"></div>
 
-    <header class="text-center mb-12">
+    <header class="flex flex-col items-center pt-8 pb-12 px-4">
         <a href="index.html">
-            <img src="logo.png" alt="SJ Logo" class="w-20 h-20 rounded-full border-2 border-orange-500 mx-auto mb-4">
+            <img src="logo.png" alt="SJ Logo" class="w-16 h-16 rounded-full border border-orange-500 mb-4 transition-transform hover:scale-110">
         </a>
-        <h1 class="text-4xl md:text-6xl font-black title-glow uppercase">Assassin's Creed Valhalla</h1>
-        <p class="text-orange-400 font-bold tracking-widest mt-2">DEFINITIVE DIGITAL REPOSITORY</p>
+        <h1 class="text-4xl md:text-6xl font-black title-glow uppercase text-center">Assassin's Creed Valhalla</h1>
+        <p class="text-orange-400 font-bold tracking-[0.3em] mt-2 text-sm md:text-base text-center">DIGITAL REPOSITORY ENTRY</p>
     </header>
 
-    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col lg:flex-row gap-8 pb-20">
         
-        <div class="lg:w-2/3 space-y-8">
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <img src="acvalhalla1.jpg" alt="Viking Scene 1" class="game-card-img">
-                <img src="acvalhalla2.jpg" alt="Viking Scene 2" class="game-card-img">
+        <div class="lg:w-2/3 w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <img src="acvalhalla1.jpg" class="game-card-img">
+                <img src="acvalhalla2.jpg" class="game-card-img">
             </div>
 
-            <div class="glass-panel p-8">
-                <h2 class="text-2xl font-bold text-yellow-500 mb-4 border-b border-yellow-500/20 pb-2 uppercase">Archive Overview</h2>
-                <p class="text-gray-200 leading-relaxed text-lg mb-8">
-                    Lead your Viking clan to glory in the Dark Ages. This digital entry provides technical access to the complete Valhalla experience, including all expansions and performance optimizations.
+            <div class="glass-panel p-6 md:p-8 text-center">
+                <h2 class="text-xl font-bold text-yellow-500 mb-4 uppercase tracking-widest">Technical Overview</h2>
+                <p class="text-gray-300 leading-relaxed mb-8">
+                    Lead your Viking clan to glory. This digital entry provides technical access to the complete Valhalla experience, including all expansions and performance optimizations.
                 </p>
                 
-                <div class="text-center">
-                    <a href="https://shrinkme.click/Assassinvalhalla" target="_blank" 
-                       class="inline-block bg-gradient-to-r from-orange-600 to-yellow-500 text-black font-black py-4 px-12 rounded-full text-xl uppercase shadow-lg hover:scale-105 transition-transform">
-                        🚀 Initialize Library Access (65GB)
-                    </a>
-                </div>
+                <a href="https://shrinkme.click/Assassinvalhalla" target="_blank" 
+                   class="inline-block bg-gradient-to-r from-orange-600 to-yellow-500 text-black font-black py-4 px-10 rounded-full text-lg uppercase shadow-xl hover:brightness-110 transition-all">
+                    🚀 Initialize Access (65GB)
+                </a>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="glass-panel p-6">
-                    <h3 class="text-orange-400 font-bold mb-2 uppercase">Requirements</h3>
-                    <p class="text-sm text-gray-300">OS: Windows 10/11 (64-bit)<br>RAM: 8GB Dual Channel<br>GPU: GTX 1060 / RX 570</p>
+            <div class="grid grid-cols-2 gap-4 mt-6">
+                <div class="glass-panel p-4 text-center">
+                    <p class="text-orange-400 text-xs font-bold uppercase">Version</p>
+                    <p class="text-sm">v1.7.0 Optimized</p>
                 </div>
-                <div class="glass-panel p-6">
-                    <h3 class="text-orange-400 font-bold mb-2 uppercase">Data Status</h3>
-                    <p class="text-sm text-gray-300">Version: v1.7.0 Optimized<br>Includes: All DLCs + Story Packs<br>Format: Verified Digital Archive</p>
+                <div class="glass-panel p-4 text-center">
+                    <p class="text-orange-400 text-xs font-bold uppercase">Status</p>
+                    <p class="text-sm">Verified Archive</p>
                 </div>
             </div>
         </div>
 
-        <aside class="lg:w-1/3">
-            <div class="glass-panel p-6 sticky top-10">
-                <h2 class="text-xl font-black text-yellow-500 mb-6 border-b border-yellow-500/30 pb-2 text-center">MORE REPOSITORIES</h2>
+        <aside class="lg:w-1/3 w-full">
+            <div class="glass-panel p-5">
+                <h2 class="text-lg font-black text-yellow-500 mb-5 border-b border-yellow-500/20 pb-2 text-center">MORE ENTRIES</h2>
                 
-                <div class="space-y-4">
-                    <a href="ghostoftsushima.html" class="sidebar-item">
+                <div class="flex flex-col gap-3">
+                    <a href="ghostoftsushima.html" class="sidebar-item p-2 flex items-center gap-4 transition-colors">
                         <img src="ghostoftsushima.jpg" class="sidebar-thumb">
-                        <div><p class="font-bold">Ghost of Tsushima</p><p class="text-xs text-gray-400">Samurai / Action</p></div>
+                        <span class="font-bold text-sm">Ghost of Tsushima</span>
                     </a>
-                    <a href="rdr2.html" class="sidebar-item">
+                    <a href="rdr2.html" class="sidebar-item p-2 flex items-center gap-4 transition-colors">
                         <img src="rdr2.jpg" class="sidebar-thumb">
-                        <div><p class="font-bold">Red Dead Redemption 2</p><p class="text-xs text-gray-400">Western / Saga</p></div>
+                        <span class="font-bold text-sm">Red Dead Redemption 2</span>
                     </a>
-                    <a href="cyberpunk2077.html" class="sidebar-item">
+                    <a href="cyberpunk2077.html" class="sidebar-item p-2 flex items-center gap-4 transition-colors">
                         <img src="Cyberpunk2077.jpg" class="sidebar-thumb">
-                        <div><p class="font-bold">Cyberpunk 2077</p><p class="text-xs text-gray-400">Sci-Fi / RPG</p></div>
+                        <span class="font-bold text-sm">Cyberpunk 2077</span>
                     </a>
-                    <a href="gta5.html" class="sidebar-item">
+                    <a href="gta5.html" class="sidebar-item p-2 flex items-center gap-4 transition-colors">
                         <img src="gta5.jpg" class="sidebar-thumb">
-                        <div><p class="font-bold">Grand Theft Auto V</p><p class="text-xs text-gray-400">Urban / Action</p></div>
+                        <span class="font-bold text-sm">Grand Theft Auto V</span>
                     </a>
-                    <a href="lastofuspart1.html" class="sidebar-item">
+                    <a href="lastofuspart1.html" class="sidebar-item p-2 flex items-center gap-4 transition-colors">
                         <img src="lastofuspart1.jpg" class="sidebar-thumb">
-                        <div><p class="font-bold">The Last of Us Part I</p><p class="text-xs text-gray-400">Horror / Survival</p></div>
+                        <span class="font-bold text-sm">The Last of Us Part I</span>
                     </a>
-                    <a href="uncharted.html" class="sidebar-item">
+                    <a href="uncharted.html" class="sidebar-item p-2 flex items-center gap-4 transition-colors">
                         <img src="uncharted.jpg" class="sidebar-thumb">
-                        <div><p class="font-bold">Uncharted 4</p><p class="text-xs text-gray-400">Adventure / Archive</p></div>
+                        <span class="font-bold text-sm">Uncharted 4</span>
                     </a>
                 </div>
 
-                <a href="index.html" class="block text-center text-xs font-bold text-orange-500 mt-8 hover:underline uppercase">Return to Main Index</a>
+                <a href="index.html" class="block text-center text-xs font-bold text-orange-500 mt-6 hover:underline uppercase">Back to Main Catalog</a>
             </div>
         </aside>
     </div>
 
-    <footer class="text-center py-20 text-gray-500 text-xs">
-        <p>© 2025 SJ Game Zone | Managed by Shan Junaid</p>
+    <footer class="text-center py-12 text-gray-500 text-xs border-t border-white/5">
+        <p>© 2025 SJ Game Zone | SJ Visual Flow Studios</p>
     </footer>
-
 </body>
 </html>
