@@ -115,7 +115,7 @@ const allGames = [
     {
         id: 13,
         title: "ASSASSIN'S CREED VALHALLA",
-        link: "https://sjgamezone.vercel.app/assassincreedvalhalla",
+        link: "https://sjgamezone.vercel.app/valhalla",
         img: "acvalhalla1.jpg",
         desc: "Lead Vikings to glory, raid, and explore England. Full PC download. Embark on Eivor's epic saga and forge your legend in a Viking-era world.",
         tags: "assassins creed valhalla viking rpg open world",
@@ -360,5 +360,6 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
 ];
+
 
 
