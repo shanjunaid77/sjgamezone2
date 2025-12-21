@@ -59,7 +59,7 @@ const allGames = [
         id: 7,
         title: "GTA V REDUX ENHANCED",
         link: "gta5redux.html",
-        img: "gta5redux.jpg",
+        img: "gta5redux2.jpg",
         desc: "Visual Enhancement Project: Experience Los Santos with 4K textures, advanced shaders, and realistic weather simulation in this curated repository.",
         tags: "gta 5 redux enhanced edition pc download open world action adventure mod graphics realistic",
         titleColorClass: "text-red-400"
@@ -360,4 +360,5 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
 ];
+
 
