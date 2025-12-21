@@ -1,4 +1,12 @@
 const allGames = [
+   {
+    id: 47, 
+    title: "FIFA 23",
+    link: "fifa23.html",
+    img: "fifa23.jpg", 
+    desc: "Experience the World's Game with HyperMotion2 Technology, both men's and women's FIFA World Cup, and cross-play features.",
+    tags: "fifa 23, football, soccer, ea sports, sports, f23"
+},
     {
     id: 46, 
     title: "Marvel's Spider-Man 2",
@@ -416,6 +424,7 @@ const allGames = [
     tags: "resident evil 4 remake, re4, horror, capcom, leon kennedy"
 },
 ];
+
 
 
 
