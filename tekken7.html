@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tekken 7 | SJ Game Zone</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #0d010d;
+            background-image: url('tekken7.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .bg-blur-overlay {
+            position: fixed;
+            inset: 0;
+            backdrop-filter: blur(8px) brightness(0.25);
+            background: rgba(13, 1, 13, 0.7);
+            z-index: -1;
+        }
+
+        .title-glow {
+            font-family: 'Audiowide', cursive;
+            text-shadow: 0 0 15px #f97316, 0 0 40px #8b5cf6;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            border-radius: 20px;
+            /* Orange Neon Glow */
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.15);
+        }
+
+        .game-card-img {
+            width: 100%;
+            height: 500px; 
+            object-fit: cover;
+            border: 3px solid #f97316;
+            border-radius: 16px;
+            /* Strong Fiery Neon Glow */
+            box-shadow: 0 0 30px rgba(249, 115, 22, 0.5);
+            transition: all 0.4s ease;
+        }
+
+        .game-card-img:hover { 
+            transform: scale(1.02);
+            box-shadow: 0 0 50px rgba(139, 92, 246, 0.8);
+            border-color: #8b5cf6;
+        }
+
+        .sidebar-thumb {
+            width: 85px; 
+            height: 110px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid rgba(249, 115, 22, 0.4);
+            box-shadow: 0 0 10px rgba(249, 115, 22, 0.2);
+        }
+
+        .sidebar-item:hover {
+            background: rgba(249, 115, 22, 0.15);
+            border-radius: 12px;
+            transform: translateX(10px);
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+        }
+
+        .spec-label {
+            color: #f97316; 
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
+
+        .fight-btn {
+            background: linear-gradient(90deg, #f97316, #8b5cf6);
+            box-shadow: 0 0 25px rgba(249, 115, 22, 0.5);
+            transition: 0.3s;
+        }
+        .fight-btn:hover {
+            box-shadow: 0 0 45px rgba(139, 92, 246, 0.8);
+            transform: translateY(-3px);
+            filter: brightness(1.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="bg-blur-overlay"></div>
+
+    <header class="flex flex-col items-center pt-12 pb-14 px-4">
+        <a href="index.html">
+            <img src="logo.png" alt="SJ Logo" class="w-32 h-32 rounded-full border-2 border-orange-500 mb-6 transition-transform hover:scale-110 shadow-lg">
+        </a>
+        <h1 class="text-4xl md:text-5xl font-black title-glow uppercase text-center tracking-tighter">TEKKEN 7</h1>
+        <p class="text-orange-400 font-bold tracking-[0.4em] mt-4 text-sm md:text-lg text-center uppercase">The Mishima Saga Concludes</p>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-10 pb-12">
+        
+        <div class="lg:w-[70%] w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                <img src="tekken7.jpg" class="game-card-img" alt="Tekken 7 Gameplay">
+                <img src="tekken72.jpg" class="game-card-img" alt="Heihachi vs Kazuya">
+            </div>
+
+            <div class="glass-panel p-8 md:p-12 text-center mb-10">
+                <h2 class="text-3xl font-bold text-orange-500 mb-6 uppercase tracking-widest border-b border-orange-500/20 pb-4 inline-block">Tournament Details</h2>
+                <p class="text-gray-200 leading-relaxed text-xl mb-10">
+                    Discover the final chapter of the 20-year-long Mishima Bloodline Feud. Powered by Unreal Engine 4, Tekken 7 features stunning story-driven cinematic battles and intense duels with new mechanics like Rage Arts and Power Crushes.
+                </p>
+                
+                <a href="https://shrinkme.click/Tekken7download" target="_blank" 
+                   class="fight-btn inline-block text-white font-black py-5 px-14 rounded-full text-2xl uppercase transition-all">
+                    🔥 GET NOW
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-panel p-8">
+                    <h3 class="text-xl font-black text-orange-500 mb-6 uppercase tracking-widest border-b border-orange-500/20 pb-2">Hardware Specs</h3>
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <p class="spec-label">Processor (CPU)</p>
+                            <p class="text-gray-200">Intel Core i3-4160 / AMD Phenom II X4 965</p>
+                        </div>
+                        <div>
+                            <p class="spec-label">Memory (RAM)</p>
+                            <p class="text-gray-200">6 GB RAM (8GB Recommended)</p>
+                        </div>
+                        <div>
+                            <p class="spec-label">Graphics (GPU)</p>
+                            <p class="text-gray-200">NVIDIA GTX 660 / AMD Radeon R7 260X (2GB)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-8">
+                    <h3 class="text-xl font-black text-orange-500 mb-6 uppercase tracking-widest border-b border-orange-500/20 pb-2">Key Features</h3>
+                    <ul class="space-y-3 text-gray-200 text-sm">
+                        <li class="flex items-start gap-2">
+                            <span class="text-purple-400">✔</span>
+                            <span>Cinematic Story Mode & Character Episodes.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-purple-400">✔</span>
+                            <span>Rage Arts, Power Crushes, and Screw Hits.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <aside class="lg:w-[30%] w-full">
+            <div class="glass-panel p-5 sticky top-6">
+                <h2 class="text-lg font-black text-orange-500 mb-6 border-b border-orange-500/30 pb-3 text-center uppercase tracking-widest">Fighter Roster</h2>
+                
+                <div class="flex flex-col gap-4">
+                    <a href="tekken8.html" class="sidebar-item p-2 flex items-center gap-5 transition-all">
+                        <img src="tekken8.jpg" class="sidebar-thumb">
+                        <span class="font-bold text-base">Tekken 8</span>
+                    </a>
+                    <a href="fifa23.html" class="sidebar-item p-2 flex items-center gap-5 transition-all">
+                        <img src="fifa23.jpg" class="sidebar-thumb">
+                        <span class="font-bold text-base">FIFA 23</span>
+                    </a>
+                    <a href="spiderman2.html" class="sidebar-item p-2 flex items-center gap-5 transition-all">
+                        <img src="spiderman2.jpg" class="sidebar-thumb">
+                        <span class="font-bold text-base">Spider-Man 2</span>
+                    </a>
+                    <a href="gtavcng.html" class="sidebar-item p-2 flex items-center gap-5 transition-all">
+                        <img src="gtavcng.jpg" class="sidebar-thumb">
+                        <span class="font-bold text-base">Vice City NG</span>
+                    </a>
+                    <a href="re4remake.html" class="sidebar-item p-2 flex items-center gap-5 transition-all">
+                        <img src="re4.jpg" class="sidebar-thumb">
+                        <span class="font-bold text-base">RE4 Remake</span>
+                    </a>
+                </div>
+
+                <a href="index.html" class="block text-center text-xs font-black text-orange-500 mt-10 hover:underline uppercase tracking-widest">Back to Hub</a>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="text-center py-12 text-gray-600 text-sm border-t border-white/5">
+        <p>© 2025 SJ Game Zone | SJ Visual Flow Studios</p>
+    </footer>
+</body>
+</html>
