@@ -1,6 +1,14 @@
 const allGames = [
+{
+    id: 45, 
+    title: "GTA Vice City: Next Gen Edition",
+    link: "gtavcng.html",
+    img: "gtavcng.jpg", 
+    desc: "Experience the 80s like never before. Built on the RAGE engine, this overhaul brings modern physics, lighting, and textures to Tommy Vercetti's empire.",
+    tags: "gta vice city, next gen, vcnge, rockstar games, open world, mods"
+},
   {
-    id: 4, 
+    id: 44, 
     title: "Tekken 8",
     link: "tekken8.html",
     img: "tekken8.jpg", 
@@ -400,6 +408,7 @@ const allGames = [
     tags: "resident evil 4 remake, re4, horror, capcom, leon kennedy"
 },
 ];
+
 
 
 
