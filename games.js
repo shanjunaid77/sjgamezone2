@@ -1,4 +1,12 @@
 const allGames = [
+  {
+    id: 41, 
+    title: "GTA San Andreas: Retextured",
+    link: "gtasa.html",
+    img: "gtasaretextured.jpg", 
+    desc: "The definitive way to play a classic. Featuring 4K textures, modern lighting, and enhanced draw distances while keeping the original feel.",
+    tags: "gta sa, san andreas, retextured, rockstar games, open world"
+},
    {
     id: 40, // Adjust ID based on your current list
     title: "Cricket 24",
@@ -368,6 +376,7 @@ const allGames = [
         titleColorClass: "text-red-400"
     },
 ];
+
 
 
 
