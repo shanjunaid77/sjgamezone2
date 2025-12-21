@@ -3,122 +3,141 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Assassin's Creed Valhalla – SJ Game Zone</title>
+<title>Assassin's Creed Valhalla | Archive – SJ Game Zone</title>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.3/dist/tailwind.min.css" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 
 <style>
-/* 🛡️ RESTORED ORIGINAL THEME WITH SIDEBAR UPGRADES */
+/* 🛡️ THEME: VIKING EPIC + BLUR OVERLAY */
 body {
    font-family: 'Inter', sans-serif;
    margin: 0;
+   padding: 0;
    background-color: #0a0a0a;
    background-image: url('acvalhalla2.jpg'); 
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
    background-attachment: fixed;
-   color: white;
+   color: #fff;
 }
 
 .bg-blur {
    position: fixed;
-   top:0; left:0; right:0; bottom:0;
-   backdrop-filter: blur(5px) brightness(0.4);
+   top: 0; left: 0; right: 0; bottom: 0;
+   backdrop-filter: blur(6px) brightness(0.4);
    z-index: -1;
 }
 
 .title-glow {
   font-family: 'Audiowide', cursive;
-  color: #fff;
-  text-shadow: 0 0 10px #ff8c00, 0 0 30px #ffd700;
+  text-shadow: 0 0 15px #ff8c00, 0 0 35px #ffd700;
   letter-spacing: 2px;
 }
 
-.main-container {
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
-   max-width: 1300px;
-   margin: 50px auto;
-   gap: 30px;
-   padding: 0 20px;
+/* MAIN LAYOUT: Content + Sidebar */
+.content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 40px auto;
+    gap: 30px;
+    padding: 20px;
 }
 
-/* Images Next to Each Other */
-.image-pair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  width: 100%;
+/* LEFT SIDE: MAIN GAME INFO (70% width) */
+.main-area {
+    flex: 2;
+    min-width: 320px;
+}
+
+/* TWO PICS NEXT TO EACH OTHER */
+.image-grid-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
 }
 
 .game-img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 12px;
-  border: 3px solid #ffd700;
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+    transition: transform 0.3s ease;
 }
 
-.btn-main {
-  background: linear-gradient(90deg, #ff8c00, #ffd700, #ff8c00);
-  background-size: 200% auto;
-  color:#000;
-  border-radius:9999px;
-  font-weight:900;
-  padding:15px 50px;
-  text-transform:uppercase;
-  box-shadow: 0 0 25px rgba(255,140,0,0.7);
-  transition: 0.4s;
-}
+.game-img:hover { transform: scale(1.02); }
 
-.btn-main:hover { transform: scale(1.05); background-position: right center; }
-
-.info-box { 
-  background: rgba(0,0,0,0.7);
-  border: 1px solid rgba(255, 215, 0, 0.4);
-  border-radius: 16px; 
-  padding: 1.5rem; 
-  backdrop-filter: blur(10px);
-}
-
-/* Sidebar Styling */
+/* RIGHT SIDE: SIDEBAR (30% width) */
 .sidebar {
-  flex: 1;
-  min-width: 300px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+    flex: 0.8;
+    min-width: 300px;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 16px;
+    padding: 20px;
+    height: fit-content;
+    backdrop-filter: blur(10px);
 }
 
 .sidebar-card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  background: rgba(255,255,255,0.05);
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid rgba(255,215,0,0.1);
-  transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: white;
 }
 
 .sidebar-card:hover {
-  background: rgba(255,255,255,0.15);
-  border-color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+    border-color: #ffd700;
 }
 
-.sidebar-img {
-  width: 60px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 4px;
+.sidebar-thumb {
+    width: 70px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 4px;
 }
 
-@media (max-width: 1024px) {
-  .main-container { flex-direction: column; }
-  .image-pair { grid-template-columns: 1fr; }
+.btn-download {
+  background: linear-gradient(90deg, #ff8c00, #ffd700, #ff8c00);
+  background-size: 200% auto;
+  color: #000;
+  border-radius: 50px;
+  font-weight: 900;
+  padding: 18px 0;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 0 0 25px rgba(255,140,0,0.6);
+  transition: 0.4s;
+  display: block;
+}
+
+.btn-download:hover { background-position: right center; transform: translateY(-3px); }
+
+.info-box {
+    background: rgba(0,0,0,0.7);
+    border: 1px solid #ffd700;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 25px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .image-grid-pair { grid-template-columns: 1fr; }
+    .content-wrapper { flex-direction: column; }
 }
 </style>
 </head>
@@ -126,88 +145,94 @@ body {
 <body>
 <div class="bg-blur"></div>
 
-<header class="text-center pt-10">
-  <a href="index.html"><img src="logo.png" alt="SJ Logo" class="w-20 h-20 rounded-full border-2 border-orange-500 mx-auto mb-4"></a>
-  <h1 class="text-5xl font-extrabold title-glow">ASSASSIN'S CREED VALHALLA</h1>
-  <p class="text-yellow-500 font-bold tracking-widest mt-2 uppercase">Definitive Digital Archive</p>
+<header class="text-center pt-10 px-4">
+    <a href="index.html">
+        <img src="logo.png" alt="SJ Game Zone Logo" class="w-24 h-24 rounded-full border-4 border-orange-500 mx-auto mb-4 hover:rotate-6 transition-transform">
+    </a>
+    <h1 class="text-5xl md:text-7xl font-black title-glow uppercase">Assassin's Creed Valhalla</h1>
+    <h2 class="text-xl md:text-2xl text-orange-400 font-bold mt-2 uppercase tracking-widest">Definitive Digital Archive Entry</h2>
 </header>
 
-<div class="main-container">
-  
-  <div class="flex-[2] space-y-8">
-    <div class="image-pair">
-      <img src="acvalhalla1.jpg" alt="Pic 1" class="game-img">
-      <img src="acvalhalla2.jpg" alt="Pic 2" class="game-img">
-    </div>
-
-    <div class="info-box">
-      <h2 class="text-2xl text-yellow-500 font-bold mb-4">Technical Overview</h2>
-      <p class="text-gray-300 leading-relaxed mb-6">
-        Step into the role of Eivor, a legendary Viking raider. This digital repository provides high-fidelity access to the complete Valhalla saga, optimized for modern hardware performance. Explore the Dark Ages of England through the definitive digital lens.
-      </p>
-      <div class="text-center">
-        <a href="https://shrinkme.click/Assassinvalhalla" target="_blank" class="btn-main inline-block">
-          🚀 INITIALIZE ACCESS (65GB)
-        </a>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div class="info-box text-sm">
-        <h3 class="text-orange-400 font-bold mb-2 uppercase">System Requirements</h3>
-        <p>OS: Windows 10/11 (64-bit)</p>
-        <p>RAM: 8 GB Dual Channel</p>
-        <p>GPU: GTX 1060 / RX 570</p>
-      </div>
-      <div class="info-box text-sm">
-        <h3 class="text-orange-400 font-bold mb-2 uppercase">Package Data</h3>
-        <p>Build: v1.7.0 Optimized</p>
-        <p>Content: All DLCs Included</p>
-        <p>Type: Performance Archive</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="sidebar">
-    <h2 class="text-xl font-black text-yellow-500 mb-2 border-b border-yellow-500/30 pb-2">MORE ENTRIES</h2>
+<div class="content-wrapper">
     
-    <a href="ghostoftsushima.html" class="sidebar-card">
-      <img src="ghostoftsushima.jpg" class="sidebar-img">
-      <div><p class="font-bold">Ghost of Tsushima</p><p class="text-xs text-gray-400">Samurai Action</p></div>
-    </a>
+    <main class="main-area">
+        <div class="image-grid-pair">
+            <img src="acvalhalla1.jpg" alt="Viking Gameplay" class="game-img">
+            <img src="acvalhalla2.jpg" alt="Viking Landscape" class="game-img">
+        </div>
 
-    <a href="rdr2.html" class="sidebar-card">
-      <img src="rdr2.jpg" class="sidebar-img">
-      <div><p class="font-bold">Red Dead Redemption 2</p><p class="text-xs text-gray-400">Western Saga</p></div>
-    </a>
+        <div class="info-box">
+            <h2 class="text-2xl font-bold text-yellow-500 mb-4 border-b border-yellow-500/30 pb-2">Technical Overview</h2>
+            <p class="text-gray-200 leading-relaxed text-lg mb-8">
+                Lead your Viking clan on an epic quest for glory in Dark Age England. This digital entry provides technical access to the complete Assassin's Creed Valhalla experience, including all expansion data and performance patches for modern PC systems.
+            </p>
+            <a href="https://shrinkme.click/Assassinvalhalla" target="_blank" class="btn-download">
+                🚀 INITIALIZE LIBRARY ACCESS (65GB)
+            </a>
+        </div>
 
-    <a href="cyberpunk2077.html" class="sidebar-card">
-      <img src="Cyberpunk2077.jpg" class="sidebar-img">
-      <div><p class="font-bold">Cyberpunk 2077</p><p class="text-xs text-gray-400">Sci-Fi RPG</p></div>
-    </a>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            <div class="info-box m-0">
+                <h3 class="text-orange-400 font-bold mb-3 uppercase">Requirements</h3>
+                <ul class="text-sm space-y-1 text-gray-300">
+                    <li><strong>OS:</strong> Windows 10/11 (64-bit)</li>
+                    <li><strong>CPU:</strong> Ryzen 5 1600 / Core i7-4790</li>
+                    <li><strong>GPU:</strong> GTX 1060 / RX 570</li>
+                    <li><strong>RAM:</strong> 8 GB Dual Channel</li>
+                </ul>
+            </div>
+            <div class="info-box m-0">
+                <h3 class="text-orange-400 font-bold mb-3 uppercase">Archive Specs</h3>
+                <ul class="text-sm space-y-1 text-gray-300">
+                    <li><strong>Version:</strong> v1.7.0 (Optimized)</li>
+                    <li><strong>Included:</strong> All DLCs + Expansions</li>
+                    <li><strong>Format:</strong> Digital Archive</li>
+                    <li><strong>Status:</strong> Verified Performance</li>
+                </ul>
+            </div>
+        </div>
+    </main>
 
-    <a href="gta5.html" class="sidebar-card">
-      <img src="gta5.jpg" class="sidebar-img">
-      <div><p class="font-bold">Grand Theft Auto V</p><p class="text-xs text-gray-400">Urban Simulation</p></div>
-    </a>
+    <aside class="sidebar">
+        <h2 class="text-xl font-black text-yellow-500 mb-6 border-b border-yellow-500/50 pb-2 text-center uppercase">More Entries</h2>
+        
+        <a href="ghostoftsushima.html" class="sidebar-card">
+            <img src="ghostoftsushima.jpg" class="sidebar-thumb">
+            <div><p class="font-bold text-sm">Ghost of Tsushima</p><p class="text-xs text-orange-400">Samurai / Action</p></div>
+        </a>
 
-    <a href="uncharted.html" class="sidebar-card">
-      <img src="uncharted.jpg" class="sidebar-img">
-      <div><p class="font-bold">Uncharted 4</p><p class="text-xs text-gray-400">Adventure Archive</p></div>
-    </a>
+        <a href="rdr2.html" class="sidebar-card">
+            <img src="rdr2.jpg" class="sidebar-thumb">
+            <div><p class="font-bold text-sm">Red Dead Redemption 2</p><p class="text-xs text-orange-400">Western / Saga</p></div>
+        </a>
 
-    <a href="farcry6.html" class="sidebar-card">
-      <img src="farcry6-1.jpg" class="sidebar-img">
-      <div><p class="font-bold">Far Cry 6</p><p class="text-xs text-gray-400">Action FPS</p></div>
-    </a>
+        <a href="cyberpunk2077.html" class="sidebar-card">
+            <img src="Cyberpunk2077.jpg" class="sidebar-thumb">
+            <div><p class="font-bold text-sm">Cyberpunk 2077</p><p class="text-xs text-orange-400">Sci-Fi / RPG</p></div>
+        </a>
 
-    <a href="index.html" class="text-center text-sm font-bold text-orange-500 mt-4 hover:underline uppercase">Back to Main Catalog</a>
-  </div>
+        <a href="gta5.html" class="sidebar-card">
+            <img src="gta5.jpg" class="sidebar-thumb">
+            <div><p class="font-bold text-sm">Grand Theft Auto V</p><p class="text-xs text-orange-400">Urban / Action</p></div>
+        </a>
+
+        <a href="lastofuspart1.html" class="sidebar-card">
+            <img src="lastofuspart1.jpg" class="sidebar-thumb">
+            <div><p class="font-bold text-sm">The Last Of Us Part I</p><p class="text-xs text-orange-400">Horror / Survival</p></div>
+        </a>
+
+        <a href="uncharted.html" class="sidebar-card">
+            <img src="uncharted.jpg" class="sidebar-thumb">
+            <div><p class="font-bold text-sm">Uncharted 4</p><p class="text-xs text-orange-400">Adventure / Archive</p></div>
+        </a>
+
+        <a href="index.html" class="block text-center text-xs font-bold text-gray-400 mt-6 hover:text-white uppercase">Return to Main Index</a>
+    </aside>
 
 </div>
 
-<footer class="text-center py-10 text-gray-500 text-xs">
-  © 2025 SJ Game Zone | SJ Visual Flow Studios | Digital Archive Managed by Shan Junaid
+<footer class="text-center py-12 text-gray-500 text-xs">
+    <p>© 2025 SJ Game Zone | SJ Visual Flow Studios | Managed by Shan Junaid</p>
 </footer>
 
 </body>
