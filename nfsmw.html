@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFS Most Wanted 2012 | SJ Game Zone</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #080a0c;
+            background-image: url('nfsmw2.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .bg-blur-overlay {
+            position: fixed;
+            inset: 0;
+            backdrop-filter: blur(10px) brightness(0.45);
+            background: rgba(10, 15, 25, 0.6); 
+            z-index: -1;
+        }
+
+        .title-glow {
+            font-family: 'Audiowide', cursive;
+            /* Criterion Era Glow: Pure White and Sky Blue */
+            text-shadow: 0 0 10px #ffffff, 0 0 30px #0ea5e9;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(14, 165, 233, 0.3);
+            border-radius: 20px;
+        }
+
+        .game-card-img {
+            width: 100%;
+            height: 500px; 
+            object-fit: cover;
+            border: 3px solid #f8fafc;
+            border-radius: 16px;
+            box-shadow: 0 0 25px rgba(14, 165, 233, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .game-card-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+            border-color: #0ea5e9;
+        }
+
+        .sidebar-thumb {
+            width: 70px;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .sidebar-item:hover {
+            background: rgba(14, 165, 233, 0.15);
+            border-radius: 10px;
+        }
+
+        .spec-label {
+            color: #38bdf8; /* sky-400 */
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+        }
+
+        /* High-Speed Velocity Animation */
+        .btn-glow {
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
+            animation: speed-bloom 2s infinite;
+        }
+
+        @keyframes speed-bloom {
+            0% { box-shadow: 0 0 10px rgba(14, 165, 233, 0.4); filter: brightness(1); }
+            50% { box-shadow: 0 0 30px rgba(255, 255, 255, 0.7); filter: brightness(1.2); }
+            100% { box-shadow: 0 0 10px rgba(14, 165, 233, 0.4); filter: brightness(1); }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="bg-blur-overlay"></div>
+
+    <header class="flex flex-col items-center pt-12 pb-14 px-4">
+        <a href="index.html">
+            <img src="logo.png" alt="SJ Logo" class="w-32 h-32 rounded-full border-2 border-sky-400 mb-6 transition-transform hover:scale-110 shadow-lg">
+        </a>
+        <h1 class="text-3xl md:text-5xl font-black title-glow uppercase text-center tracking-tighter">NFS MOST WANTED (2012)</h1>
+        <p class="text-sky-300 font-bold tracking-[0.4em] mt-4 text-sm md:text-lg text-center uppercase">Urban Open-World Racing Archive</p>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-10 pb-12">
+        
+        <div class="lg:w-[70%] w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                <img src="nfsmw.jpg" class="game-card-img" alt="Most Wanted 2012 Cover">
+                <img src="nfsmw2.jpg" class="game-card-img" alt="Fairhaven Gameplay">
+            </div>
+
+            <div class="glass-panel p-8 md:p-12 text-center mb-10">
+                <h2 class="text-3xl font-bold text-sky-400 mb-6 uppercase tracking-widest border-b border-sky-400/20 pb-4 inline-block">Technical Overview</h2>
+                <p class="text-gray-200 leading-relaxed text-xl mb-10 italic">
+                    "To be Most Wanted, you’ll need to outrun the cops, outdrive your friends, and outsmart your rivals."
+                    <br><br>
+                    Welcome to Fairhaven City. This digital repository contains the Criterion-developed racing simulation featuring the Autolog 2.0 social system and high-fidelity vehicle physics assets.
+                </p>
+                
+                <a href="https://shrinkme.click/nfsmw-2012" target="_blank" 
+                   class="btn-glow inline-block bg-white text-black font-black py-5 px-14 rounded-full text-2xl uppercase hover:scale-105 transition-all">
+                    🚀 Initialize Access (6GB)
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-panel p-8">
+                    <h3 class="text-xl font-black text-sky-400 mb-6 uppercase tracking-widest border-b border-sky-400/20 pb-2">System Requirements</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="spec-label">Operating System</p>
+                            <p class="text-gray-200">Windows 7 / 10 / 11 (64-bit)</p>
+                        </div>
+                        <div>
+                            <p class="spec-label">Processor (CPU)</p>
+                            <p class="text-gray-200">Core 2 Quad 2.66 GHz / Phenom II X4 3.0 GHz</p>
+                        </div>
+                        <div>
+                            <p class="spec-label">Memory (RAM)</p>
+                            <p class="text-gray-200">4 GB RAM</p>
+                        </div>
+                        <div>
+                            <p class="spec-label">Graphics (GPU)</p>
+                            <p class="text-gray-200">DirectX 11 compatible with 1GB RAM</p>
+                        </div>
+                        <div>
+                            <p class="spec-label">Storage</p>
+                            <p class="text-gray-200">6 GB Available Space</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-8">
+                    <h3 class="text-xl font-black text-sky-400 mb-6 uppercase tracking-widest border-b border-sky-400/20 pb-2">Archive Features</h3>
+                    <ul class="space-y-4 text-gray-200">
+                        <li class="flex items-start gap-3">
+                            <span class="text-sky-400 text-xl">✔</span>
+                            <span>Open World Freedom: Drive anywhere, explore the city, and find cars.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-sky-400 text-xl">✔</span>
+                            <span>Autolog 2.0: Real-time social competition and record tracking.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-sky-400 text-xl">✔</span>
+                            <span>Non-Stop Multiplayer: No lobbies, no waiting, just racing.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-sky-400 text-xl">✔</span>
+                            <span>Pre-patched for maximum stability on modern Windows builds.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <aside class="lg:w-[30%] w-full">
+            <div class="glass-panel p-6 sticky top-6">
+                <h2 class="text-xl font-black text-sky-400 mb-8 border-b border-sky-400/30 pb-3 text-center uppercase tracking-widest">Related Racing</h2>
+                
+                <div class="flex flex-col gap-4">
+                    <a href="nfsrivals.html" class="sidebar-item p-3 flex items-center gap-5 transition-all">
+                        <img src="nfsrivals.jpg" class="sidebar-thumb">
+                        <span class="font-bold text-base">NFS Rivals</span>
+                    </a>
+                    <a href="nfsmw.html" class="sidebar-item p-3 flex items-center gap-5 transition-all">
+                        <img src="nfsmw.jpg" class="sidebar-thumb">
+                        <span class="font-bold text-base">NFS MW (2005)</span>
+                    </a>
+                    <a href="forzahorizon5.html" class="sidebar-item p-3 flex items-center gap-5 transition-all">
+                        <img src="forzahorizon5.jpg" class="sidebar-thumb">
+                        <span class="font-bold text-base">Forza Horizon 5</span>
+                    </a>
+                </div>
+
+                <a href="index.html" class="block text-center text-sm font-black text-sky-400 mt-10 hover:underline uppercase tracking-widest">Back to Main Catalog</a>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="text-center py-12 text-gray-500 text-sm border-t border-white/5">
+        <p>© 2025 SJ Game Zone | Digital Archive managed by Shan Junaid</p>
+    </footer>
+</body>
+</html>
