@@ -413,5 +413,14 @@ const allGames = [
         img: "re4.jpg", 
         desc: "Modernized Survival Repository: A reimagining of the classic 2005 simulation. Features terrifyingly detailed graphics and updated mission data.",
         tags: "resident evil 4 remake, re4, horror, capcom, leon kennedy"
-    }
+    },
+    {
+    id: 48, 
+    title: "Resident Evil Village",
+    link: "residentevilvillage.html",
+    img: "revillage.jpg", 
+    desc: "Biohazard Survival Repository: Journey into a village haunted by ancient nightmares. Experience ultra-realistic horror powered by the RE Engine with high-fidelity mission data.",
+    tags: "resident evil village, re8, horror, capcom, ethan winters, lady dimitrescu"
+},
 ];
+
