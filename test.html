@@ -17,7 +17,6 @@
     <style>
         :root {
           --neon-cyan: #00f2ff;
-          /* Royal Blue Gradient from your reference image */
           --btn-blue: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%); 
           --bg-black: #050505;
         }
@@ -32,14 +31,13 @@
           color: #f1f5f9;
         }
 
-        /* Background Brightness & Blur Overlay */
         .overlay-blur {
           position: fixed;
           inset: 0;
-          background: rgba(0, 0, 0, 0.85);
-          /* Increased brightness by 7% as requested */
-          backdrop-filter: blur(8px) brightness(1.07);
-          -webkit-backdrop-filter: blur(8px) brightness(1.07);
+          background: rgba(0, 0, 0, 0.82); /* Slightly lighter overlay */
+          /* Total 12% Brightness increase (original 1.07 + 0.05) */
+          backdrop-filter: blur(8px) brightness(1.12);
+          -webkit-backdrop-filter: blur(8px) brightness(1.12);
           z-index: -1;
         }
 
@@ -54,7 +52,6 @@
 
         @media (min-width: 768px) { .cyber-title { font-size: 2.8rem; } }
 
-        /* Initiate Download Button (Reference Match) */
         .btn-download {
             background: var(--btn-blue);
             color: #fff;
@@ -62,7 +59,7 @@
             font-size: 0.75rem;
             text-transform: uppercase;
             padding: 12px 15px;
-            border-radius: 50px; /* Pill shape like reference */
+            border-radius: 50px;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.2);
             display: inline-block;
@@ -91,6 +88,7 @@
             text-transform: uppercase;
             font-size: 0.85rem;
             border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
         }
 
         .modern-card {
@@ -99,7 +97,22 @@
             border-radius: 16px;
             transition: 0.3s;
         }
-        .modern-card:hover { border-color: var(--neon-cyan); }
+        .modern-card:hover { border-color: var(--neon-cyan); background: rgba(255,255,255,0.05); }
+
+        /* Watch Tutorial Button Styling */
+        .btn-tutorial {
+            background: #ef4444;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .btn-tutorial:hover { background: #dc2626; transform: scale(1.05); }
     </style>
 </head>
 <body class="p-4 md:p-6">
@@ -113,13 +126,17 @@
         
         <nav class="flex flex-wrap justify-center gap-3 mt-6">
             <a href="index.html" class="nav-main-btn glass-active">Games</a>
-            <a href="software.html" class="nav-main-btn bg-white/5 text-white/60">Software</a>
-            <a href="windows.html" class="nav-main-btn bg-white/5 text-white/60">Windows OS</a>
+            <a href="software.html" class="nav-main-btn bg-white/5 text-white/60 hover:text-white">Software</a>
+            <a href="windows.html" class="nav-main-btn bg-white/5 text-white/60 hover:text-white">Windows OS</a>
         </nav>
+
+        <div class="mt-8">
+            <a href="tutorial.html" class="btn-tutorial">▶ Watch Download Tutorial</a>
+        </div>
     </header>
 
     <main class="container mx-auto max-w-7xl">
-        <div class="mt-8 mb-10 flex flex-col md:flex-row justify-between items-center gap-4 px-4">
+        <div class="mt-12 mb-10 flex flex-col md:flex-row justify-between items-center gap-4 px-4">
             <h2 class="text-xl md:text-2xl font-black uppercase tracking-tighter text-white">AVAILABLE GAMES LIBRARY</h2>
             <input id="searchInput" placeholder="Search (Games, Software, OS)..." class="w-full md:w-80 bg-white/5 border border-white/10 text-white px-5 py-3 rounded-xl focus:border-cyan-500 outline-none transition-all" />
         </div>
@@ -135,7 +152,6 @@
             const paginationBox = document.getElementById('pagination');
             const searchInput = document.getElementById('searchInput');
 
-            // Combines all data sources
             function getCombinedDB() {
                 return [
                     ...(typeof allGames !== 'undefined' ? allGames : []),
@@ -158,7 +174,7 @@
                         <article class="modern-card p-3">
                             <a href="${item.link}">
                                 <img src="${item.img}" class="w-full aspect-[3/4] object-cover rounded-lg mb-3" loading="lazy">
-                                <h3 class="font-bold text-white uppercase truncate text-[10px] md:text-xs mb-3 text-center">${item.title}</h3>
+                                <h3 class="font-bold text-white uppercase truncate text-[10px] md:text-xs mb-3 text-center px-1">${item.title}</h3>
                                 <div class="btn-download">Initiate download</div>
                             </a>
                         </article>
@@ -170,7 +186,7 @@
             function setupPagination(totalItems) {
                 paginationBox.innerHTML = '';
                 const pageCount = Math.ceil(totalItems / itemsPerPage);
-                const maxPages = 10; // Forced 10 pages as requested
+                const maxPages = 10; 
 
                 for(let i=1; i<=maxPages; i++) {
                     const btn = document.createElement('button');
@@ -180,7 +196,7 @@
                         currentPage = i;
                         if(i <= pageCount) {
                             render(i);
-                            window.scrollTo({top: 300, behavior: 'smooth'});
+                            window.scrollTo({top: 400, behavior: 'smooth'});
                         } else {
                             masterGrid.innerHTML = '<p class="col-span-full text-center py-20 text-gray-500 uppercase font-black">Archive Sector Empty</p>';
                         }
