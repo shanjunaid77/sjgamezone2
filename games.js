@@ -418,9 +418,10 @@ const allGames = [
     id: 48, 
     title: "Resident Evil Village",
     link: "residentevilvillage.html",
-    img: "revillage.jpg", 
+    img: "re8-1.jpg", 
     desc: "Biohazard Survival Repository: Journey into a village haunted by ancient nightmares. Experience ultra-realistic horror powered by the RE Engine with high-fidelity mission data.",
     tags: "resident evil village, re8, horror, capcom, ethan winters, lady dimitrescu"
 },
 ];
+
 
