@@ -31,31 +31,26 @@
           color: #f1f5f9;
         }
 
-        /* Background Blur Overlay */
         .overlay-blur {
           position: fixed;
           inset: 0;
           background: rgba(0, 0, 0, 0.85);
-          backdrop-filter: blur(6px); /* Blurs the bg.jpg */
+          backdrop-filter: blur(6px);
           -webkit-backdrop-filter: blur(6px);
           z-index: -1;
         }
 
-        /* Re-added Glow to Title */
         .cyber-title {
           font-family: 'Orbitron', sans-serif;
           font-size: 1.8rem; 
           letter-spacing: 3px;
           color: #fff;
-          text-shadow: 
-            0 0 5px rgba(0, 242, 255, 0.5),
-            0 0 10px rgba(0, 242, 255, 0.3);
+          text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
           text-transform: uppercase;
         }
 
         @media (min-width: 768px) { .cyber-title { font-size: 2.8rem; } }
 
-        /* 20% Bigger Logo */
         .logo-img {
             width: 100px;
             height: 100px;
@@ -63,25 +58,28 @@
             border: 2px solid rgba(0, 242, 255, 0.2);
             transition: all 0.4s ease;
         }
-
-        .logo-container:hover .logo-img {
-            border-color: var(--neon-cyan);
-            box-shadow: 0 0 15px var(--neon-cyan);
-        }
-
         @media (min-width: 768px) { .logo-img { width: 120px; height: 120px; } }
 
-        /* Category Buttons - 10% Smaller than last version */
+        /* Glassy Active Button Style */
+        .glass-active {
+            background: rgba(0, 242, 255, 0.15) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 2px solid var(--neon-cyan) !important;
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.3), inset 0 0 10px rgba(0, 242, 255, 0.2);
+            color: white !important;
+        }
+
         .nav-main-btn {
-            padding: 12px 30px;
+            padding: 10px 25px;
             border-radius: 12px;
             font-weight: 900;
             text-transform: uppercase;
             transition: all 0.3s ease;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* Premium Initiate Download Button */
         .btn-download {
             background: linear-gradient(135deg, #0e7490 0%, #083344 100%);
             color: #fff;
@@ -97,26 +95,23 @@
             text-align: center;
         }
 
-        .btn-download:hover {
-            border-color: var(--neon-cyan);
-            background: #155e75;
-        }
-
         .modern-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             transition: 0.3s;
         }
+        .modern-card:hover { border-color: var(--neon-cyan); }
 
+        /* Bottom Pagination Glass Style */
         .nav-node {
             padding: 10px 18px;
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             font-weight: bold;
+            transition: 0.3s;
         }
-        .nav-node.active { background: var(--neon-cyan); color: #000; }
     </style>
 </head>
 <body class="p-4 md:p-6">
@@ -124,14 +119,14 @@
 
     <header class="text-center py-8">
         <a href="index.html" class="logo-container inline-block">
-            <img src="logo.png" alt="SJ Logo" class="logo-img mb-6"/>
+            <img src="logo.png" alt="SJ Logo" class="logo-img mb-6 hover:scale-105 transition-transform"/>
         </a>
         <h1 class="cyber-title">SJ GAME ZONE</h1>
         
         <nav class="flex flex-wrap justify-center gap-4 mt-8 mb-6">
-            <a href="index.html" class="nav-main-btn bg-cyan-600 text-white shadow-lg">Games</a>
-            <a href="software.html" class="nav-main-btn bg-white/5 border border-white/10 hover:border-cyan-500 text-white">Software</a>
-            <a href="windows.html" class="nav-main-btn bg-white/5 border border-white/10 hover:border-cyan-500 text-white">Windows OS</a>
+            <a href="index.html" class="nav-main-btn glass-active">Games</a>
+            <a href="software.html" class="nav-main-btn bg-white/5 text-white/70 hover:border-cyan-500">Software</a>
+            <a href="windows.html" class="nav-main-btn bg-white/5 text-white/70 hover:border-cyan-500">Windows OS</a>
         </nav>
 
         <div>
@@ -147,23 +142,17 @@
                 AVAILABLE GAMES LIBRARY
             </h2>
             <div class="w-full md:w-96">
-                <input id="searchInput" placeholder="Search archive (Games, Soft, OS)..." class="w-full bg-white/5 border border-white/10 text-white px-6 py-4 rounded-2xl focus:border-cyan-500 outline-none transition-all" />
+                <input id="searchInput" placeholder="Search archive..." class="w-full bg-white/5 border border-white/10 text-white px-6 py-4 rounded-2xl focus:border-cyan-500 outline-none" />
             </div>
         </div>
 
-        <div id="masterGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 px-4">
-            </div>
+        <div id="masterGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 px-4"></div>
 
         <div class="mt-20 flex flex-wrap justify-center items-center gap-2 pb-20" id="pagination"></div>
     </main>
 
-    <footer class="text-center py-10 border-t border-white/5 text-gray-500 text-xs font-bold uppercase tracking-widest">
+    <footer class="text-center py-10 border-t border-white/5 text-gray-500 text-xs font-bold tracking-widest">
         <p>© 2025 SJ GAME ZONE | SJ Visual Flow Studios</p>
-        <div class="mt-4 flex justify-center gap-8">
-            <a href="dmca.html" class="hover:text-cyan-500">DMCA</a>
-            <a href="privacy.html" class="hover:text-cyan-500">Privacy</a>
-            <a href="about.html" class="hover:text-cyan-500">About</a>
-        </div>
     </footer>
 
     <script>
@@ -172,7 +161,6 @@
             const paginationBox = document.getElementById('pagination');
             const searchInput = document.getElementById('searchInput');
 
-            // Searches all 3 files
             const db = [
                 ...(typeof allGames !== 'undefined' ? allGames : []),
                 ...(typeof allSoftware !== 'undefined' ? allSoftware : []),
@@ -208,14 +196,15 @@
 
                 const prev = document.createElement('button');
                 prev.innerText = 'PREV';
-                prev.className = `nav-node ${currentPage === 1 ? 'opacity-30' : ''}`;
+                prev.className = `nav-node ${currentPage === 1 ? 'opacity-30' : 'hover:border-cyan-500'}`;
                 prev.onclick = () => { if(currentPage > 1) { currentPage--; render(currentPage); window.scrollTo({top: 400, behavior: 'smooth'}); } };
                 paginationBox.appendChild(prev);
 
                 for(let i=1; i<=maxPages; i++) {
                     const btn = document.createElement('button');
                     btn.innerText = i;
-                    btn.className = `nav-node ${i === currentPage ? 'active' : ''}`;
+                    // Apply glass-active to the selected page node
+                    btn.className = `nav-node ${i === currentPage ? 'glass-active' : 'hover:border-cyan-500'}`;
                     btn.onclick = () => { 
                         currentPage = i; 
                         if(i <= pageCount) {
@@ -223,6 +212,7 @@
                             window.scrollTo({top: 400, behavior: 'smooth'});
                         } else {
                             masterGrid.innerHTML = '<p class="col-span-full text-center py-10 text-gray-500">This page is currently empty.</p>';
+                            setupPagination(totalItems);
                         }
                     };
                     paginationBox.appendChild(btn);
@@ -230,7 +220,7 @@
 
                 const next = document.createElement('button');
                 next.innerText = 'NEXT';
-                next.className = `nav-node ${currentPage === maxPages ? 'opacity-30' : ''}`;
+                next.className = `nav-node ${currentPage === maxPages ? 'opacity-30' : 'hover:border-cyan-500'}`;
                 next.onclick = () => { if(currentPage < maxPages) { currentPage++; render(currentPage); window.scrollTo({top: 400, behavior: 'smooth'}); } };
                 paginationBox.appendChild(next);
             }
