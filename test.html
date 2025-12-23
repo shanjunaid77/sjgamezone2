@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <title>SJ Game Zone | Premium Archive</title>
+    <title>SJ Game Zone | Professional Archive</title>
     <link rel="icon" type="image/png" href="logo.png" />
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
@@ -17,6 +17,7 @@
     <style>
         :root {
           --neon-cyan: #00f2ff;
+          --royal-blue: #3b82f6;
           --btn-blue: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%); 
           --bg-black: #050505;
         }
@@ -31,11 +32,11 @@
           color: #f1f5f9;
         }
 
+        /* 12% Brightness Boost & Blur */
         .overlay-blur {
           position: fixed;
           inset: 0;
-          background: rgba(0, 0, 0, 0.82); /* Slightly lighter overlay */
-          /* Total 12% Brightness increase (original 1.07 + 0.05) */
+          background: rgba(0, 0, 0, 0.82);
           backdrop-filter: blur(8px) brightness(1.12);
           -webkit-backdrop-filter: blur(8px) brightness(1.12);
           z-index: -1;
@@ -46,39 +47,52 @@
           font-size: 1.8rem; 
           letter-spacing: 3px;
           color: #fff;
-          text-shadow: 0 0 12px rgba(0, 242, 255, 0.5);
+          text-shadow: 0 0 15px rgba(0, 242, 255, 0.6);
           text-transform: uppercase;
         }
 
         @media (min-width: 768px) { .cyber-title { font-size: 2.8rem; } }
 
+        /* Premium Gaming Card with Glow Effect */
+        .modern-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .modern-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--neon-cyan);
+            /* Double glow effect: Cyan + Blue */
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.2), 0 0 15px rgba(59, 130, 246, 0.3);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        /* Royal Blue Initiate Button */
         .btn-download {
             background: var(--btn-blue);
             color: #fff;
-            font-weight: 700;
-            font-size: 0.75rem;
+            font-weight: 800;
+            font-size: 0.7rem;
             text-transform: uppercase;
             padding: 12px 15px;
             border-radius: 50px;
-            transition: all 0.3s ease;
+            transition: 0.3s;
             border: 1px solid rgba(255, 255, 255, 0.2);
             display: inline-block;
             width: 100%;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(29, 78, 216, 0.4);
-        }
-
-        .btn-download:hover {
-            filter: brightness(1.2);
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.6);
-            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(29, 78, 216, 0.3);
         }
 
         .glass-active {
             background: rgba(0, 242, 255, 0.1) !important;
             backdrop-filter: blur(10px);
             border: 2px solid var(--neon-cyan) !important;
-            box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
         }
 
         .nav-main-btn {
@@ -88,18 +102,8 @@
             text-transform: uppercase;
             font-size: 0.85rem;
             border: 1px solid rgba(255,255,255,0.05);
-            transition: 0.3s;
         }
 
-        .modern-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            transition: 0.3s;
-        }
-        .modern-card:hover { border-color: var(--neon-cyan); background: rgba(255,255,255,0.05); }
-
-        /* Watch Tutorial Button Styling */
         .btn-tutorial {
             background: #ef4444;
             color: white;
@@ -120,7 +124,7 @@
 
     <header class="text-center py-6">
         <a href="index.html" class="inline-block mb-4">
-            <img src="logo.png" alt="SJ Logo" class="w-24 h-24 md:w-28 md:h-28 rounded-full border border-white/10 hover:border-cyan-400 transition-all"/>
+            <img src="logo.png" alt="SJ Logo" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-white/10 hover:border-cyan-400 transition-all shadow-2xl"/>
         </a>
         <h1 class="cyber-title">SJ GAME ZONE</h1>
         
@@ -137,14 +141,18 @@
 
     <main class="container mx-auto max-w-7xl">
         <div class="mt-12 mb-10 flex flex-col md:flex-row justify-between items-center gap-4 px-4">
-            <h2 class="text-xl md:text-2xl font-black uppercase tracking-tighter text-white">AVAILABLE GAMES LIBRARY</h2>
-            <input id="searchInput" placeholder="Search (Games, Software, OS)..." class="w-full md:w-80 bg-white/5 border border-white/10 text-white px-5 py-3 rounded-xl focus:border-cyan-500 outline-none transition-all" />
+            <h2 class="text-xl md:text-2xl font-black uppercase tracking-tighter text-white border-l-4 border-blue-500 pl-4">AVAILABLE GAMES LIBRARY</h2>
+            <input id="searchInput" placeholder="Search archive (Games, Soft, OS)..." class="w-full md:w-80 bg-white/5 border border-white/10 text-white px-5 py-3 rounded-xl focus:border-cyan-500 outline-none transition-all" />
         </div>
 
-        <div id="masterGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 px-4"></div>
+        <div id="masterGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 px-4"></div>
 
         <div class="mt-16 flex flex-wrap justify-center items-center gap-2 pb-20" id="pagination"></div>
     </main>
+
+    <footer class="text-center py-10 border-t border-white/5 text-gray-500 text-[10px] font-bold tracking-widest uppercase">
+        © 2025 SJ GAME ZONE | SJ Visual Flow Studios
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -171,10 +179,12 @@
 
                 pageData.forEach(item => {
                     masterGrid.insertAdjacentHTML('beforeend', `
-                        <article class="modern-card p-3">
+                        <article class="modern-card p-4">
                             <a href="${item.link}">
-                                <img src="${item.img}" class="w-full aspect-[3/4] object-cover rounded-lg mb-3" loading="lazy">
-                                <h3 class="font-bold text-white uppercase truncate text-[10px] md:text-xs mb-3 text-center px-1">${item.title}</h3>
+                                <div class="overflow-hidden rounded-xl mb-4">
+                                    <img src="${item.img}" class="w-full aspect-[3/4] object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
+                                </div>
+                                <h3 class="font-bold text-white uppercase truncate text-[10px] md:text-xs mb-4 text-center px-1 tracking-wider">${item.title}</h3>
                                 <div class="btn-download">Initiate download</div>
                             </a>
                         </article>
@@ -198,7 +208,7 @@
                             render(i);
                             window.scrollTo({top: 400, behavior: 'smooth'});
                         } else {
-                            masterGrid.innerHTML = '<p class="col-span-full text-center py-20 text-gray-500 uppercase font-black">Archive Sector Empty</p>';
+                            masterGrid.innerHTML = '<p class="col-span-full text-center py-20 text-gray-500 uppercase font-black">No Items Found In This Sector</p>';
                         }
                     };
                     paginationBox.appendChild(btn);
