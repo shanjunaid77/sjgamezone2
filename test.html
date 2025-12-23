@@ -17,8 +17,7 @@
     <style>
         :root {
           --neon-cyan: #00f2ff;
-          --neon-glow: rgba(0, 242, 255, 0.6);
-          --accent-blue: #3b82f6;
+          --dark-cyan: #083344; /* Darker tone for buttons */
           --bg-black: #080808;
         }
 
@@ -35,142 +34,129 @@
         .overlay-dark {
           position: fixed;
           inset: 0;
-          background: rgba(0, 0, 0, 0.88);
+          background: rgba(0, 0, 0, 0.9);
           z-index: -1;
         }
 
-        /* Neon Title Styling */
+        /* Subtle Neon Title */
         .cyber-title {
           font-family: 'Orbitron', sans-serif;
-          font-size: 2rem; 
-          letter-spacing: 2px;
+          font-size: 1.8rem; 
+          letter-spacing: 3px;
           color: #fff;
-          text-shadow: 
-            0 0 7px #fff,
-            0 0 10px var(--neon-cyan),
-            0 0 21px var(--neon-cyan);
+          text-shadow: 0 0 8px rgba(0, 242, 255, 0.4);
           text-transform: uppercase;
         }
 
-        @media (min-width: 768px) { .cyber-title { font-size: 3rem; } }
+        @media (min-width: 768px) { .cyber-title { font-size: 2.8rem; } }
 
-        /* Neon Logo Pulse Effect */
-        .logo-container {
-            position: relative;
-            display: inline-block;
-            transition: all 0.4s ease;
-        }
-
+        /* 20% Bigger Logo with Hover Effect */
         .logo-img {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            border: 2px solid rgba(255,255,255,0.1);
+            border: 2px solid rgba(0, 242, 255, 0.2);
             transition: all 0.4s ease;
         }
 
         .logo-container:hover .logo-img {
             border-color: var(--neon-cyan);
-            box-shadow: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-glow);
-            transform: scale(1.05) rotate(5deg);
+            box-shadow: 0 0 15px var(--neon-cyan);
+            transform: scale(1.05);
         }
 
-        @media (min-width: 768px) { .logo-img { width: 96px; height: 96px; } }
+        @media (min-width: 768px) { .logo-img { width: 120px; height: 120px; } }
 
-        /* Modern Card Styling */
-        .modern-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .modern-card:hover {
-            background: rgba(255, 255, 255, 0.06);
-            border-color: var(--neon-cyan);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Premium Initiate Download Button */
+        /* Darkish Premium Initiate Download Button */
         .btn-download {
-            background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--accent-blue) 100%);
-            color: #000;
-            font-weight: 800;
+            background: linear-gradient(135deg, #0e7490 0%, #083344 100%);
+            color: #fff;
+            font-weight: 700;
             font-size: 0.75rem;
             text-transform: uppercase;
-            padding: 10px 20px;
-            border-radius: 50px;
+            padding: 12px 20px;
+            border-radius: 12px;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0, 242, 255, 0.2);
+            border: 1px solid rgba(0, 242, 255, 0.1);
             display: inline-block;
             width: 100%;
             text-align: center;
         }
 
         .btn-download:hover {
-            box-shadow: 0 0 25px rgba(0, 242, 255, 0.5);
-            transform: scale(1.03);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+            background: #155e75;
         }
 
-        /* Pagination Nodes */
+        /* Watch Tutorial Button */
+        .btn-tutorial {
+            background: #ef4444;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+            transition: 0.3s;
+        }
+        .btn-tutorial:hover { background: #dc2626; transform: translateY(-2px); }
+
+        .modern-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+        .modern-card:hover { border-color: var(--neon-cyan); transform: translateY(-5px); }
+
         .nav-node {
-            padding: 8px 16px;
-            border-radius: 8px;
+            padding: 10px 20px;
+            border-radius: 10px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: 0.2s;
             font-weight: bold;
+            font-size: 0.9rem;
         }
-
-        .nav-node.active {
-            background: var(--neon-cyan);
-            color: #000;
-            border-color: #fff;
-            box-shadow: 0 0 15px var(--neon-cyan);
-        }
-
-        .nav-node:hover:not(.active) {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: var(--neon-cyan);
-        }
-
-        .reveal { opacity: 0; transform: translateY(15px); transition: 0.5s ease-out; }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .nav-node.active { background: var(--neon-cyan); color: #000; box-shadow: 0 0 15px var(--neon-cyan); }
     </style>
 </head>
 <body class="p-4 md:p-6">
     <div class="overlay-dark"></div>
 
-    <header class="text-center py-6">
-        <a href="index.html" class="logo-container">
-            <img src="logo.png" alt="SJ Logo" class="logo-img mb-4"/>
+    <header class="text-center py-8">
+        <a href="index.html" class="logo-container inline-block">
+            <img src="logo.png" alt="SJ Logo" class="logo-img mb-6"/>
         </a>
         <h1 class="cyber-title">SJ GAME ZONE</h1>
+        
+        <nav class="flex justify-center gap-4 mt-8 mb-6">
+            <a href="index.html" class="px-10 py-4 bg-cyan-600 rounded-xl font-black text-white uppercase shadow-lg text-lg">Games</a>
+            <a href="software.html" class="px-10 py-4 bg-white/5 border border-white/10 hover:border-cyan-500 rounded-xl font-black text-white uppercase transition-all text-lg">Software</a>
+            <a href="windows.html" class="px-10 py-4 bg-white/5 border border-white/10 hover:border-cyan-500 rounded-xl font-black text-white uppercase transition-all text-lg">Windows OS</a>
+        </nav>
+
+        <div class="mb-4">
+            <a href="tutorial.html" class="btn-tutorial">▶ Watch Download Tutorial</a>
+        </div>
     </header>
 
-    <nav class="flex justify-center gap-3 mb-12">
-        <a href="index.html" class="px-6 py-2 bg-cyan-600 rounded-lg font-bold text-sm text-white uppercase shadow-lg shadow-cyan-900/20">Games</a>
-        <a href="software.html" class="px-6 py-2 bg-white/5 border border-white/10 hover:border-cyan-500 rounded-lg font-bold text-sm text-white uppercase transition-all">Software</a>
-        <a href="windows.html" class="px-6 py-2 bg-white/5 border border-white/10 hover:border-cyan-500 rounded-lg font-bold text-sm text-white uppercase transition-all">Windows OS</a>
-    </nav>
-
     <main class="container mx-auto max-w-7xl">
-        <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4 px-2">
-            <h2 class="text-xl font-bold uppercase tracking-widest text-white/60">Digital Library</h2>
-            <input id="searchInput" placeholder="Search archive..." class="w-full md:w-80 bg-white/5 border border-white/10 text-white px-5 py-3 rounded-xl focus:border-cyan-500 outline-none transition-all" />
+        <div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-4 px-2">
+            <h2 class="text-xl font-black uppercase tracking-tighter text-white/80">AVAILABLE GAMES LIBRARY</h2>
+            <input id="searchInput" placeholder="Search archive..." class="w-full md:w-96 bg-white/5 border border-white/10 text-white px-6 py-4 rounded-2xl focus:border-cyan-500 outline-none" />
         </div>
 
-        <div id="masterGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div id="masterGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             </div>
 
-        <div class="mt-16 flex flex-wrap justify-center items-center gap-2 pb-20" id="pagination">
-            </div>
+        <div class="mt-20 flex flex-wrap justify-center items-center gap-2 pb-20" id="pagination"></div>
     </main>
 
-    <footer class="text-center py-10 border-t border-white/5">
-        <p class="text-gray-600 text-xs">© 2025 SJ GAME ZONE | SJ Visual Flow Studios</p>
-        <div class="mt-4 flex justify-center gap-6 text-[10px] font-bold uppercase tracking-widest text-gray-500">
+    <footer class="text-center py-10 border-t border-white/5 text-gray-500 text-xs font-bold uppercase tracking-widest">
+        <p>© 2025 SJ GAME ZONE | SJ Visual Flow Studios</p>
+        <div class="mt-4 flex justify-center gap-8">
             <a href="dmca.html" class="hover:text-cyan-500">DMCA</a>
             <a href="privacy.html" class="hover:text-cyan-500">Privacy</a>
             <a href="about.html" class="hover:text-cyan-500">About</a>
@@ -178,16 +164,11 @@
     </footer>
 
     <script>
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-        }, { threshold: 0.1 });
-
         document.addEventListener('DOMContentLoaded', () => {
             const masterGrid = document.getElementById('masterGrid');
             const paginationBox = document.getElementById('pagination');
             const searchInput = document.getElementById('searchInput');
 
-            // Combined Database (Games + Software + Windows)
             const db = [
                 ...(typeof allGames !== 'undefined' ? allGames : []),
                 ...(typeof allSoftware !== 'undefined' ? allSoftware : []),
@@ -200,22 +181,19 @@
             function render(page, data = db) {
                 masterGrid.innerHTML = '';
                 const start = (page - 1) * itemsPerPage;
-                const end = start + itemsPerPage;
-                const pageData = data.slice(start, end);
+                const pageData = data.slice(start, start + itemsPerPage);
 
                 pageData.forEach(item => {
                     masterGrid.insertAdjacentHTML('beforeend', `
-                        <article class="modern-card p-3 reveal">
+                        <article class="modern-card p-4">
                             <a href="${item.link}">
-                                <img src="${item.img}" class="w-full aspect-[3/4] object-cover rounded-xl mb-3" loading="lazy">
-                                <h3 class="font-bold text-white uppercase truncate text-xs mb-3 px-1">${item.title}</h3>
+                                <img src="${item.img}" class="w-full aspect-[3/4] object-cover rounded-xl mb-4" loading="lazy">
+                                <h3 class="font-bold text-white uppercase truncate text-xs mb-4 text-center">${item.title}</h3>
                                 <div class="btn-download">Initiate download</div>
                             </a>
                         </article>
                     `);
                 });
-                
-                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
                 setupPagination(data.length);
             }
 
@@ -224,43 +202,30 @@
                 const pageCount = Math.ceil(totalItems / itemsPerPage);
                 const maxPages = 10;
 
-                // Previous Button
                 const prev = document.createElement('button');
                 prev.innerText = 'PREV';
-                prev.className = `nav-node ${currentPage === 1 ? 'opacity-30 cursor-not-allowed' : ''}`;
-                prev.onclick = () => { if(currentPage > 1) { currentPage--; render(currentPage); window.scrollTo({top: 200, behavior: 'smooth'}); } };
+                prev.className = `nav-node ${currentPage === 1 ? 'opacity-30' : ''}`;
+                prev.onclick = () => { if(currentPage > 1) { currentPage--; render(currentPage); } };
                 paginationBox.appendChild(prev);
 
-                // Page Numbers (Showing 10)
                 for(let i=1; i<=maxPages; i++) {
                     const btn = document.createElement('button');
                     btn.innerText = i;
                     btn.className = `nav-node ${i === currentPage ? 'active' : ''}`;
-                    btn.onclick = () => {
-                        currentPage = i;
-                        if(i <= pageCount) {
-                            render(i);
-                            window.scrollTo({top: 200, behavior: 'smooth'});
-                        } else {
-                            masterGrid.innerHTML = '<p class="col-span-full text-center text-gray-500 py-10">Archive Sector Offline.</p>';
-                        }
-                    };
+                    btn.onclick = () => { currentPage = i; i <= pageCount ? render(i) : (masterGrid.innerHTML = '<p class="col-span-full text-center py-10">Empty Sector.</p>'); };
                     paginationBox.appendChild(btn);
                 }
 
-                // Next Button
                 const next = document.createElement('button');
                 next.innerText = 'NEXT';
-                next.className = `nav-node ${currentPage === maxPages ? 'opacity-30 cursor-not-allowed' : ''}`;
-                next.onclick = () => { if(currentPage < maxPages) { currentPage++; render(currentPage); window.scrollTo({top: 200, behavior: 'smooth'}); } };
+                next.className = `nav-node ${currentPage === maxPages ? 'opacity-30' : ''}`;
+                next.onclick = () => { if(currentPage < maxPages) { currentPage++; render(currentPage); } };
                 paginationBox.appendChild(next);
             }
 
             searchInput.addEventListener('input', (e) => {
                 const term = e.target.value.toLowerCase();
-                const filtered = db.filter(x => x.title.toLowerCase().includes(term));
-                currentPage = 1;
-                render(1, filtered);
+                render(1, db.filter(x => x.title.toLowerCase().includes(term)));
             });
 
             render(1);
