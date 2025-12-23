@@ -4,107 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SJ Game Zone | Premium Archive</title>
-    <link rel="icon" type="image/png" href="logo.png" />
-    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script src="games.js"></script>
-    <script src="software.js"></script>
-    <script src="windows.js"></script>
-
+    <script src="games.js"></script><script src="software.js"></script><script src="windows.js"></script>
     <style>
-        :root {
-          --neon-cyan: #00f2ff;
-          --royal-blue: #3b82f6;
-          --btn-blue: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%); 
-          --bg-black: #050505;
-        }
-
-        body {
-          font-family: 'Inter', sans-serif;
-          background-color: var(--bg-black);
-          background-image: url('bg.jpg'); 
-          background-size: cover;
-          background-position: center;
-          background-attachment: fixed;
-          color: #f1f5f9;
-        }
-
-        .overlay-blur {
-          position: fixed;
-          inset: 0;
-          background: rgba(0, 0, 0, 0.82);
-          backdrop-filter: blur(8px) brightness(1.12);
-          -webkit-backdrop-filter: blur(8px) brightness(1.12);
-          z-index: -1;
-        }
-
-        .cyber-title {
-          font-family: 'Orbitron', sans-serif;
-          text-shadow: 0 0 15px rgba(0, 242, 255, 0.6);
-          text-transform: uppercase;
-        }
-
-        /* Hover Glow Effect */
-        .modern-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 20px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .modern-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--neon-cyan);
-            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.2), 0 0 15px rgba(59, 130, 246, 0.3);
-            background: rgba(255, 255, 255, 0.06);
-        }
-
-        .btn-download {
-            background: var(--btn-blue);
-            color: #fff;
-            font-weight: 800;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            padding: 12px 15px;
-            border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            text-align: center;
-        }
-
-        .page-num-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .active-page {
-            background: rgba(0, 242, 255, 0.1);
-            border: 2px solid var(--neon-cyan);
-            color: white;
-        }
+        :root { --neon-cyan: #00f2ff; --royal-blue: #3b82f6; --btn-blue: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%); --bg-black: #050505; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-black); background-image: url('bg.jpg'); background-size: cover; background-position: center; background-attachment: fixed; color: #f1f5f9; }
+        .overlay-blur { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.82); backdrop-filter: blur(8px) brightness(1.12); z-index: -1; }
+        .cyber-title { font-family: 'Orbitron', sans-serif; text-shadow: 0 0 15px rgba(0, 242, 255, 0.6); text-transform: uppercase; }
+        .modern-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .modern-card:hover { transform: translateY(-8px); border-color: var(--neon-cyan); box-shadow: 0 10px 30px rgba(0, 242, 255, 0.2), 0 0 15px rgba(59, 130, 246, 0.3); background: rgba(255, 255, 255, 0.06); }
+        .btn-download { background: var(--btn-blue); color: #fff; font-weight: 800; font-size: 0.7rem; text-transform: uppercase; padding: 12px 15px; border-radius: 50px; border: 1px solid rgba(255, 255, 255, 0.2); text-align: center; }
+        .active-page { background: rgba(0, 242, 255, 0.1); border: 2px solid var(--neon-cyan); color: white; }
     </style>
 </head>
 <body class="p-4 md:p-6">
     <div class="overlay-blur"></div>
-
     <header class="text-center pt-10">
         <a href="index.html" class="inline-block mb-4">
-            <img src="logo.png" alt="SJ Logo" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-white/10 hover:border-cyan-400 transition-all"/>
+            <img src="logo.png" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-white/10 hover:border-cyan-400 transition-all"/>
         </a>
         <h1 class="cyber-title text-2xl md:text-5xl font-black tracking-widest">SJ GAME ZONE</h1>
         
+        <p class="text-[10px] md:text-xs text-cyan-400/60 font-bold uppercase tracking-[0.2em] mt-2 px-4">
+            // GLOBAL DIGITAL REPOSITORY & UTILITY LIBRARY // <br>
+            Community Verified. Search across **Games, Utilities, and OS**. Report issues.
+        </p>
+
         <nav class="flex flex-wrap justify-center gap-3 mt-6">
             <a href="index.html" class="px-6 py-2 rounded-xl font-black uppercase text-sm border-2 border-cyan-400 bg-cyan-400/10">Games</a>
             <a href="software.html" class="px-6 py-2 rounded-xl font-black uppercase text-sm bg-white/5 text-white/50">Software</a>
             <a href="windows.html" class="px-6 py-2 rounded-xl font-black uppercase text-sm bg-white/5 text-white/50">Windows OS</a>
         </nav>
-
         <div class="mt-16 mb-4">
             <a href="tutorial.html" class="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-full font-black uppercase text-xs transition-all shadow-lg inline-block">▶ Watch Download Tutorial</a>
         </div>
@@ -113,15 +44,13 @@
     <main class="container mx-auto max-w-7xl">
         <div class="mt-4 mb-10 flex flex-col md:flex-row justify-between items-center gap-4 px-4">
             <h2 class="text-xl md:text-2xl font-black uppercase tracking-tighter text-white border-l-4 border-blue-500 pl-4">AVAILABLE LIBRARY</h2>
-            <input id="searchInput" placeholder="Search (GTA 5, NFS, etc)..." class="w-full md:w-80 bg-white/5 border border-white/10 text-white px-5 py-3 rounded-xl focus:border-cyan-500 outline-none transition-all" />
+            <input id="searchInput" placeholder="Search (GTA 5, NFS, etc)..." class="w-full md:w-80 bg-white/5 border border-white/10 text-white px-5 py-3 rounded-xl focus:border-cyan-500 outline-none" />
         </div>
-
         <div id="masterGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 px-4"></div>
-
         <div class="mt-16 flex flex-wrap justify-center items-center gap-3 pb-20">
-            <button id="prevBtn" class="bg-white/5 px-4 py-2 rounded-lg text-xs font-bold uppercase disabled:opacity-20">Prev</button>
+            <button id="prevBtn" class="bg-white/5 px-4 py-2 rounded-lg text-xs font-bold disabled:opacity-20">Prev</button>
             <div id="paginationNumbers" class="flex gap-2"></div>
-            <button id="nextBtn" class="bg-white/5 px-4 py-2 rounded-lg text-xs font-bold uppercase disabled:opacity-20">Next</button>
+            <button id="nextBtn" class="bg-white/5 px-4 py-2 rounded-lg text-xs font-bold disabled:opacity-20">Next</button>
         </div>
     </main>
 
@@ -130,72 +59,34 @@
             const masterGrid = document.getElementById('masterGrid');
             const paginationNumbers = document.getElementById('paginationNumbers');
             const searchInput = document.getElementById('searchInput');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-
-            const getDB = () => [
-                ...(typeof allGames !== 'undefined' ? allGames : []),
-                ...(typeof allSoftware !== 'undefined' ? allSoftware : []),
-                ...(typeof allWindows !== 'undefined' ? allWindows : [])
-            ];
-
+            const getDB = () => [...(typeof allGames !== 'undefined' ? allGames : []), ...(typeof allSoftware !== 'undefined' ? allSoftware : []), ...(typeof allWindows !== 'undefined' ? allWindows : [])];
             let activeDB = getDB();
-            const itemsPerPage = 15;
-            let currentPage = 1;
-            const forcedMaxPages = 10;
-
+            const itemsPerPage = 15; let currentPage = 1; const forcedMaxPages = 10;
             function render() {
                 masterGrid.innerHTML = '';
                 const start = (currentPage - 1) * itemsPerPage;
                 const pageData = activeDB.slice(start, start + itemsPerPage);
-
-                if(pageData.length === 0 && currentPage <= 1) {
-                     masterGrid.innerHTML = '<p class="col-span-full text-center py-20 text-gray-600 font-bold uppercase">Sector Empty</p>';
-                } else if (pageData.length === 0) {
-                     masterGrid.innerHTML = '<p class="col-span-full text-center py-20 text-cyan-500/30 font-bold uppercase tracking-widest">Coming Soon</p>';
-                }
-
                 pageData.forEach(item => {
-                    masterGrid.insertAdjacentHTML('beforeend', `
-                        <article class="modern-card p-4">
-                            <a href="${item.link}">
-                                <div class="overflow-hidden rounded-xl mb-3">
-                                    <img src="${item.img}" class="w-full aspect-[3/4] object-cover hover:scale-110 transition duration-500" loading="lazy">
-                                </div>
-                                <h3 class="font-bold text-white uppercase text-[11px] md:text-[13px] mb-3 text-center px-1 leading-tight h-9 flex items-center justify-center tracking-tight">
-                                    ${item.title}
-                                </h3>
-                                <div class="btn-download w-full inline-block">Initiate download</div>
-                            </a>
-                        </article>
-                    `);
+                    masterGrid.insertAdjacentHTML('beforeend', `<article class="modern-card p-4"><a href="${item.link}"><div class="overflow-hidden rounded-xl mb-3"><img src="${item.img}" class="w-full aspect-[3/4] object-cover hover:scale-110 transition duration-500"></div><h3 class="font-bold text-white uppercase text-[11px] md:text-[13px] mb-3 text-center px-1 leading-tight h-9 flex items-center justify-center tracking-tight">${item.title}</h3><div class="btn-download w-full inline-block">Initiate download</div></a></article>`);
                 });
                 updatePagination();
             }
-
             function updatePagination() {
                 paginationNumbers.innerHTML = '';
                 for (let i = 1; i <= forcedMaxPages; i++) {
-                    const btn = document.createElement('button');
-                    btn.innerText = i;
-                    btn.className = `page-num-btn ${i === currentPage ? 'active-page' : 'bg-white/5 text-white/40'}`;
+                    const btn = document.createElement('button'); btn.innerText = i;
+                    btn.className = `w-10 h-10 rounded-lg font-bold ${i === currentPage ? 'active-page' : 'bg-white/5 text-white/40'}`;
                     btn.onclick = () => { currentPage = i; render(); window.scrollTo({top: 400, behavior: 'smooth'}); };
                     paginationNumbers.appendChild(btn);
                 }
-                prevBtn.disabled = currentPage === 1;
-                nextBtn.disabled = currentPage === forcedMaxPages;
+                document.getElementById('prevBtn').onclick = () => { if(currentPage > 1) { currentPage--; render(); } };
+                document.getElementById('nextBtn').onclick = () => { if(currentPage < forcedMaxPages) { currentPage++; render(); } };
             }
-
-            prevBtn.onclick = () => { if(currentPage > 1) { currentPage--; render(); } };
-            nextBtn.onclick = () => { if(currentPage < forcedMaxPages) { currentPage++; render(); } };
-
             searchInput.addEventListener('input', (e) => {
                 const term = e.target.value.toLowerCase();
                 activeDB = getDB().filter(x => x.title.toLowerCase().includes(term) || (x.keywords && x.keywords.toLowerCase().includes(term)));
-                currentPage = 1;
-                render();
+                currentPage = 1; render();
             });
-
             render();
         });
     </script>
