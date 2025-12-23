@@ -3,263 +3,200 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <title>SJ Game Zone | PC Game Library: GTA V, FIFA 23, Red Dead Redemption 2</title>
-    <meta name="description" content="SJ Game Zone offers a curated digital library for top PC titles. Community verified repository." />
-    <meta name="keywords" content="GTA 5 PC, Red Dead Redemption 2 Library, FIFA 23 PC access, PC game repository, SJ Game Zone" />
+    <title>SJ Game Zone | Premium Archive</title>
     <link rel="icon" type="image/png" href="logo.png" />
-    <link rel="canonical" href="https://sjgamezone.neocities.org/index.html" />
     
-    <meta property="og:title" content="SJ Game Zone | PC Game Library" />
-    <meta property="og:description" content="Explore the best and latest PC game titles within our digital library." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://sjgamezone.neocities.org/index.html" />
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <script src="games.js"></script>
+    <script src="software.js"></script>
+    <script src="windows.js"></script>
 
     <style>
         :root {
-          --color-primary:#3b82f6;
-          --color-secondary:#ef4444;
-          --color-neon:#38bdf8;
-          --color-heading-white:#FFFFFF;
-          --bg-dark:#050a16;
-          --bg-light:#1f2937;
-          --font-display:'Orbitron', sans-serif;
-          --font-body:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+          --neon-cyan: #00f2ff;
+          --royal-blue: #3b82f6;
+          --btn-blue: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%); 
+          --bg-black: #050505;
         }
 
-        /* --- BACKGROUND FIX --- */
         body {
-          font-family: var(--font-body);
-          margin: 0;
-          background-color: var(--bg-dark);
-          /* The background image is set here */
+          font-family: 'Inter', sans-serif;
+          background-color: var(--bg-black);
           background-image: url('bg.jpg'); 
           background-size: cover;
           background-position: center;
           background-attachment: fixed;
-          background-repeat: no-repeat;
-          color: #e6eef8;
-          min-height: 100vh;
+          color: #f1f5f9;
         }
 
-        /* --- BLUR LAYER FIX --- */
-        .bg-blur {
+        .overlay-blur {
           position: fixed;
           inset: 0;
-          /* A semi-transparent overlay is required for the blur/brightness to be visible */
-          background: rgba(5, 10, 22, 0.5); 
-          backdrop-filter: blur(8px) brightness(0.7);
-          -webkit-backdrop-filter: blur(8px) brightness(0.7); 
+          background: rgba(0, 0, 0, 0.82);
+          backdrop-filter: blur(8px) brightness(1.12);
+          -webkit-backdrop-filter: blur(8px) brightness(1.12);
           z-index: -1;
-          pointer-events: none;
         }
 
-        /* --- CONTENT LAYER --- */
-        header, main, footer, .nav-container {
-            position: relative;
-            z-index: 10;
+        .cyber-title {
+          font-family: 'Orbitron', sans-serif;
+          text-shadow: 0 0 15px rgba(0, 242, 255, 0.6);
+          text-transform: uppercase;
         }
 
-        /* --- CYBER GLOW & LOGO --- */
-        .sj-cyber-glow {
-          font-family: var(--font-display);
-          color: #ffffff; 
-          text-shadow: 0 0 5px var(--color-neon), 0 0 15px rgba(56, 189, 248, 0.5);
-          -webkit-text-stroke: 1px var(--bg-dark);
-        }
-        .logo-pulse {
-            transition: all 0.3s ease;
-            border-color: var(--color-secondary); 
-            box-shadow: 0 0 10px 2px rgba(239, 68, 68, 0.4); 
-        }
-        .logo-link:hover .logo-pulse {
-            box-shadow: 0 0 20px 5px rgba(239, 68, 68, 0.8);
-            transform: scale(1.05);
+        /* Hover Glow Effect */
+        .modern-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        /* --- BUTTONS --- */
-        .top-btn { transition: all 0.3s ease; }
-        .active-btn {
-            background: linear-gradient(135deg, var(--color-neon) 0%, var(--color-primary) 100%) !important;
-            box-shadow: 0 0 25px 5px var(--color-neon);
-            color: var(--bg-dark) !important;
-            border: 2px solid white;
-        }
-        @keyframes ripple-glow {
-            0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.4); transform: scale(0.95); }
-            100% { box-shadow: 0 0 0 30px rgba(56, 189, 248, 0); transform: scale(1.05); }
-        }
-        .active-btn::after {
-            content: ''; position: absolute; inset: -5px; border-radius: 12px;
-            animation: ripple-glow 3s infinite; z-index: -1;
+        .modern-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 10px 30px rgba(0, 242, 255, 0.2), 0 0 15px rgba(59, 130, 246, 0.3);
+            background: rgba(255, 255, 255, 0.06);
         }
 
-        /* --- CARDS --- */
-        .game-card {
-          background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(0,0,0,0.4)); 
-          border: 2px solid var(--bg-light); 
-          transition: all 0.3s ease;
-          display: flex; flex-direction: column; padding: 1rem;
+        .btn-download {
+            background: var(--btn-blue);
+            color: #fff;
+            font-weight: 800;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            padding: 12px 15px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
         }
-        .game-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 0 30px var(--color-neon);
-          border-color: var(--color-neon); 
+
+        .page-num-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
-        .game-thumb { height: 240px; object-fit: cover; border-radius: 8px; border: 3px solid var(--color-secondary); }
 
-        .download-button {
-          background: linear-gradient(90deg, #1e40af 0%, #3b82f6 100%);
-          padding: 12px 30px; border-radius: 9999px; font-weight: 700;
-          text-align: center; color: white; transition: all 0.3s;
+        .active-page {
+            background: rgba(0, 242, 255, 0.1);
+            border: 2px solid var(--neon-cyan);
+            color: white;
         }
-        .download-button:hover { background: #60a5fa; transform: translateY(-2px); }
-
-        /* --- UTILS --- */
-        .game-link-wrapper h3 { min-height: 2.8rem; margin-top: 0.75rem; }
-        .game-link-wrapper p { font-size: 0.875rem; margin-bottom: 1.25rem; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden; }
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease; }
-        .reveal.visible { opacity: 1; transform: none; }
-
-        /* --- PAGER --- */
-        .pager { background: rgba(0, 0, 0, 0.3); padding: 5px; border-radius: 8px; gap: 5px; }
-        .pager a { padding: 0.6rem 0.9rem; color: var(--color-neon); border-radius: 4px; }
-        .pager a.current { background: var(--color-neon); color: var(--bg-dark); font-weight: 900; }
-        #placeholder-container { display: none; flex-direction: column; align-items: center; padding: 2rem; border: 2px dashed #4b5563; border-radius: 12px; margin-top: 2rem; }
     </style>
 </head>
-<body class="p-6 sm:p-12">
-    <div class="bg-blur" aria-hidden="true"></div>
+<body class="p-4 md:p-6">
+    <div class="overlay-blur"></div>
 
-    <header class="text-center mb-16">
-        <a href="index.html" class="inline-block relative logo-link">
-          <img src="logo.png" alt="SJ Game Zone logo" class="mx-auto mb-6 rounded-full border-4 w-32 h-32 object-cover logo-pulse"/>
+    <header class="text-center pt-10">
+        <a href="index.html" class="inline-block mb-4">
+            <img src="logo.png" alt="SJ Logo" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-white/10 hover:border-cyan-400 transition-all"/>
         </a>
-        <h1 class="text-4xl sm:text-6xl font-extrabold uppercase sj-cyber-glow tracking-wider">SJ GAME ZONE</h1>
-        <p class="mt-5 text-xl text-white font-bold tracking-widest">// GLOBAL DIGITAL REPOSITORY & GAME LIBRARY //</p>
-        <p class="mt-5 text-sm text-gray-400 max-w-2xl mx-auto">Community Verified Catalog. The ultimate archive for **GTA V, Red Dead Redemption 2, and Elden Ring** entries. Report issues: <a href="https://www.instagram.com/sjvisualflowstudios/" target="_blank" class="text-blue-400 hover:text-red-400">@sjvisualflowstudios</a></p>
+        <h1 class="cyber-title text-2xl md:text-5xl font-black tracking-widest">SJ GAME ZONE</h1>
+        
+        <nav class="flex flex-wrap justify-center gap-3 mt-6">
+            <a href="index.html" class="px-6 py-2 rounded-xl font-black uppercase text-sm border-2 border-cyan-400 bg-cyan-400/10">Games</a>
+            <a href="software.html" class="px-6 py-2 rounded-xl font-black uppercase text-sm bg-white/5 text-white/50">Software</a>
+            <a href="windows.html" class="px-6 py-2 rounded-xl font-black uppercase text-sm bg-white/5 text-white/50">Windows OS</a>
+        </nav>
+
+        <div class="mt-16 mb-4">
+            <a href="tutorial.html" class="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-full font-black uppercase text-xs transition-all shadow-lg inline-block">▶ Watch Download Tutorial</a>
+        </div>
     </header>
 
-    <nav class="nav-container flex justify-center gap-6 mb-10">
-        <a href="index.html" class="top-btn active-btn px-6 py-3 rounded-lg font-bold uppercase">LIBRARY</a>
-        <a href="software.html" class="top-btn bg-green-600 px-6 py-3 rounded-lg font-bold text-white uppercase">UTILITIES</a>
-        <a href="windows.html" class="top-btn bg-red-600 px-6 py-3 rounded-lg font-bold text-white uppercase">SYSTEM OS</a>
-    </nav>
-
-    <main class="container mx-auto">
-        <div class="flex flex-col sm:flex-row justify-between items-center mb-10">
-            <h2 class="text-2xl sm:text-3xl font-extrabold uppercase text-white">Game Catalog</h2>
-            <div class="w-full sm:w-96 mt-6 sm:mt-0 relative">
-                <input id="searchInput" placeholder="Search library..." class="w-full bg-gray-900 border-2 border-red-600 text-white px-5 py-3 rounded-full focus:outline-none focus:ring-4 focus:ring-blue-500" />
-            </div>
+    <main class="container mx-auto max-w-7xl">
+        <div class="mt-4 mb-10 flex flex-col md:flex-row justify-between items-center gap-4 px-4">
+            <h2 class="text-xl md:text-2xl font-black uppercase tracking-tighter text-white border-l-4 border-blue-500 pl-4">AVAILABLE LIBRARY</h2>
+            <input id="searchInput" placeholder="Search (GTA 5, NFS, etc)..." class="w-full md:w-80 bg-white/5 border border-white/10 text-white px-5 py-3 rounded-xl focus:border-cyan-500 outline-none transition-all" />
         </div>
 
-        <div id="gamesGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8"></div>
+        <div id="masterGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 px-4"></div>
 
-        <div id="placeholder-container">
-            <p id="placeholder-message" class="text-gray-400 text-xl"></p>
-        </div>
-
-        <div id="pagination-container" class="mt-16 text-center">
-          <nav class="pager inline-flex items-center text-xl font-semibold">
-            <a href="#" class="opacity-50 pointer-events-none">« Prev</a>
-            <a href="index.html" class="current">1</a>
-            <a href="page2.html">2</a>
-            <a href="page3.html">3</a>
-            <a href="page4.html">4</a>
-            <a href="page5.html">5</a>
-            <a href="page2.html">Next »</a>
-          </nav>
+        <div class="mt-16 flex flex-wrap justify-center items-center gap-3 pb-20">
+            <button id="prevBtn" class="bg-white/5 px-4 py-2 rounded-lg text-xs font-bold uppercase disabled:opacity-20">Prev</button>
+            <div id="paginationNumbers" class="flex gap-2"></div>
+            <button id="nextBtn" class="bg-white/5 px-4 py-2 rounded-lg text-xs font-bold uppercase disabled:opacity-20">Next</button>
         </div>
     </main>
 
-    <footer class="text-center mt-20 pb-10">
-      <p class="text-gray-400">&copy; 2025 <strong class="text-blue-300">SJ Game Zone</strong> | Created by <span class="text-blue-400">SJ Visual Flow Studios</span></p>
-      <div class="mt-4 space-x-6 text-sm">
-        <a href="about.html" class="hover:text-blue-400">Library Info</a> <span>|</span>
-        <a href="privacy.html" class="hover:text-blue-400">Privacy Policy</a> <span>|</span>
-        <a href="disclaimer.html" class="hover:text-blue-400">Terms of Use</a>
-      </div>
-    </footer>
-
     <script>
-        const io = new IntersectionObserver((entries)=>{
-          entries.forEach(e=>{
-            if(e.isIntersecting){
-              e.target.classList.add('visible'); 
-              io.unobserve(e.target); 
-            }
-          });
-        },{threshold:0.1});
-        
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', () => {
+            const masterGrid = document.getElementById('masterGrid');
+            const paginationNumbers = document.getElementById('paginationNumbers');
             const searchInput = document.getElementById('searchInput');
-            const gamesGrid = document.getElementById('gamesGrid');
-            const placeholderContainer = document.getElementById('placeholder-container');
-            const placeholderMessage = document.getElementById('placeholder-message');
-            const paginationContainer = document.getElementById('pagination-container');
-            
-            const pageIndex = 1;
-            const gamesPerPage = 15; 
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
 
-            function generateCardHTML(game, delay) {
-                const color = (game.id % 2 === 0) ? 'text-red-400' : 'text-blue-400';
-                return `
-                    <article class="game-card rounded-xl reveal" style="transition-delay: ${delay}ms;">
-                        <a href="${game.link}" class="block h-full game-link-wrapper">
-                            <img src="${game.img}" alt="${game.title}" class="game-thumb mb-4 w-full" loading="lazy"/>
-                            <h3 class="text-lg font-bold ${color} uppercase leading-snug">${game.title}</h3>
-                            <p class="text-gray-400 mt-2 flex-grow">${game.desc}</p>
-                            <div class="mt-auto pt-4">
-                                <div class="download-button">GET ENTRY</div>
-                            </div>
-                        </a>
-                    </article>
-                `;
-            }
+            const getDB = () => [
+                ...(typeof allGames !== 'undefined' ? allGames : []),
+                ...(typeof allSoftware !== 'undefined' ? allSoftware : []),
+                ...(typeof allWindows !== 'undefined' ? allWindows : [])
+            ];
 
-            function displayGames(gamesToShow, isSearch) {
-                gamesGrid.innerHTML = '';
-                if (gamesToShow.length === 0) {
-                    gamesGrid.style.display = 'none';
-                    placeholderContainer.style.display = 'flex';
-                    placeholderMessage.textContent = isSearch ? "No entries found." : "Library update in progress.";
-                    paginationContainer.style.display = 'none';
-                    return;
+            let activeDB = getDB();
+            const itemsPerPage = 15;
+            let currentPage = 1;
+            const forcedMaxPages = 10;
+
+            function render() {
+                masterGrid.innerHTML = '';
+                const start = (currentPage - 1) * itemsPerPage;
+                const pageData = activeDB.slice(start, start + itemsPerPage);
+
+                if(pageData.length === 0 && currentPage <= 1) {
+                     masterGrid.innerHTML = '<p class="col-span-full text-center py-20 text-gray-600 font-bold uppercase">Sector Empty</p>';
+                } else if (pageData.length === 0) {
+                     masterGrid.innerHTML = '<p class="col-span-full text-center py-20 text-cyan-500/30 font-bold uppercase tracking-widest">Coming Soon</p>';
                 }
-                gamesGrid.style.display = 'grid';
-                placeholderContainer.style.display = 'none';
-                paginationContainer.style.display = isSearch ? 'none' : 'block';
-                let delay = 0;
-                gamesToShow.forEach(game => {
-                    gamesGrid.insertAdjacentHTML('beforeend', generateCardHTML(game, delay));
-                    delay += 50; 
+
+                pageData.forEach(item => {
+                    masterGrid.insertAdjacentHTML('beforeend', `
+                        <article class="modern-card p-4">
+                            <a href="${item.link}">
+                                <div class="overflow-hidden rounded-xl mb-3">
+                                    <img src="${item.img}" class="w-full aspect-[3/4] object-cover hover:scale-110 transition duration-500" loading="lazy">
+                                </div>
+                                <h3 class="font-bold text-white uppercase text-[11px] md:text-[13px] mb-3 text-center px-1 leading-tight h-9 flex items-center justify-center tracking-tight">
+                                    ${item.title}
+                                </h3>
+                                <div class="btn-download w-full inline-block">Initiate download</div>
+                            </a>
+                        </article>
+                    `);
                 });
-                document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-            }
-            
-            function performGlobalSearch(query) {
-                if (typeof allGames === 'undefined') return;
-                const q = query.toLowerCase().trim();
-                if (q.length === 0) {
-                    const startIndex = (pageIndex - 1) * gamesPerPage;
-                    displayGames(allGames.slice(startIndex, startIndex + gamesPerPage), false);
-                    return;
-                }
-                const filtered = allGames.filter(g => g.title.toLowerCase().includes(q) || g.desc.toLowerCase().includes(q));
-                displayGames(filtered, true);
-            }
-            
-            if (typeof allGames !== 'undefined') {
-                const startIndex = (pageIndex - 1) * gamesPerPage;
-                displayGames(allGames.slice(startIndex, startIndex + gamesPerPage), false);
+                updatePagination();
             }
 
-            searchInput.addEventListener('input', () => performGlobalSearch(searchInput.value));
+            function updatePagination() {
+                paginationNumbers.innerHTML = '';
+                for (let i = 1; i <= forcedMaxPages; i++) {
+                    const btn = document.createElement('button');
+                    btn.innerText = i;
+                    btn.className = `page-num-btn ${i === currentPage ? 'active-page' : 'bg-white/5 text-white/40'}`;
+                    btn.onclick = () => { currentPage = i; render(); window.scrollTo({top: 400, behavior: 'smooth'}); };
+                    paginationNumbers.appendChild(btn);
+                }
+                prevBtn.disabled = currentPage === 1;
+                nextBtn.disabled = currentPage === forcedMaxPages;
+            }
+
+            prevBtn.onclick = () => { if(currentPage > 1) { currentPage--; render(); } };
+            nextBtn.onclick = () => { if(currentPage < forcedMaxPages) { currentPage++; render(); } };
+
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                activeDB = getDB().filter(x => x.title.toLowerCase().includes(term) || (x.keywords && x.keywords.toLowerCase().includes(term)));
+                currentPage = 1;
+                render();
+            });
+
+            render();
         });
     </script>
 </body>
