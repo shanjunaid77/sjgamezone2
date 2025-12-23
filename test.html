@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <title>SJ Game Zone | Professional Archive</title>
-    <link rel="icon" type="image/png" href="logo.png" />
-    
+    <title>SJ Game Zone | Premium Archive</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -17,7 +14,6 @@
     <style>
         :root {
           --neon-cyan: #00f2ff;
-          --royal-blue: #3b82f6;
           --btn-blue: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%); 
           --bg-black: #050505;
         }
@@ -32,7 +28,6 @@
           color: #f1f5f9;
         }
 
-        /* 12% Brightness Boost & Blur */
         .overlay-blur {
           position: fixed;
           inset: 0;
@@ -53,25 +48,22 @@
 
         @media (min-width: 768px) { .cyber-title { font-size: 2.8rem; } }
 
-        /* Premium Gaming Card with Glow Effect */
+        /* Card Glow Effect */
         .modern-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 20px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             overflow: hidden;
-            position: relative;
         }
 
         .modern-card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-10px);
             border-color: var(--neon-cyan);
-            /* Double glow effect: Cyan + Blue */
             box-shadow: 0 10px 30px rgba(0, 242, 255, 0.2), 0 0 15px rgba(59, 130, 246, 0.3);
             background: rgba(255, 255, 255, 0.06);
         }
 
-        /* Royal Blue Initiate Button */
         .btn-download {
             background: var(--btn-blue);
             color: #fff;
@@ -85,14 +77,12 @@
             display: inline-block;
             width: 100%;
             text-align: center;
-            box-shadow: 0 4px 10px rgba(29, 78, 216, 0.3);
         }
 
         .glass-active {
             background: rgba(0, 242, 255, 0.1) !important;
             backdrop-filter: blur(10px);
             border: 2px solid var(--neon-cyan) !important;
-            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
         }
 
         .nav-main-btn {
@@ -113,10 +103,8 @@
             text-transform: uppercase;
             font-size: 0.8rem;
             box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4);
-            transition: 0.3s;
             display: inline-block;
         }
-        .btn-tutorial:hover { background: #dc2626; transform: scale(1.05); }
     </style>
 </head>
 <body class="p-4 md:p-6">
@@ -124,14 +112,14 @@
 
     <header class="text-center py-6">
         <a href="index.html" class="inline-block mb-4">
-            <img src="logo.png" alt="SJ Logo" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-white/10 hover:border-cyan-400 transition-all shadow-2xl"/>
+            <img src="logo.png" alt="SJ Logo" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-white/10 hover:border-cyan-400 transition-all"/>
         </a>
         <h1 class="cyber-title">SJ GAME ZONE</h1>
         
         <nav class="flex flex-wrap justify-center gap-3 mt-6">
             <a href="index.html" class="nav-main-btn glass-active">Games</a>
-            <a href="software.html" class="nav-main-btn bg-white/5 text-white/60 hover:text-white">Software</a>
-            <a href="windows.html" class="nav-main-btn bg-white/5 text-white/60 hover:text-white">Windows OS</a>
+            <a href="software.html" class="nav-main-btn bg-white/5 text-white/60">Software</a>
+            <a href="windows.html" class="nav-main-btn bg-white/5 text-white/60">Windows OS</a>
         </nav>
 
         <div class="mt-8">
@@ -142,17 +130,12 @@
     <main class="container mx-auto max-w-7xl">
         <div class="mt-12 mb-10 flex flex-col md:flex-row justify-between items-center gap-4 px-4">
             <h2 class="text-xl md:text-2xl font-black uppercase tracking-tighter text-white border-l-4 border-blue-500 pl-4">AVAILABLE GAMES LIBRARY</h2>
-            <input id="searchInput" placeholder="Search archive (Games, Soft, OS)..." class="w-full md:w-80 bg-white/5 border border-white/10 text-white px-5 py-3 rounded-xl focus:border-cyan-500 outline-none transition-all" />
+            <input id="searchInput" placeholder="Search (Try 'GTA 5' or 'NFS')..." class="w-full md:w-80 bg-white/5 border border-white/10 text-white px-5 py-3 rounded-xl focus:border-cyan-500 outline-none transition-all" />
         </div>
 
         <div id="masterGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 px-4"></div>
-
         <div class="mt-16 flex flex-wrap justify-center items-center gap-2 pb-20" id="pagination"></div>
     </main>
-
-    <footer class="text-center py-10 border-t border-white/5 text-gray-500 text-[10px] font-bold tracking-widest uppercase">
-        © 2025 SJ GAME ZONE | SJ Visual Flow Studios
-    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -160,15 +143,14 @@
             const paginationBox = document.getElementById('pagination');
             const searchInput = document.getElementById('searchInput');
 
-            function getCombinedDB() {
-                return [
-                    ...(typeof allGames !== 'undefined' ? allGames : []),
-                    ...(typeof allSoftware !== 'undefined' ? allSoftware : []),
-                    ...(typeof allWindows !== 'undefined' ? allWindows : [])
-                ];
-            }
+            // SAFETY CHECK: Load data or return empty array if file is missing
+            const getDB = () => [
+                ...(typeof allGames !== 'undefined' ? allGames : []),
+                ...(typeof allSoftware !== 'undefined' ? allSoftware : []),
+                ...(typeof allWindows !== 'undefined' ? allWindows : [])
+            ];
 
-            const db = getCombinedDB();
+            const db = getDB();
             const itemsPerPage = 15;
             let currentPage = 1;
 
@@ -177,14 +159,18 @@
                 const start = (page - 1) * itemsPerPage;
                 const pageData = data.slice(start, start + itemsPerPage);
 
+                if (pageData.length === 0) {
+                    masterGrid.innerHTML = '<p class="col-span-full text-center py-20 text-gray-500">No results found.</p>';
+                }
+
                 pageData.forEach(item => {
                     masterGrid.insertAdjacentHTML('beforeend', `
                         <article class="modern-card p-4">
                             <a href="${item.link}">
                                 <div class="overflow-hidden rounded-xl mb-4">
-                                    <img src="${item.img}" class="w-full aspect-[3/4] object-cover transition-transform duration-500 hover:scale-110" loading="lazy">
+                                    <img src="${item.img}" class="w-full aspect-[3/4] object-cover hover:scale-110 transition-transform duration-500" loading="lazy">
                                 </div>
-                                <h3 class="font-bold text-white uppercase truncate text-[10px] md:text-xs mb-4 text-center px-1 tracking-wider">${item.title}</h3>
+                                <h3 class="font-bold text-white uppercase truncate text-xs mb-4 text-center tracking-wider">${item.title}</h3>
                                 <div class="btn-download">Initiate download</div>
                             </a>
                         </article>
@@ -195,29 +181,22 @@
 
             function setupPagination(totalItems) {
                 paginationBox.innerHTML = '';
-                const pageCount = Math.ceil(totalItems / itemsPerPage);
-                const maxPages = 10; 
-
-                for(let i=1; i<=maxPages; i++) {
+                const pageCount = Math.max(1, Math.ceil(totalItems / itemsPerPage));
+                for(let i=1; i<=Math.min(pageCount, 10); i++) {
                     const btn = document.createElement('button');
                     btn.innerText = i;
-                    btn.className = `w-10 h-10 rounded-lg font-bold transition-all ${i === currentPage ? 'glass-active text-white' : 'bg-white/5 text-white/40 hover:text-white'}`;
-                    btn.onclick = () => {
-                        currentPage = i;
-                        if(i <= pageCount) {
-                            render(i);
-                            window.scrollTo({top: 400, behavior: 'smooth'});
-                        } else {
-                            masterGrid.innerHTML = '<p class="col-span-full text-center py-20 text-gray-500 uppercase font-black">No Items Found In This Sector</p>';
-                        }
-                    };
+                    btn.className = `w-10 h-10 rounded-lg font-bold ${i === currentPage ? 'glass-active text-white' : 'bg-white/5 text-white/40'}`;
+                    btn.onclick = () => { currentPage = i; render(i); window.scrollTo({top: 400, behavior: 'smooth'}); };
                     paginationBox.appendChild(btn);
                 }
             }
 
             searchInput.addEventListener('input', (e) => {
                 const term = e.target.value.toLowerCase();
-                const filtered = db.filter(x => x.title.toLowerCase().includes(term));
+                const filtered = db.filter(x => 
+                    x.title.toLowerCase().includes(term) || 
+                    (x.keywords && x.keywords.toLowerCase().includes(term))
+                );
                 currentPage = 1;
                 render(1, filtered);
             });
