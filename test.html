@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title>SJ Game Zone | Universal Digital Archive</title>
+    <meta name="description" content="SJ Game Zone: The ultimate repository for PC Games, Software, and Windows OS. Community verified links and tutorials." />
+    <link rel="icon" type="image/png" href="logo.png" />
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="games.js"></script>
+    <script src="software.js"></script>
+    <script src="windows.js"></script>
+
+    <style>
+        :root {
+          --color-primary:#3b82f6;
+          --color-secondary:#ef4444;
+          --color-neon:#38bdf8;
+          --bg-dark:#050a16;
+          --font-display:'Orbitron', sans-serif;
+          --font-body:'Inter', sans-serif;
+        }
+
+        body {
+          font-family: var(--font-body);
+          margin: 0;
+          background-color: var(--bg-dark);
+          background-image: url('bg.jpg'); 
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+          color: #e6eef8;
+        }
+
+        .bg-blur {
+          position: fixed;
+          inset: 0;
+          background: rgba(5, 10, 22, 0.7); 
+          backdrop-filter: blur(12px) brightness(0.5);
+          z-index: -1;
+        }
+
+        .sj-cyber-glow {
+          font-family: var(--font-display);
+          text-shadow: 0 0 20px var(--color-neon);
+        }
+
+        /* Video Section */
+        .video-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            border: 3px solid rgba(56, 189, 248, 0.3);
+            border-radius: 24px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .tutorial-btn {
+            background: linear-gradient(90deg, #ef4444, #991b1b);
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+            transition: all 0.3s ease;
+        }
+        .tutorial-btn:hover { transform: scale(1.05); box-shadow: 0 0 30px rgba(239, 68, 68, 0.6); }
+
+        /* Catalog Cards */
+        .game-card {
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          transition: all 0.3s ease;
+        }
+        .game-card:hover {
+          transform: translateY(-8px);
+          border-color: var(--color-neon);
+          background: rgba(56, 189, 248, 0.05);
+        }
+
+        /* Pagination Styling */
+        .page-link {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.2s;
+        }
+        .page-link:hover, .page-link.active {
+            background: var(--color-neon);
+            color: black;
+            font-weight: 800;
+            border-color: white;
+            box-shadow: 0 0 15px var(--color-neon);
+        }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.5s ease-out; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body class="p-4 md:p-10">
+    <div class="bg-blur"></div>
+
+    <header class="text-center mb-12">
+        <a href="index.html" class="inline-block mb-6">
+          <img src="logo.png" alt="SJ Logo" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-sky-400 p-1 hover:rotate-6 transition-transform"/>
+        </a>
+        <h1 class="text-4xl md:text-7xl font-black sj-cyber-glow italic tracking-tighter">SJ GAME ZONE</h1>
+        <p class="text-sky-400 font-bold tracking-[0.4em] text-xs md:text-sm mt-4 uppercase">Archive // Games // Software // OS</p>
+    </header>
+
+    <nav class="flex flex-wrap justify-center gap-4 mb-16">
+        <a href="index.html" class="px-8 py-3 bg-sky-600 rounded-xl font-black text-white uppercase shadow-lg">Games</a>
+        <a href="software.html" class="px-8 py-3 bg-gray-800/80 hover:bg-gray-700 rounded-xl font-black text-white uppercase transition-all">Software</a>
+        <a href="utilities.html" class="px-8 py-3 bg-gray-800/80 hover:bg-gray-700 rounded-xl font-black text-white uppercase transition-all">Utilities</a>
+        <a href="windows.html" class="px-8 py-3 bg-gray-800/80 hover:bg-gray-700 rounded-xl font-black text-white uppercase transition-all">Windows OS</a>
+    </nav>
+
+    <section class="mb-20 text-center">
+        <div class="video-wrapper mb-8">
+            <video controls class="w-full aspect-video">
+                <source src="tutorial.mp4" type="video/mp4">
+            </video>
+        </div>
+        <a href="#" class="tutorial-btn inline-block px-12 py-5 rounded-2xl text-xl font-black text-white uppercase italic">
+            Watch Download Tutorial
+        </a>
+    </section>
+
+    <main class="container mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-10 gap-6">
+            <h2 class="text-2xl font-black uppercase tracking-widest border-l-4 border-sky-500 pl-4">Digital Catalog</h2>
+            <div class="w-full md:w-96">
+                <input id="searchInput" placeholder="Search across all archives..." class="w-full bg-black/50 border-2 border-white/10 text-white px-6 py-4 rounded-2xl focus:border-sky-500 outline-none transition-all" />
+            </div>
+        </div>
+
+        <div id="masterGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            </div>
+
+        <div class="mt-20 flex flex-wrap justify-center gap-3" id="pagination">
+            </div>
+    </main>
+
+    <footer class="mt-32 pb-16 text-center border-t border-white/5 pt-10">
+        <p class="text-gray-500 text-sm">© 2025 SJ GAME ZONE | SJ Visual Flow Studios</p>
+        <div class="mt-6 flex justify-center gap-8 text-xs font-bold uppercase text-gray-400 tracking-tighter">
+            <a href="dmca.html" class="hover:text-red-500 transition-colors">DMCA</a>
+            <a href="privacy.html" class="hover:text-sky-400 transition-colors">Privacy</a>
+            <a href="about.html" class="hover:text-sky-400 transition-colors">About</a>
+        </div>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const masterGrid = document.getElementById('masterGrid');
+            const paginationBox = document.getElementById('pagination');
+            const searchInput = document.getElementById('searchInput');
+
+            // Combine all data
+            const db = [
+                ...(typeof allGames !== 'undefined' ? allGames : []),
+                ...(typeof allSoftware !== 'undefined' ? allSoftware : []),
+                ...(typeof allWindows !== 'undefined' ? allWindows : [])
+            ];
+
+            const itemsPerPage = 15;
+            let currentPage = 1;
+
+            function render(page, data = db) {
+                masterGrid.innerHTML = '';
+                const start = (page - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+                const pageData = data.slice(start, end);
+
+                pageData.forEach(item => {
+                    masterGrid.insertAdjacentHTML('beforeend', `
+                        <article class="game-card p-3 rounded-2xl reveal">
+                            <a href="${item.link}">
+                                <img src="${item.img}" class="w-full aspect-[3/4] object-cover rounded-xl mb-4" loading="lazy">
+                                <h3 class="font-bold text-white uppercase truncate text-sm">${item.title}</h3>
+                                <div class="mt-4 bg-sky-600 text-white text-center py-2 rounded-lg font-black text-xs uppercase hover:bg-sky-500 transition-colors">
+                                    Initiate download
+                                </div>
+                            </a>
+                        </article>
+                    `);
+                });
+                
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+                setupPagination(data.length);
+            }
+
+            function setupPagination(totalItems) {
+                paginationBox.innerHTML = '';
+                const pageCount = Math.ceil(totalItems / itemsPerPage);
+                // Limit to 10 pages for the UI as requested
+                const displayLimit = Math.min(pageCount, 10);
+
+                for(let i=1; i<=displayLimit; i++) {
+                    const btn = document.createElement('button');
+                    btn.innerText = i;
+                    btn.className = `page-link ${i === currentPage ? 'active' : ''}`;
+                    btn.onclick = () => {
+                        currentPage = i;
+                        render(i);
+                        window.scrollTo({top: 600, behavior: 'smooth'});
+                    };
+                    paginationBox.appendChild(btn);
+                }
+            }
+
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                const filtered = db.filter(x => x.title.toLowerCase().includes(term));
+                currentPage = 1;
+                render(1, filtered);
+            });
+
+            render(1);
+        });
+    </script>
+</body>
+</html>
