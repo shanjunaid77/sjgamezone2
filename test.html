@@ -16,7 +16,8 @@
 
     <style>
         :root {
-          --accent-cyan: #00f2ff;
+          --neon-cyan: #00f2ff;
+          --neon-glow: rgba(0, 242, 255, 0.6);
           --accent-blue: #3b82f6;
           --bg-black: #080808;
         }
@@ -31,7 +32,6 @@
           color: #f1f5f9;
         }
 
-        /* Clean dark overlay - no blue tint */
         .overlay-dark {
           position: fixed;
           inset: 0;
@@ -39,18 +39,43 @@
           z-index: -1;
         }
 
-        /* 40% Smaller Title */
+        /* Neon Title Styling */
         .cyber-title {
           font-family: 'Orbitron', sans-serif;
           font-size: 2rem; 
-          letter-spacing: -1px;
-          background: linear-gradient(to bottom, #ffffff, #94a3b8);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+          letter-spacing: 2px;
+          color: #fff;
+          text-shadow: 
+            0 0 7px #fff,
+            0 0 10px var(--neon-cyan),
+            0 0 21px var(--neon-cyan);
           text-transform: uppercase;
         }
 
         @media (min-width: 768px) { .cyber-title { font-size: 3rem; } }
+
+        /* Neon Logo Pulse Effect */
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            transition: all 0.4s ease;
+        }
+
+        .logo-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.1);
+            transition: all 0.4s ease;
+        }
+
+        .logo-container:hover .logo-img {
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-glow);
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        @media (min-width: 768px) { .logo-img { width: 96px; height: 96px; } }
 
         /* Modern Card Styling */
         .modern-card {
@@ -62,14 +87,14 @@
 
         .modern-card:hover {
             background: rgba(255, 255, 255, 0.06);
-            border-color: var(--accent-cyan);
+            border-color: var(--neon-cyan);
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         /* Premium Initiate Download Button */
         .btn-download {
-            background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+            background: linear-gradient(135deg, var(--neon-cyan) 0%, var(--accent-blue) 100%);
             color: #000;
             font-weight: 800;
             font-size: 0.75rem;
@@ -99,14 +124,15 @@
         }
 
         .nav-node.active {
-            background: var(--accent-cyan);
+            background: var(--neon-cyan);
             color: #000;
             border-color: #fff;
+            box-shadow: 0 0 15px var(--neon-cyan);
         }
 
         .nav-node:hover:not(.active) {
             background: rgba(255, 255, 255, 0.15);
-            border-color: var(--accent-cyan);
+            border-color: var(--neon-cyan);
         }
 
         .reveal { opacity: 0; transform: translateY(15px); transition: 0.5s ease-out; }
@@ -117,14 +143,14 @@
     <div class="overlay-dark"></div>
 
     <header class="text-center py-6">
-        <a href="index.html" class="inline-block">
-            <img src="logo.png" alt="SJ Logo" class="w-20 h-20 md:w-24 md:h-24 rounded-full border-2 border-white/10 mb-4"/>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="SJ Logo" class="logo-img mb-4"/>
         </a>
         <h1 class="cyber-title">SJ GAME ZONE</h1>
     </header>
 
     <nav class="flex justify-center gap-3 mb-12">
-        <a href="index.html" class="px-6 py-2 bg-cyan-600 rounded-lg font-bold text-sm text-white uppercase">Games</a>
+        <a href="index.html" class="px-6 py-2 bg-cyan-600 rounded-lg font-bold text-sm text-white uppercase shadow-lg shadow-cyan-900/20">Games</a>
         <a href="software.html" class="px-6 py-2 bg-white/5 border border-white/10 hover:border-cyan-500 rounded-lg font-bold text-sm text-white uppercase transition-all">Software</a>
         <a href="windows.html" class="px-6 py-2 bg-white/5 border border-white/10 hover:border-cyan-500 rounded-lg font-bold text-sm text-white uppercase transition-all">Windows OS</a>
     </nav>
@@ -161,7 +187,7 @@
             const paginationBox = document.getElementById('pagination');
             const searchInput = document.getElementById('searchInput');
 
-            // Database Merge
+            // Combined Database (Games + Software + Windows)
             const db = [
                 ...(typeof allGames !== 'undefined' ? allGames : []),
                 ...(typeof allSoftware !== 'undefined' ? allSoftware : []),
@@ -205,7 +231,7 @@
                 prev.onclick = () => { if(currentPage > 1) { currentPage--; render(currentPage); window.scrollTo({top: 200, behavior: 'smooth'}); } };
                 paginationBox.appendChild(prev);
 
-                // Page Numbers
+                // Page Numbers (Showing 10)
                 for(let i=1; i<=maxPages; i++) {
                     const btn = document.createElement('button');
                     btn.innerText = i;
