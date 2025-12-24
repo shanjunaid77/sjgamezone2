@@ -81,13 +81,7 @@
 <body class="p-4 md:p-6">
     <div class="overlay-blur"></div>
 
-    <div class="flex justify-end max-w-7xl mx-auto mb-4">
-        <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" class="bg-red-500/20 hover:bg-red-500 border border-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-tighter transition-all">
-            ⚠ DMCA Takedown Request
-        </a>
-    </div>
-
-    <header class="text-center pt-5">
+    <header class="text-center pt-10">
         <a href="index.html" class="inline-block mb-4">
             <img src="logo.png" alt="SJ Logo" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-white/10 hover:border-cyan-400 transition-all"/>
         </a>
@@ -110,7 +104,7 @@
     </header>
 
     <main class="container mx-auto max-w-7xl">
-        <div class="mt-10 mb-10 flex flex-col md:flex-row justify-between items-center gap-4 px-4">
+        <div class="mt-16 mb-10 flex flex-col md:flex-row justify-between items-center gap-4 px-4">
             <h2 class="text-xl md:text-2xl font-black uppercase tracking-tighter text-white border-l-4 border-blue-500 pl-4">SOFTWARE ARCHIVE</h2>
             <input id="searchInput" placeholder="Search Software..." class="w-full md:w-80 bg-white/5 border border-white/10 text-white px-5 py-3 rounded-xl focus:border-cyan-500 outline-none transition-all" />
         </div>
@@ -124,6 +118,28 @@
         </div>
     </main>
 
+    <footer class="text-center py-12 border-t border-white/5 bg-black/20">
+        <div class="container mx-auto px-4">
+            <p class="text-gray-500 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">
+                © 2025 SJ GAME ZONE | SJ Visual Flow Studios
+            </p>
+
+            <div class="max-w-3xl mx-auto">
+                <p class="text-gray-600 text-[9px] leading-relaxed uppercase tracking-wider">
+                    <span class="text-blue-400/60 font-black">Disclaimer:</span> 
+                    SJ Zone is a digital index for community-verified links. We do not host, store, or upload any files. 
+                    All content is provided by third-party sources. Use at your own risk.
+                </p>
+            </div>
+            
+            <div class="mt-6 flex justify-center gap-6 text-[9px] font-black uppercase tracking-tighter text-white/20">
+                <span class="hover:text-cyan-400 transition-colors cursor-default">Privacy Protocol</span>
+                <span class="hover:text-cyan-400 transition-colors cursor-default">Terms of Utility</span>
+                <a href="dmca.html" class="hover:text-red-500 transition-colors">DMCA</a>
+            </div>
+        </div>
+    </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const masterGrid = document.getElementById('masterGrid');
@@ -132,7 +148,7 @@
             const prevBtn = document.getElementById('prevBtn');
             const nextBtn = document.getElementById('nextBtn');
 
-            // FIX: Changed allSoftware to allSoftwares to match your software.js
+            // Matches the variable name in your software.js
             const softwareOnly = () => [...(typeof allSoftwares !== 'undefined' ? allSoftwares : [])];
             
             const allData = () => [
@@ -160,7 +176,7 @@
                         <article class="modern-card p-4">
                             <a href="${item.link}">
                                 <div class="overflow-hidden rounded-xl mb-3">
-                                    <img src="${item.img}" class="w-full aspect-[3/4] object-cover hover:scale-110 transition duration-500" alt="${item.title}" loading="lazy">
+                                    <img src="${item.img}" class="w-full aspect-[3/4] object-cover hover:scale-110 transition duration-500" loading="lazy" alt="${item.title}">
                                 </div>
                                 <h3 class="font-bold text-white uppercase text-[11px] md:text-[13px] mb-3 text-center px-1 leading-tight h-9 flex items-center justify-center tracking-tight">
                                     ${item.title}
