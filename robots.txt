@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Direct link to your sitemap to help Google find all pages
+Sitemap: https://sjgamezone.vercel.app/sitemap.xml
