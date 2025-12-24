@@ -12,7 +12,7 @@ const allSoftwares = [
         id: 2,
         title: "Adobe Photoshop 2025",
         link: "photoshop.html", // Points to your custom photoshop.html
-        img: "photoshop.jpg",
+        img: "photoshop1.jpg",
         desc: "Industry-standard image editing software. Create, enhance, and transform your photos with AI-powered advanced tools.",
         tags: "photoshop, adobe, image editing, graphics software, design"
     },
@@ -41,4 +41,5 @@ const allSoftwares = [
         tags: "office, microsoft, word, excel, productivity, school"
     }
 ];
+
 
