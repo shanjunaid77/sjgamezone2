@@ -6,7 +6,9 @@
     <title>SJ Game Zone | Premium Archive</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="games.js"></script><script src="software.js"></script><script src="windows.js"></script>
+    <script src="games.js"></script>
+    <script src="software.js"></script>
+    <script src="windows.js"></script>
     <style>
         :root { --neon-cyan: #00f2ff; --royal-blue: #3b82f6; --btn-blue: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%); --bg-black: #050505; }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-black); background-image: url('bg.jpg'); background-size: cover; background-position: center; background-attachment: fixed; color: #f1f5f9; }
@@ -26,24 +28,22 @@
         </a>
         <h1 class="cyber-title text-2xl md:text-5xl font-black tracking-widest">SJ GAME ZONE</h1>
         
-<p class="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mt-2 px-4 leading-relaxed">
-    <span class="text-[#99f6ff] drop-shadow-[0_0_8px_rgba(153,246,255,0.4)]">
-        // GLOBAL DIGITAL REPOSITORY & UTILITY LIBRARY //
-    </span> <br>
-    
-    <span class="text-[#99f6ff] drop-shadow-[0_0_8px_rgba(153,246,255,0.4)]">
-        Community Verified. Search across **Games, Utilities, and OS**.
-    </span> <br>
-    
-    <a href="https://www.instagram.com/sjvisualflowstudios" target="_blank" class="text-red-400 hover:text-red-500 transition-colors underline decoration-dotted">
-        Report Broken Links on Instagram
-    </a>
-</p>
+        <p class="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mt-2 px-4 leading-relaxed">
+            <span class="text-[#99f6ff] drop-shadow-[0_0_8px_rgba(153,246,255,0.4)]">
+                // GLOBAL DIGITAL REPOSITORY & UTILITY LIBRARY //
+            </span> <br>
+            <span class="text-[#99f6ff] drop-shadow-[0_0_8px_rgba(153,246,255,0.4)]">
+                Community Verified. Search across **Games, Utilities, and OS**.
+            </span> <br>
+            <a href="https://www.instagram.com/sjvisualflowstudios" target="_blank" class="text-red-400 hover:text-red-500 transition-colors underline decoration-dotted">
+                Report Broken Links on Instagram
+            </a>
+        </p>
 
         <nav class="flex flex-wrap justify-center gap-3 mt-6">
             <a href="index.html" class="px-6 py-2 rounded-xl font-black uppercase text-sm border-2 border-cyan-400 bg-cyan-400/10">Games</a>
-            <a href="software.html" class="px-6 py-2 rounded-xl font-black uppercase text-sm bg-white/5 text-white/50">Software</a>
-            <a href="windows.html" class="px-6 py-2 rounded-xl font-black uppercase text-sm bg-white/5 text-white/50">Windows OS</a>
+            <a href="software.html" class="px-6 py-2 rounded-xl font-black uppercase text-sm bg-white/5 text-white/50 hover:text-white transition">Software</a>
+            <a href="windows.html" class="px-6 py-2 rounded-xl font-black uppercase text-sm bg-white/5 text-white/50 hover:text-white transition">Windows OS</a>
         </nav>
         <div class="mt-16 mb-4">
             <a href="tutorial.html" class="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-full font-black uppercase text-xs transition-all shadow-lg inline-block">▶ Watch Download Tutorial</a>
@@ -53,7 +53,7 @@
     <main class="container mx-auto max-w-7xl">
         <div class="mt-4 mb-10 flex flex-col md:flex-row justify-between items-center gap-4 px-4">
             <h2 class="text-xl md:text-2xl font-black uppercase tracking-tighter text-white border-l-4 border-blue-500 pl-4">AVAILABLE LIBRARY</h2>
-            <input id="searchInput" placeholder="Search (GTA 5, NFS, etc)..." class="w-full md:w-80 bg-white/5 border border-white/10 text-white px-5 py-3 rounded-xl focus:border-cyan-500 outline-none" />
+            <input id="searchInput" placeholder="Search (GTA 5, Photoshop, IDM)..." class="w-full md:w-80 bg-white/5 border border-white/10 text-white px-5 py-3 rounded-xl focus:border-cyan-500 outline-none transition-all" />
         </div>
         <div id="masterGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 px-4"></div>
         <div class="mt-16 flex flex-wrap justify-center items-center gap-3 pb-20">
@@ -62,70 +62,100 @@
             <button id="nextBtn" class="bg-white/5 px-4 py-2 rounded-lg text-xs font-bold disabled:opacity-20">Next</button>
         </div>
     </main>
-    <footer class="text-center py-12 border-t border-white/5 bg-black/20">
-    <div class="container mx-auto px-4">
-        <p class="text-gray-500 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">
-            © 2025 SJ GAME ZONE | SJ Visual Flow Studios
-        </p>
 
-        <div class="max-w-3xl mx-auto mb-8">
-            <p class="text-gray-600 text-[9px] leading-relaxed uppercase tracking-wider">
-                <span class="text-blue-400/60 font-black">Disclaimer:</span> 
-                SJ Zone is a digital index for community-verified links. We do not host, store, or upload any files, media, or software on our servers. 
-                All content is provided by third-party sources. SJ Game Zone is not responsible for external content. 
-                Use at your own risk.
+    <footer class="text-center py-12 border-t border-white/5 bg-black/20">
+        <div class="container mx-auto px-4">
+            <p class="text-gray-500 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">
+                © 2025 SJ GAME ZONE | SJ Visual Flow Studios
             </p>
+            <div class="max-w-3xl mx-auto mb-8">
+                <p class="text-gray-600 text-[9px] leading-relaxed uppercase tracking-wider">
+                    <span class="text-blue-400/60 font-black">Disclaimer:</span> 
+                    SJ Zone is a digital index for community-verified links. We do not host files on our servers. Use at your own risk.
+                </p>
+            </div>
+            <div class="flex justify-center gap-6 text-[9px] font-black uppercase tracking-tighter text-white/20">
+                <a href="privacy.html" class="hover:text-cyan-400 transition-colors">Privacy Protocol</a>
+                <a href="terms.html" class="hover:text-cyan-400 transition-colors">Terms of Utility</a>
+                <a href="dmca.html" class="hover:text-red-500 transition-colors">DMCA Takedown Request</a>
+            </div>
         </div>
-        
-        <div class="flex justify-center gap-6 text-[9px] font-black uppercase tracking-tighter text-white/20">
-            <span class="hover:text-cyan-400 transition-colors cursor-default">Privacy Protocol</span>
-            <span class="hover:text-cyan-400 transition-colors cursor-default">Terms of Utility</span>
-            <a href="dmca.html" class="hover:text-red-500 transition-colors decoration-none">DMCA Takedown Request</a>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const masterGrid = document.getElementById('masterGrid');
             const paginationNumbers = document.getElementById('paginationNumbers');
             const searchInput = document.getElementById('searchInput');
-            const getDB = () => [...(typeof allGames !== 'undefined' ? allGames : []), ...(typeof allSoftware !== 'undefined' ? allSoftware : []), ...(typeof allWindows !== 'undefined' ? allWindows : [])];
-            let activeDB = getDB();
+
+            // Fixed the variable names to match all your .js files
+            const getDB = () => [
+                ...(typeof allGames !== 'undefined' ? allGames : []), 
+                ...(typeof allSoftware !== 'undefined' ? allSoftware : []), 
+                ...(typeof allSoftwares !== 'undefined' ? allSoftwares : []), 
+                ...(typeof allWindows !== 'undefined' ? allWindows : [])
+            ];
+
+            let activeDB = (typeof allGames !== 'undefined') ? allGames : getDB();
             const itemsPerPage = 15; let currentPage = 1; const forcedMaxPages = 10;
+
             function render() {
                 masterGrid.innerHTML = '';
                 const start = (currentPage - 1) * itemsPerPage;
                 const pageData = activeDB.slice(start, start + itemsPerPage);
+                
+                if(pageData.length === 0) {
+                    masterGrid.innerHTML = '<p class="col-span-full text-center py-20 text-gray-600 font-bold uppercase tracking-widest">No results found</p>';
+                }
+
                 pageData.forEach(item => {
-                    masterGrid.insertAdjacentHTML('beforeend', `<article class="modern-card p-4"><a href="${item.link}"><div class="overflow-hidden rounded-xl mb-3"><img src="${item.img}" class="w-full aspect-[3/4] object-cover hover:scale-110 transition duration-500"></div><h3 class="font-bold text-white uppercase text-[11px] md:text-[13px] mb-3 text-center px-1 leading-tight h-9 flex items-center justify-center tracking-tight">${item.title}</h3><div class="btn-download w-full inline-block">Initiate download</div></a></article>`);
+                    masterGrid.insertAdjacentHTML('beforeend', `
+                        <article class="modern-card p-4">
+                            <a href="${item.link}">
+                                <div class="overflow-hidden rounded-xl mb-3">
+                                    <img src="${item.img}" class="w-full aspect-[3/4] object-cover hover:scale-110 transition duration-500" loading="lazy">
+                                </div>
+                                <h3 class="font-bold text-white uppercase text-[11px] md:text-[13px] mb-3 text-center px-1 leading-tight h-9 flex items-center justify-center tracking-tight">
+                                    ${item.title}
+                                </h3>
+                                <div class="btn-download w-full inline-block">initiate download</div>
+                            </a>
+                        </article>
+                    `);
                 });
                 updatePagination();
             }
+
             function updatePagination() {
                 paginationNumbers.innerHTML = '';
                 for (let i = 1; i <= forcedMaxPages; i++) {
-                    const btn = document.createElement('button'); btn.innerText = i;
-                    btn.className = `w-10 h-10 rounded-lg font-bold ${i === currentPage ? 'active-page' : 'bg-white/5 text-white/40'}`;
+                    const btn = document.createElement('button'); 
+                    btn.innerText = i;
+                    btn.className = `w-10 h-10 rounded-lg font-bold flex items-center justify-center ${i === currentPage ? 'active-page' : 'bg-white/5 text-white/40 hover:text-white'}`;
                     btn.onclick = () => { currentPage = i; render(); window.scrollTo({top: 400, behavior: 'smooth'}); };
                     paginationNumbers.appendChild(btn);
                 }
-                document.getElementById('prevBtn').onclick = () => { if(currentPage > 1) { currentPage--; render(); } };
-                document.getElementById('nextBtn').onclick = () => { if(currentPage < forcedMaxPages) { currentPage++; render(); } };
             }
+
+            document.getElementById('prevBtn').onclick = () => { if(currentPage > 1) { currentPage--; render(); } };
+            document.getElementById('nextBtn').onclick = () => { if(currentPage < forcedMaxPages) { currentPage++; render(); } };
+
             searchInput.addEventListener('input', (e) => {
                 const term = e.target.value.toLowerCase();
-                activeDB = getDB().filter(x => x.title.toLowerCase().includes(term) || (x.keywords && x.keywords.toLowerCase().includes(term)));
+                if(term === "") {
+                    activeDB = (typeof allGames !== 'undefined') ? allGames : getDB();
+                } else {
+                    activeDB = getDB().filter(x => 
+                        x.title.toLowerCase().includes(term) || 
+                        (x.tags && x.tags.toLowerCase().includes(term)) ||
+                        (x.keywords && x.keywords.toLowerCase().includes(term))
+                    );
+                }
                 currentPage = 1; render();
             });
+
             render();
         });
     </script>
 </body>
 </html>
-
-
-
-
-
-
