@@ -4,7 +4,7 @@ const allSoftwares = [
         id: 1,
         title: "Internet Download Manager (IDM)",
         link: "https://sjgamezone.neocities.org/software/idm.html",
-        img: "idm.jpg",
+        img: "idm1.jpg",
         desc: "Boost your download speeds, resume broken downloads, and schedule downloads efficiently with IDM. Compatible with all modern browsers.",
         tags: "idm, download manager, accelerator, windows software"
     },
@@ -25,6 +25,7 @@ const allSoftwares = [
         tags: "premiere pro, adobe, video editing, filmmaking software"
     },
 ];
+
 
 
 
