@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adobe Photoshop 2025 | SJ Software Zone</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #050a0f;
+            background-image: url('photoshop1.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .bg-blur-overlay {
+            position: fixed;
+            inset: 0;
+            backdrop-filter: blur(12px) brightness(0.3);
+            background: rgba(5, 12, 25, 0.85); 
+            z-index: -1;
+        }
+
+        .title-glow {
+            font-family: 'Audiowide', cursive;
+            /* Photoshop Blue Glow */
+            text-shadow: 0 0 15px #00c3ff, 0 0 35px #0051ff;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 195, 255, 0.25);
+            border-radius: 20px;
+        }
+
+        .software-card-img {
+            width: 100%;
+            height: 450px; 
+            object-fit: cover;
+            border: 2px solid rgba(0, 195, 255, 0.3);
+            border-radius: 16px;
+            box-shadow: 0 0 25px rgba(0, 195, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .software-card-img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px rgba(0, 195, 255, 0.5);
+            border-color: #00c3ff;
+        }
+
+        .sidebar-thumb {
+            width: 65px;
+            height: 85px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .sidebar-item:hover {
+            background: rgba(0, 195, 255, 0.15);
+            border-radius: 12px;
+        }
+
+        .spec-label {
+            color: #00c3ff;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+        }
+
+        .btn-glow {
+            background: linear-gradient(135deg, #00c3ff 0%, #0051ff 100%);
+            box-shadow: 0 0 20px rgba(0, 195, 255, 0.5);
+            animation: pulse-photoshop 3s infinite;
+        }
+
+        @keyframes pulse-photoshop {
+            0% { box-shadow: 0 0 10px rgba(0, 195, 255, 0.4); }
+            50% { box-shadow: 0 0 35px rgba(0, 81, 255, 0.7); }
+            100% { box-shadow: 0 0 10px rgba(0, 195, 255, 0.4); }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="bg-blur-overlay"></div>
+
+    <header class="flex flex-col items-center pt-12 pb-14 px-4">
+        <a href="index.html">
+            <img src="logo.png" alt="SJ Logo" class="w-28 h-28 rounded-full border-2 border-sky-500 mb-6 transition-transform hover:scale-110 shadow-lg">
+        </a>
+        <h1 class="text-3xl md:text-5xl font-black title-glow uppercase text-center tracking-tighter">ADOBE PHOTOSHOP</h1>
+        <p class="text-sky-400 font-bold tracking-[0.5em] mt-4 text-xs md:text-sm text-center uppercase">Digital Imagery & Canvas Archive</p>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-10 pb-12">
+        
+        <div class="lg:w-[70%] w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                <img src="photoshop1.jpg" class="software-card-img" alt="Photoshop Cover">
+                <img src="photoshop2.jpg" class="software-card-img" alt="Photoshop Workspace">
+            </div>
+
+            <div class="glass-panel p-8 md:p-12 text-center mb-10">
+                <h2 class="text-2xl font-black text-sky-400 mb-6 uppercase tracking-widest border-b border-sky-900/30 pb-4 inline-block">Software Overview</h2>
+                <p class="text-gray-300 leading-relaxed text-lg mb-10 italic">
+                    "The world’s best imaging and graphic design software. Create and enhance photographs, illustrations, and 3D artwork."
+                    <br><br>
+                    This 2025 digital reconstruction includes Generative Fill AI assets, advanced neural filters, and high-fidelity layer synchronization data.
+                </p>
+                
+                <a href="https://ouo.io/466aA7" target="_blank" 
+                   class="btn-glow inline-block text-white font-black py-5 px-16 rounded-full text-xl uppercase transition-all tracking-widest">
+                    🚀 initiate download
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-panel p-8">
+                    <h3 class="text-lg font-black text-sky-400 mb-6 uppercase tracking-widest border-b border-white/5 pb-2">System Requirements</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="spec-label">Processor</p>
+                            <p class="text-gray-200">Multicore Intel® or AMD processor (2 GHz or faster)</p>
+                        </div>
+                        <div>
+                            <p class="spec-label">RAM</p>
+                            <p class="text-gray-200">8 GB minimum (16 GB Recommended)</p>
+                        </div>
+                        <div>
+                            <p class="spec-label">Graphics Card</p>
+                            <p class="text-gray-200">GPU with DirectX 12 support (2 GB VRAM)</p>
+                        </div>
+                        <div>
+                            <p class="spec-label">Resolution</p>
+                            <p class="text-gray-200">1280 x 800 display at 100% UI scaling</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-8">
+                    <h3 class="text-lg font-black text-sky-400 mb-6 uppercase tracking-widest border-b border-white/5 pb-2">Archive Features</h3>
+                    <ul class="space-y-4 text-gray-200 text-sm">
+                        <li class="flex items-start gap-3">
+                            <span class="text-sky-400 font-bold">✔</span>
+                            <span>Neural Engine: AI-driven face and background logic.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-sky-400 font-bold">✔</span>
+                            <span>Smart Objects: Non-destructive scaling assets.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-sky-400 font-bold">✔</span>
+                            <span>Cloud Sync: Remote PSD synchronization.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <aside class="lg:w-[30%] w-full">
+            <div class="glass-panel p-6 sticky top-6">
+                <h2 class="text-lg font-black text-sky-400 mb-8 border-b border-white/10 pb-3 text-center uppercase tracking-widest">Related Software</h2>
+                <div class="flex flex-col gap-4">
+                    <a href="premiere.html" class="sidebar-item p-3 flex items-center gap-5 transition-all">
+                        <img src="premiere1.jpg" class="sidebar-thumb">
+                        <span class="font-bold text-sm uppercase">Premiere Pro</span>
+                    </a>
+                    <a href="idm.html" class="sidebar-item p-3 flex items-center gap-5 transition-all">
+                        <img src="idm1.jpg" class="sidebar-thumb">
+                        <span class="font-bold text-sm uppercase">IDM Manager</span>
+                    </a>
+                    <a href="office.html" class="sidebar-item p-3 flex items-center gap-5 transition-all">
+                        <img src="office.jpg" class="sidebar-thumb">
+                        <span class="font-bold text-sm uppercase">MS Office</span>
+                    </a>
+                </div>
+                <a href="software.html" class="block text-center text-[10px] font-black text-sky-400 mt-10 hover:text-white transition uppercase tracking-[0.3em]">Back to Software Hub</a>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="text-center py-12 text-gray-600 text-[10px] border-t border-white/5 uppercase tracking-[0.2em]">
+        <p>© 2025 SJ Software Zone | Digital Archive managed by Shan Junaid</p>
+    </footer>
+</body>
+</html>
