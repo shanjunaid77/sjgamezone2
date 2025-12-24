@@ -19,8 +19,8 @@ const allSoftwares = [
     {
         id: 3,
         title: "Adobe Premiere Pro 2025",
-        link: "premierepro.html", // Points to your custom premierepro.html
-        img: "premierepro.jpg",
+        link: "premiere.html", // Points to your custom premierepro.html
+        img: "premiere1.jpg",
         desc: "Professional video editing software used by filmmakers. Edit videos, add effects, and export in 4K high quality.",
         tags: "premiere pro, adobe, video editing, filmmaking software, video"
     },
@@ -41,3 +41,4 @@ const allSoftwares = [
         tags: "office, microsoft, word, excel, productivity, school"
     }
 ];
+
