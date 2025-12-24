@@ -88,12 +88,12 @@
         <h1 class="cyber-title text-2xl md:text-5xl font-black tracking-widest">SJ SOFTWARE ZONE</h1>
         
         <p class="text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mt-2 px-4 leading-relaxed">
-            <span class="text-[#99f6ff] drop-shadow-[0_0_8px_rgba(153,246,255,0.4)]">
-                // GLOBAL DIGITAL REPOSITORY & UTILITY LIBRARY //
-            </span> <br>
-            <span class="text-cyan-300/80">
-                Community Verified. Search across **Games, Utilities, and OS**.
-            </span>
+            <span class="text-[#99f6ff] drop-shadow-[0_0_8px_rgba(153,246,255,0.4)]">// GLOBAL DIGITAL REPOSITORY //</span> <br>
+            <span class="text-cyan-300/80">Search across Games, Software, and OS.</span>
+             <a href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank" class="text-red-400 hover:text-red-500 transition-colors underline decoration-dotted">
+        Report Broken Links on Instagram
+    </a>
+            
         </p>
 
         <nav class="flex flex-wrap justify-center gap-3 mt-6">
@@ -101,6 +101,10 @@
             <a href="software.html" class="px-6 py-2 rounded-xl font-black uppercase text-sm border-2 border-cyan-400 bg-cyan-400/10">Software</a>
             <a href="windows.html" class="px-6 py-2 rounded-xl font-black uppercase text-sm bg-white/5 text-white/50 hover:text-white transition">Windows OS</a>
         </nav>
+          <div class="mt-16 mb-4">
+            <a href="tutorial.html" class="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-full font-black uppercase text-xs transition-all shadow-lg inline-block">▶ Watch Download Tutorial</a>
+        </div>
+    </header>
     </header>
 
     <main class="container mx-auto max-w-7xl">
@@ -120,21 +124,9 @@
 
     <footer class="text-center py-12 border-t border-white/5 bg-black/20">
         <div class="container mx-auto px-4">
-            <p class="text-gray-500 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">
-                © 2025 SJ GAME ZONE | SJ Visual Flow Studios
-            </p>
-
-            <div class="max-w-3xl mx-auto">
-                <p class="text-gray-600 text-[9px] leading-relaxed uppercase tracking-wider">
-                    <span class="text-blue-400/60 font-black">Disclaimer:</span> 
-                    SJ Zone is a digital index for community-verified links. We do not host, store, or upload any files. 
-                    All content is provided by third-party sources. Use at your own risk.
-                </p>
-            </div>
-            
-            <div class="mt-6 flex justify-center gap-6 text-[9px] font-black uppercase tracking-tighter text-white/20">
-                <span class="hover:text-cyan-400 transition-colors cursor-default">Privacy Protocol</span>
-                <span class="hover:text-cyan-400 transition-colors cursor-default">Terms of Utility</span>
+            <div class="mt-6 flex justify-center gap-6 text-[10px] font-black uppercase tracking-tighter text-white/20">
+                <span class="hover:text-cyan-400 transition-colors">Privacy Protocol</span>
+                <span class="hover:text-cyan-400 transition-colors">Terms of Utility</span>
                 <a href="dmca.html" class="hover:text-red-500 transition-colors">DMCA</a>
             </div>
         </div>
@@ -148,27 +140,21 @@
             const prevBtn = document.getElementById('prevBtn');
             const nextBtn = document.getElementById('nextBtn');
 
-            // Matches the variable name in your software.js
             const softwareOnly = () => [...(typeof allSoftwares !== 'undefined' ? allSoftwares : [])];
-            
-            const allData = () => [
-                ...(typeof allSoftwares !== 'undefined' ? allSoftwares : []),
-                ...(typeof allGames !== 'undefined' ? allGames : []),
-                ...(typeof allWindows !== 'undefined' ? allWindows : [])
-            ];
+            const allData = () => [...softwareOnly(), ...(typeof allGames !== 'undefined' ? allGames : []), ...(typeof allWindows !== 'undefined' ? allWindows : [])];
 
             let activeDB = softwareOnly();
             const itemsPerPage = 15;
             let currentPage = 1;
+            const maxPagesToShow = 10; // FORCED TO 10 PAGES
 
             function render() {
                 masterGrid.innerHTML = '';
                 const start = (currentPage - 1) * itemsPerPage;
                 const pageData = activeDB.slice(start, start + itemsPerPage);
 
-                if(pageData.length === 0) {
+                if(pageData.length === 0 && currentPage === 1) {
                     masterGrid.innerHTML = '<p class="col-span-full text-center py-20 text-gray-600 font-bold uppercase tracking-widest">No matching results found</p>';
-                    return;
                 }
 
                 pageData.forEach(item => {
@@ -176,9 +162,9 @@
                         <article class="modern-card p-4">
                             <a href="${item.link}">
                                 <div class="overflow-hidden rounded-xl mb-3">
-                                    <img src="${item.img}" class="w-full aspect-[3/4] object-cover hover:scale-110 transition duration-500" loading="lazy" alt="${item.title}">
+                                    <img src="${item.img}" class="w-full aspect-[3/4] object-cover hover:scale-110 transition duration-500" loading="lazy">
                                 </div>
-                                <h3 class="font-bold text-white uppercase text-[11px] md:text-[13px] mb-3 text-center px-1 leading-tight h-9 flex items-center justify-center tracking-tight">
+                                <h3 class="font-bold text-white uppercase text-[11px] md:text-[13px] mb-3 text-center h-9 flex items-center justify-center">
                                     ${item.title}
                                 </h3>
                                 <div class="btn-download w-full inline-block">initiate download</div>
@@ -190,32 +176,30 @@
             }
 
             function updatePagination() {
-                const totalPages = Math.ceil(activeDB.length / itemsPerPage) || 1;
                 paginationNumbers.innerHTML = '';
-                for (let i = 1; i <= totalPages; i++) {
+                for (let i = 1; i <= maxPagesToShow; i++) {
                     const btn = document.createElement('button');
                     btn.innerText = i;
                     btn.className = `w-10 h-10 rounded-lg font-bold flex items-center justify-center ${i === currentPage ? 'active-page' : 'bg-white/5 text-white/40 hover:text-white'}`;
-                    btn.onclick = () => { currentPage = i; render(); window.scrollTo({top: 400, behavior: 'smooth'}); };
+                    btn.onclick = () => { 
+                        if (i === 1 || activeDB.length > (i-1) * itemsPerPage) {
+                            currentPage = i; 
+                            render(); 
+                            window.scrollTo({top: 400, behavior: 'smooth'}); 
+                        }
+                    };
                     paginationNumbers.appendChild(btn);
                 }
                 prevBtn.disabled = currentPage === 1;
-                nextBtn.disabled = currentPage === totalPages;
+                nextBtn.disabled = currentPage === maxPagesToShow;
             }
 
             prevBtn.onclick = () => { if(currentPage > 1) { currentPage--; render(); } };
-            nextBtn.onclick = () => { if(currentPage < Math.ceil(activeDB.length / itemsPerPage)) { currentPage++; render(); } };
+            nextBtn.onclick = () => { if(currentPage < maxPagesToShow) { currentPage++; render(); } };
 
             searchInput.addEventListener('input', (e) => {
                 const term = e.target.value.toLowerCase();
-                if (term === "") {
-                    activeDB = softwareOnly();
-                } else {
-                    activeDB = allData().filter(x => 
-                        x.title.toLowerCase().includes(term) || 
-                        (x.tags && x.tags.toLowerCase().includes(term))
-                    );
-                }
+                activeDB = term === "" ? softwareOnly() : allData().filter(x => x.title.toLowerCase().includes(term));
                 currentPage = 1;
                 render();
             });
