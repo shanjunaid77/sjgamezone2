@@ -71,13 +71,6 @@
             text-align: center;
         }
 
-        .page-num-btn {
-            width: 40px; height: 40px;
-            border-radius: 10px;
-            font-weight: bold;
-            display: flex; align-items: center; justify-content: center;
-        }
-
         .active-page {
             background: rgba(0, 242, 255, 0.1);
             border: 2px solid var(--neon-cyan);
@@ -88,7 +81,13 @@
 <body class="p-4 md:p-6">
     <div class="overlay-blur"></div>
 
-    <header class="text-center pt-10">
+    <div class="flex justify-end max-w-7xl mx-auto mb-4">
+        <a href="https://www.instagram.com/YOUR_INSTAGRAM" target="_blank" class="bg-red-500/20 hover:bg-red-500 border border-red-500 text-red-500 hover:text-white px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-tighter transition-all">
+            ⚠ DMCA Takedown Request
+        </a>
+    </div>
+
+    <header class="text-center pt-5">
         <a href="index.html" class="inline-block mb-4">
             <img src="logo.png" alt="SJ Logo" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-2 border-white/10 hover:border-cyan-400 transition-all"/>
         </a>
@@ -100,10 +99,7 @@
             </span> <br>
             <span class="text-cyan-300/80">
                 Community Verified. Search across **Games, Utilities, and OS**.
-            </span> <br>
-            <a href="https://www.instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank" class="text-red-400 hover:text-red-500 transition-colors underline decoration-dotted">
-                Report Broken Links on Instagram
-            </a>
+            </span>
         </p>
 
         <nav class="flex flex-wrap justify-center gap-3 mt-6">
@@ -111,16 +107,12 @@
             <a href="software.html" class="px-6 py-2 rounded-xl font-black uppercase text-sm border-2 border-cyan-400 bg-cyan-400/10">Software</a>
             <a href="windows.html" class="px-6 py-2 rounded-xl font-black uppercase text-sm bg-white/5 text-white/50 hover:text-white transition">Windows OS</a>
         </nav>
-
-        <div class="mt-16 mb-4">
-            <a href="tutorial.html" class="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-full font-black uppercase text-xs transition-all shadow-lg inline-block">▶ Watch Download Tutorial</a>
-        </div>
     </header>
 
     <main class="container mx-auto max-w-7xl">
-        <div class="mt-4 mb-10 flex flex-col md:flex-row justify-between items-center gap-4 px-4">
+        <div class="mt-10 mb-10 flex flex-col md:flex-row justify-between items-center gap-4 px-4">
             <h2 class="text-xl md:text-2xl font-black uppercase tracking-tighter text-white border-l-4 border-blue-500 pl-4">SOFTWARE ARCHIVE</h2>
-            <input id="searchInput" placeholder="Search All Categories..." class="w-full md:w-80 bg-white/5 border border-white/10 text-white px-5 py-3 rounded-xl focus:border-cyan-500 outline-none transition-all" />
+            <input id="searchInput" placeholder="Search Software..." class="w-full md:w-80 bg-white/5 border border-white/10 text-white px-5 py-3 rounded-xl focus:border-cyan-500 outline-none transition-all" />
         </div>
 
         <div id="masterGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 px-4"></div>
@@ -132,29 +124,6 @@
         </div>
     </main>
 
-  <footer class="text-center py-12 border-t border-white/5 bg-black/20">
-    <div class="container mx-auto px-4">
-        <p class="text-gray-500 text-[10px] font-bold tracking-[0.3em] uppercase mb-4">
-            © 2025 SJ GAME ZONE | SJ Visual Flow Studios
-        </p>
-
-        <div class="max-w-3xl mx-auto">
-            <p class="text-gray-600 text-[9px] leading-relaxed uppercase tracking-wider">
-                <span class="text-blue-400/60 font-black">Disclaimer:</span> 
-                SJ Zone is a digital index for community-verified links. We do not host, store, or upload any files, media, or software on our servers. 
-                All content is provided by third-party sources. If you are a copyright owner and want a link removed, please contact us via Instagram for immediate action. 
-                Use at your own risk.
-            </p>
-        </div>
-        
-        <div class="mt-6 flex justify-center gap-6 text-[9px] font-black uppercase tracking-tighter text-white/20">
-            <span class="hover:text-cyan-400 transition-colors cursor-default">Privacy Protocol</span>
-            <span class="hover:text-cyan-400 transition-colors cursor-default">Terms of Utility</span>
-            <a href="https://www.instagram.com/YOUR_INSTAGRAM" class="hover:text-red-500 transition-colors">DMCA Takedown Request</a>
-        </div>
-    </div>
-</footer>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const masterGrid = document.getElementById('masterGrid');
@@ -163,12 +132,11 @@
             const prevBtn = document.getElementById('prevBtn');
             const nextBtn = document.getElementById('nextBtn');
 
-            // Initial view is ONLY software
-            const softwareOnly = () => [...(typeof allSoftware !== 'undefined' ? allSoftware : [])];
+            // FIX: Changed allSoftware to allSoftwares to match your software.js
+            const softwareOnly = () => [...(typeof allSoftwares !== 'undefined' ? allSoftwares : [])];
             
-            // Global data for searching
             const allData = () => [
-                ...(typeof allSoftware !== 'undefined' ? allSoftware : []),
+                ...(typeof allSoftwares !== 'undefined' ? allSoftwares : []),
                 ...(typeof allGames !== 'undefined' ? allGames : []),
                 ...(typeof allWindows !== 'undefined' ? allWindows : [])
             ];
@@ -176,7 +144,6 @@
             let activeDB = softwareOnly();
             const itemsPerPage = 15;
             let currentPage = 1;
-            const forcedMaxPages = 10;
 
             function render() {
                 masterGrid.innerHTML = '';
@@ -185,6 +152,7 @@
 
                 if(pageData.length === 0) {
                     masterGrid.innerHTML = '<p class="col-span-full text-center py-20 text-gray-600 font-bold uppercase tracking-widest">No matching results found</p>';
+                    return;
                 }
 
                 pageData.forEach(item => {
@@ -192,12 +160,12 @@
                         <article class="modern-card p-4">
                             <a href="${item.link}">
                                 <div class="overflow-hidden rounded-xl mb-3">
-                                    <img src="${item.img}" class="w-full aspect-[3/4] object-cover hover:scale-110 transition duration-500" loading="lazy">
+                                    <img src="${item.img}" class="w-full aspect-[3/4] object-cover hover:scale-110 transition duration-500" alt="${item.title}" loading="lazy">
                                 </div>
                                 <h3 class="font-bold text-white uppercase text-[11px] md:text-[13px] mb-3 text-center px-1 leading-tight h-9 flex items-center justify-center tracking-tight">
                                     ${item.title}
                                 </h3>
-                                <div class="btn-download w-full inline-block">Initiate download</div>
+                                <div class="btn-download w-full inline-block">initiate download</div>
                             </a>
                         </article>
                     `);
@@ -206,29 +174,30 @@
             }
 
             function updatePagination() {
+                const totalPages = Math.ceil(activeDB.length / itemsPerPage) || 1;
                 paginationNumbers.innerHTML = '';
-                for (let i = 1; i <= forcedMaxPages; i++) {
+                for (let i = 1; i <= totalPages; i++) {
                     const btn = document.createElement('button');
                     btn.innerText = i;
-                    btn.className = `page-num-btn ${i === currentPage ? 'active-page' : 'bg-white/5 text-white/40 hover:text-white'}`;
+                    btn.className = `w-10 h-10 rounded-lg font-bold flex items-center justify-center ${i === currentPage ? 'active-page' : 'bg-white/5 text-white/40 hover:text-white'}`;
                     btn.onclick = () => { currentPage = i; render(); window.scrollTo({top: 400, behavior: 'smooth'}); };
                     paginationNumbers.appendChild(btn);
                 }
                 prevBtn.disabled = currentPage === 1;
-                nextBtn.disabled = currentPage === forcedMaxPages;
+                nextBtn.disabled = currentPage === totalPages;
             }
 
             prevBtn.onclick = () => { if(currentPage > 1) { currentPage--; render(); } };
-            nextBtn.onclick = () => { if(currentPage < forcedMaxPages) { currentPage++; render(); } };
+            nextBtn.onclick = () => { if(currentPage < Math.ceil(activeDB.length / itemsPerPage)) { currentPage++; render(); } };
 
             searchInput.addEventListener('input', (e) => {
                 const term = e.target.value.toLowerCase();
                 if (term === "") {
-                    activeDB = softwareOnly(); // Reset to only software if search is empty
+                    activeDB = softwareOnly();
                 } else {
                     activeDB = allData().filter(x => 
                         x.title.toLowerCase().includes(term) || 
-                        (x.keywords && x.keywords.toLowerCase().includes(term))
+                        (x.tags && x.tags.toLowerCase().includes(term))
                     );
                 }
                 currentPage = 1;
