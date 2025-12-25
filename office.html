@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MS Office 2024 | SJ Software Zone</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: #050a0f;
+            background-image: url('office1.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .bg-blur-overlay {
+            position: fixed;
+            inset: 0;
+            backdrop-filter: blur(12px) brightness(0.3);
+            background: rgba(10, 15, 25, 0.9); 
+            z-index: -1;
+        }
+
+        .title-glow {
+            font-family: 'Audiowide', cursive;
+            text-shadow: 0 0 15px #f97316, 0 0 30px #ea580c;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(249, 115, 22, 0.25);
+            border-radius: 20px;
+        }
+
+        .software-card-img {
+            width: 100%;
+            height: 400px; 
+            object-fit: cover;
+            border: 2px solid rgba(249, 115, 22, 0.3);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .software-card-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 40px rgba(249, 115, 22, 0.4);
+            border-color: #f97316;
+        }
+
+        .spec-label {
+            color: #f97316;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+        }
+
+        .btn-glow {
+            background: linear-gradient(135deg, #f97316 0%, #c2410c 100%);
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.5);
+            animation: pulse-orange 3s infinite;
+        }
+
+        @keyframes pulse-orange {
+            0% { box-shadow: 0 0 10px rgba(249, 115, 22, 0.4); }
+            50% { box-shadow: 0 0 35px rgba(234, 88, 12, 0.7); }
+            100% { box-shadow: 0 0 10px rgba(249, 115, 22, 0.4); }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="bg-blur-overlay"></div>
+
+    <header class="flex flex-col items-center pt-12 pb-14 px-4">
+        <a href="index.html">
+            <img src="logo.png" alt="SJ Logo" class="w-28 h-28 rounded-full border-2 border-orange-500 mb-6 transition-transform hover:scale-110">
+        </a>
+        <h1 class="text-3xl md:text-5xl font-black title-glow uppercase text-center tracking-tighter">MS OFFICE 2024</h1>
+        <p class="text-orange-400 font-bold tracking-[0.5em] mt-4 text-xs md:text-sm text-center uppercase">Professional Productivity Suite</p>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-10 pb-12">
+        
+        <div class="lg:w-[70%] w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                <img src="office1.jpg" class="software-card-img" alt="Office 2024 Overview">
+                <img src="office2.jpg" class="software-card-img" alt="Office Apps Interface">
+            </div>
+
+            <div class="glass-panel p-8 md:p-12 text-center mb-10">
+                <h2 class="text-2xl font-black text-orange-400 mb-6 uppercase tracking-widest border-b border-orange-900/30 pb-4 inline-block">Suite Description</h2>
+                <p class="text-gray-300 leading-relaxed text-lg mb-10">
+                    Microsoft Office 2024 is the latest evolution of the world's most trusted productivity tools. This package includes Word, Excel, PowerPoint, Outlook, and OneNote with enhanced performance and a modernized interface.
+                    <br><br>
+                    Experience improved data analysis in Excel, more cinematic presentations in PowerPoint, and a distraction-free writing environment in Word.
+                </p>
+                
+                <a href="https://ouo.io/JmeHH4" target="_blank" 
+                   class="btn-glow inline-block text-white font-black py-5 px-16 rounded-full text-xl uppercase transition-all tracking-widest">
+                    🚀 initiate download
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-panel p-8">
+                    <h3 class="text-lg font-black text-orange-400 mb-6 uppercase tracking-widest">System Requirements</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="spec-label">OS</p>
+                            <p class="text-gray-200">Windows 10 or Windows 11</p>
+                        </div>
+                        <div>
+                            <p class="spec-label">Processor</p>
+                            <p class="text-gray-200">1.6 GHz, 2-core processor</p>
+                        </div>
+                        <div>
+                            <p class="spec-label">RAM</p>
+                            <p class="text-gray-200">4 GB RAM (64-bit)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-8">
+                    <h3 class="text-lg font-black text-orange-400 mb-6 uppercase tracking-widest">Included Apps</h3>
+                    <ul class="grid grid-cols-2 gap-2 text-gray-200 text-sm font-bold">
+                        <li>• Word 2024</li>
+                        <li>• Excel 2024</li>
+                        <li>• PowerPoint 2024</li>
+                        <li>• Outlook 2024</li>
+                        <li>• OneNote 2024</li>
+                        <li>• Publisher 2024</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <aside class="lg:w-[30%] w-full">
+            <div class="glass-panel p-6 sticky top-6">
+                <h2 class="text-lg font-black text-orange-400 mb-8 border-b border-white/10 pb-3 text-center uppercase tracking-widest">More Tools</h2>
+                <div class="flex flex-col gap-4">
+                    <a href="photoshop.html" class="p-3 flex items-center gap-4 hover:bg-white/5 rounded-xl transition-all">
+                        <img src="photoshop1.jpg" class="w-12 h-12 object-cover rounded shadow-lg">
+                        <span class="font-bold text-sm uppercase">Photoshop</span>
+                    </a>
+                    <a href="premiere.html" class="p-3 flex items-center gap-4 hover:bg-white/5 rounded-xl transition-all">
+                        <img src="premiere1.jpg" class="w-12 h-12 object-cover rounded shadow-lg">
+                        <span class="font-bold text-sm uppercase">Premiere Pro</span>
+                    </a>
+                    <a href="idm.html" class="p-3 flex items-center gap-4 hover:bg-white/5 rounded-xl transition-all">
+                        <img src="idm1.jpg" class="w-12 h-12 object-cover rounded shadow-lg">
+                        <span class="font-bold text-sm uppercase">IDM 6.42</span>
+                    </a>
+                </div>
+                <a href="software.html" class="block text-center text-[10px] font-black text-orange-400 mt-10 hover:text-white transition uppercase tracking-[0.3em]">Software Archive</a>
+            </div>
+        </aside>
+    </div>
+
+    <footer class="text-center py-12 text-gray-600 text-[10px] border-t border-white/5 uppercase tracking-[0.2em]">
+        <p>© 2025 SJ Software Zone | Digital Office Archive managed by Shan Junaid</p>
+    </footer>
+</body>
+</html>
