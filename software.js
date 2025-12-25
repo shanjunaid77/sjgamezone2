@@ -26,20 +26,13 @@ const allSoftwares = [
     },
     {
         id: 4,
-        title: "WinRAR 7.01 Premium",
-        link: "winrar.html",
-        img: "winrar.jpg",
-        desc: "The world's most powerful compression tool. Extract ZIP, RAR, and ISO files with high speed and security.",
-        tags: "winrar, zip, rar, extractor, utility, software"
-    },
-    {
-        id: 5,
-        title: "Microsoft Office 2025",
+        title: "Microsoft Office 2024",
         link: "office.html",
-        img: "office.jpg",
+        img: "office1.jpg",
         desc: "Complete productivity suite including Word, Excel, and PowerPoint for professional documentation and analysis.",
         tags: "office, microsoft, word, excel, productivity, school"
     }
 ];
+
 
 
