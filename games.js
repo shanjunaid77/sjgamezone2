@@ -3,7 +3,7 @@ const allGames = [
         id: 0,
         title: "Spider-Man: Miles Morales",
         link: "spidermanmiles.html",
-        img: "spidermanmorals1.jpg",
+        img: "spidermanmiles1.jpg",
         desc: "Next-Gen Urban Heroic Archive: Master explosive new powers as Miles Morales. Experience high-fidelity web-swinging and venom-power combat simulation.",
         tags: "spider-man miles morales, marvel, spiderman pc, action, superhero, insomniac, venom blast, miles morales download",
         category: "Action",
@@ -490,3 +490,4 @@ const allGames = [
         titleColorClass: "text-blue-300"
     }
 ];
+
