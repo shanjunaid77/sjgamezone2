@@ -40,22 +40,21 @@
             border-radius: 20px;
         }
 
-        /* Fixed main images to be responsive but not giant */
         .game-card-img {
             width: 100%;
-            height: 350px; 
+            height: 380px; 
             object-fit: cover;
             border: 2px solid rgba(239, 68, 68, 0.3);
             border-radius: 16px;
             transition: all 0.3s ease;
         }
 
-        /* --- SIDEBAR CORRECTIONS --- */
+        /* SIDEBAR FIX: Keeps cards small and aligned */
         .sidebar-thumb {
-            width: 60px;   /* Forces the image to be small */
-            height: 80px;  /* Forces consistent height */
+            width: 55px;
+            height: 75px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 6px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
@@ -63,19 +62,25 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            text-decoration: none;
-            color: white;
-            border-radius: 12px;
-            padding: 8px;
+            padding: 10px;
             background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            transition: all 0.3s ease;
         }
 
         .sidebar-item:hover {
-            background: rgba(239, 68, 68, 0.15);
-            transform: translateX(5px);
+            background: rgba(239, 68, 68, 0.1);
+            transform: translateX(8px);
         }
 
-        /* --- BUTTON --- */
+        .spec-label {
+            color: #ef4444;
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+        }
+
         .btn-glow {
             background: linear-gradient(135deg, #b91c1c 0%, #7f1d1d 100%);
             box-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
@@ -94,7 +99,7 @@
 
     <header class="flex flex-col items-center pt-12 pb-14 px-4">
         <a href="index.html">
-            <img src="logo.png" alt="SJ Logo" class="w-28 h-28 rounded-full border-2 border-red-600 mb-6 shadow-lg">
+            <img src="logo.png" alt="SJ Logo" class="w-24 h-24 rounded-full border-2 border-red-600 mb-6 shadow-lg">
         </a>
         <h1 class="text-3xl md:text-5xl font-black title-glow uppercase text-center tracking-tighter">MILES MORALES</h1>
         <p class="text-red-500 font-bold tracking-[0.5em] mt-4 text-xs md:text-sm text-center uppercase">Be Greater. Be Yourself.</p>
@@ -111,13 +116,51 @@
             <div class="glass-panel p-8 md:p-12 text-center mb-10">
                 <h2 class="text-2xl font-black text-red-500 mb-6 uppercase tracking-widest border-b border-red-900/30 pb-4 inline-block">Game Overview</h2>
                 <p class="text-gray-300 leading-relaxed text-lg mb-10">
-                    Master the bio-electric venom blast attacks and covert camouflage power to become your own Spider-Man.
+                    Teenager Miles Morales is adjusting to his new home while following in the footsteps of his mentor, Peter Parker, as a new Spider-Man. Master his unique bio-electric venom blast attacks and covert camouflage.
                 </p>
                 
                 <a href="https://shrinkme.click/spidermanmiles" target="_blank" 
                    class="btn-glow inline-block text-white font-black py-5 px-16 rounded-full text-xl uppercase tracking-widest">
                     🚀 initiate download
                 </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-panel p-8">
+                    <h3 class="text-lg font-black text-red-500 mb-6 uppercase tracking-widest border-b border-white/5 pb-2">PC Requirements</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="spec-label">Processor</p>
+                            <p class="text-gray-200">Intel Core i3-4160 / AMD equivalent</p>
+                        </div>
+                        <div>
+                            <p class="spec-label">RAM</p>
+                            <p class="text-gray-200">8 GB RAM</p>
+                        </div>
+                        <div>
+                            <p class="spec-label">Graphics</p>
+                            <p class="text-gray-200">NVIDIA GTX 950 / AMD Radeon RX 460</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-8">
+                    <h3 class="text-lg font-black text-red-500 mb-6 uppercase tracking-widest border-b border-white/5 pb-2">New Abilities</h3>
+                    <ul class="space-y-4 text-gray-200 text-sm">
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-500 font-bold">»</span>
+                            <span>Venom Blast: Bio-electric attack powers.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-500 font-bold">»</span>
+                            <span>Camouflage: Become invisible for stealth.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-red-500 font-bold">»</span>
+                            <span>Web-Slinging: Enhanced traversal physics.</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -128,22 +171,22 @@
                     
                     <a href="gtavcng.html" class="sidebar-item">
                         <img src="gtavcng.jpg" class="sidebar-thumb">
-                        <span class="font-bold text-sm uppercase">Vice City NG</span>
+                        <span class="font-bold text-xs uppercase tracking-tighter">Vice City NG</span>
                     </a>
 
                     <a href="tekken8.html" class="sidebar-item">
                         <img src="tekken8.jpg" class="sidebar-thumb">
-                        <span class="font-bold text-sm uppercase">Tekken 8</span>
+                        <span class="font-bold text-xs uppercase tracking-tighter">Tekken 8</span>
                     </a>
 
                     <a href="re4remake.html" class="sidebar-item">
                         <img src="re4.jpg" class="sidebar-thumb">
-                        <span class="font-bold text-sm uppercase">RE4 Remake</span>
+                        <span class="font-bold text-xs uppercase tracking-tighter">RE4 Remake</span>
                     </a>
 
                     <a href="gtasaretextured.html" class="sidebar-item">
                         <img src="gtasaretextured.jpg" class="sidebar-thumb">
-                        <span class="font-bold text-sm uppercase">GTA SA: HD</span>
+                        <span class="font-bold text-xs uppercase tracking-tighter">GTA SA: HD</span>
                     </a>
 
                 </div>
