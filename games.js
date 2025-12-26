@@ -1,11 +1,23 @@
 const allGames = [
     {
+        id: 0,
+        title: "Spider-Man: Miles Morales",
+        link: "spidermanmiles.html",
+        img: "spidermanmorals1.jpg",
+        desc: "Next-Gen Urban Heroic Archive: Master explosive new powers as Miles Morales. Experience high-fidelity web-swinging and venom-power combat simulation.",
+        tags: "spider-man miles morales, marvel, spiderman pc, action, superhero, insomniac, venom blast, miles morales download",
+        category: "Action",
+        titleColorClass: "text-red-500"
+    },
+    {
         id: 1, 
         title: "FIFA 23",
         link: "fifa23.html",
         img: "fifa23.jpg", 
         desc: "Digital Athletics Repository: Experience the World's Game with HyperMotion2 technology. Features men's and women's World Cup simulation data.",
-        tags: "fifa 23, football, soccer, ea sports, sports, f23"
+        tags: "fifa 23, football, soccer, ea sports, sports, f23, fifa pc download, world cup mode",
+        category: "Sports",
+        titleColorClass: "text-blue-400"
     },
     {
         id: 2, 
@@ -13,7 +25,9 @@ const allGames = [
         link: "spiderman2.html",
         img: "spiderman2.jpg", 
         desc: "Urban Heroic Archive: Nine months after Miles Morales, Peter and Miles must stop Kraven and the monstrous Venom simulation.",
-        tags: "spider-man 2, marvel, peter parker, miles morales, insomniac games, venom"
+        tags: "spider-man 2, marvel, peter parker, miles morales, insomniac games, venom, spiderman 2 pc archive",
+        category: "Action",
+        titleColorClass: "text-red-400"
     },
     {
         id: 3, 
@@ -21,7 +35,9 @@ const allGames = [
         link: "gtavcng.html",
         img: "gtavcng.jpg", 
         desc: "Engine Overhaul Repository: Experience the 80s rebuilt on the RAGE engine. Features modern physics, lighting, and textures for Tommy Vercetti's empire.",
-        tags: "gta vice city, next gen, vcnge, rockstar games, open world, mods"
+        tags: "gta vice city, next gen, vcnge, rockstar games, open world, mods, vice city remastered pc",
+        category: "Open World",
+        titleColorClass: "text-pink-400"
     },
     {
         id: 4,
@@ -29,7 +45,8 @@ const allGames = [
         link: "tekken7.html",
         img: "tekken7.jpg",
         desc: "Mishima Saga Repository: Competitive martial arts simulation. High-frame-rate technical archive for performance fighting mechanics.",
-        tags: "tekken 7 pc download fighting game action martial arts tournament kazuya heihachi",
+        tags: "tekken 7 pc download, fighting game, action, martial arts, tournament, kazuya, heihachi, tekken 7 archive",
+        category: "Fighting",
         titleColorClass: "text-red-400"
     },
     {
@@ -38,7 +55,9 @@ const allGames = [
         link: "tekken8.html",
         img: "tekken8.jpg", 
         desc: "Next-Gen Combat Archive: Legendary fighting franchise entry. Experience aggressive combat systems and stunning visual fidelity with Jin and Kazuya.",
-        tags: "tekken 8, t8, fighting game, bandai namco, jin kazama"
+        tags: "tekken 8, t8, fighting game, bandai namco, jin kazama, tekken 8 pc download, next gen fighting",
+        category: "Fighting",
+        titleColorClass: "text-blue-500"
     },
     {
         id: 6, 
@@ -46,7 +65,9 @@ const allGames = [
         link: "gtasaretextured.html",
         img: "gtasaretextured.jpg", 
         desc: "Legacy Digital Enhancement: The definitive way to play a classic. Featuring 4K textures and enhanced draw distances for the San Andreas simulation.",
-        tags: "gta sa, san andreas, retextured, rockstar games, open world"
+        tags: "gta sa, san andreas, retextured, rockstar games, open world, gta sa 4k, cj remastered",
+        category: "Open World",
+        titleColorClass: "text-green-500"
     },
     {
         id: 7,
@@ -54,7 +75,9 @@ const allGames = [
         link: "cricket24.html",
         img: "cricket2024.jpg", 
         desc: "Sports Simulation Archive: The most realistic cricket simulation ever. Featuring licensed global teams and advanced Pro-Team technical modes.",
-        tags: "cricket 24, sports, big ant studios, cricket pc"
+        tags: "cricket 24, sports, big ant studios, cricket pc download, ashes cricket, world cup cricket",
+        category: "Sports",
+        titleColorClass: "text-blue-300"
     },
     {
         id: 8,
@@ -62,7 +85,8 @@ const allGames = [
         link: "ghostoftsushima.html",
         img: "ghostoftsushima.jpg",
         desc: "Definitive Digital Archive: Experience the journey of Jin Sakai. Master samurai discipline and stealth in this high-fidelity open-world repository.",
-        tags: "ghost of tsushima pc download samurai open world action stealth jin sakai mongol invasion adventure",
+        tags: "ghost of tsushima pc download, samurai, open world, action, stealth, jin sakai, mongol invasion, adventure",
+        category: "Action",
         titleColorClass: "text-red-400"
     },
     {
@@ -71,7 +95,8 @@ const allGames = [
         link: "rdr2.html",
         img: "rdr2.jpg",
         desc: "Digital Repository Entry: An epic tale of loyalty and the American frontier. Features advanced environmental physics and deep narrative simulation.",
-        tags: "red dead redemption 2 western adventure arthur morgan",
+        tags: "red dead redemption 2, western adventure, arthur morgan, rdr2 pc download, rockstar games",
+        category: "Open World",
         titleColorClass: "text-blue-400"
     },
     {
@@ -80,7 +105,8 @@ const allGames = [
         link: "gtavc.html",
         img: "gtavc.jpg",
         desc: "Legacy Repository: Relive the 80s criminal underworld. Digital archive featuring the complete Tommy Vercetti storyline and period-accurate soundtrack.",
-        tags: "gta grand theft auto vice city 80s action",
+        tags: "gta grand theft auto vice city, 80s action, tommy vercetti, vice city download",
+        category: "Open World",
         titleColorClass: "text-red-400"
     },
     {
@@ -89,7 +115,8 @@ const allGames = [
         link: "gtasanandreas.html",
         img: "gtasa1.jpg",
         desc: "Digital Archive Entry: The definitive urban simulation of San Andreas. Explore vast territories with enhanced draw distances and complete mission data.",
-        tags: "gta san andreas carl cj johnson open world action adventure los santos",
+        tags: "gta san andreas, carl cj johnson, open world, action, adventure, los santos, gta sa pc",
+        category: "Open World",
         titleColorClass: "text-blue-400"
     },
     {
@@ -98,7 +125,8 @@ const allGames = [
         link: "gta4.html",
         img: "gta4.jpg",
         desc: "High-Fidelity Repository: Liberty City digital simulation. Experience the complete narrative of Niko Bellic with physics-based environmental interaction.",
-        tags: "gta 4 gta iv rockstar open world liberty city action adventure",
+        tags: "gta 4, gta iv, rockstar, open world, liberty city, action adventure, niko bellic",
+        category: "Open World",
         titleColorClass: "text-red-400"
     },
     {
@@ -107,7 +135,8 @@ const allGames = [
         link: "gta5.html",
         img: "gta5.jpg",
         desc: "Premium Digital Archive: The Los Santos repository. Includes full story campaign and technical optimization for high-performance PC hardware.",
-        tags: "gta grand theft auto 5 action adventure open world",
+        tags: "gta grand theft auto 5, action, adventure, open world, gta v pc download",
+        category: "Open World",
         titleColorClass: "text-blue-400"
     },
     {
@@ -116,7 +145,8 @@ const allGames = [
         link: "gta5redux.html",
         img: "gta5redux2.jpg",
         desc: "Visual Enhancement Project: Experience Los Santos with 4K textures, advanced shaders, and realistic weather simulation in this curated repository.",
-        tags: "gta 5 redux enhanced edition pc download open world action adventure mod graphics realistic",
+        tags: "gta 5 redux enhanced edition, pc download, open world, action, adventure, mod, graphics, realistic gta",
+        category: "Open World",
         titleColorClass: "text-red-400"
     },
     {
@@ -125,7 +155,8 @@ const allGames = [
         link: "lastofuspart2.html",
         img: "lastofusp2.jpg",
         desc: "Cinematic Narrative Repository: A brutal quest for justice in a post-apocalyptic simulation. Features industry-leading animation and technical detail.",
-        tags: "the last of us part 2 pc download survival horror action adventure drama tlou2",
+        tags: "the last of us part 2 pc download, survival horror, action adventure, drama, tlou2, ellie",
+        category: "Horror",
         titleColorClass: "text-blue-400"
     },
     {
@@ -134,7 +165,8 @@ const allGames = [
         link: "lastofuspart1.html",
         img: "lastofuspart1.jpg",
         desc: "Digital Survival Archive: The definitive journey of Joel and Ellie. Rebuilt for modern PC hardware with advanced AI and atmospheric rendering.",
-        tags: "the last of us tlou joel ellie horror survival",
+        tags: "the last of us, tlou, joel, ellie, horror, survival, tlou part 1 pc",
+        category: "Horror",
         titleColorClass: "text-red-400"
     },
     {
@@ -143,7 +175,8 @@ const allGames = [
         link: "assassinscreed1.html",
         img: "assassincreed1.jpg",
         desc: "Historical Simulation: The Third Crusade repository. Archive of the Brotherhood's origins featuring Altaïr Ibn-La'Ahad.",
-        tags: "assassin's creed 1 ubisoft stealth parkour historical adventure",
+        tags: "assassin's creed 1, ubisoft, stealth, parkour, historical adventure, altair",
+        category: "Action",
         titleColorClass: "text-blue-400"
     },
     {
@@ -152,7 +185,8 @@ const allGames = [
         link: "assassinscreed2.html",
         img: "assassincreed22.jpg",
         desc: "Renaissance Digital Archive: The Ezio Auditore collection. Experience technical mastery of parkour and stealth in 15th-century Italy.",
-        tags: "assassin's creed 2 ezio stealth parkour renaissance adventure",
+        tags: "assassin's creed 2, ezio auditore, stealth, parkour, renaissance adventure",
+        category: "Action",
         titleColorClass: "text-red-400"
     },
     {
@@ -161,7 +195,8 @@ const allGames = [
         link: "assassinscreed3.html",
         img: "assassinscreed3.jpg",
         desc: "Colonial Era Repository: Navigate the American Revolution. Features naval combat simulation and high-density forest parkour.",
-        tags: "assassin's creed 3 connor kenway stealth action parkour pc game historical",
+        tags: "assassin's creed 3, connor kenway, stealth, action, parkour, pc game, historical",
+        category: "Action",
         titleColorClass: "text-blue-400"
     },
     {
@@ -170,7 +205,8 @@ const allGames = [
         link: "valhalla.html",
         img: "acvalhalla1.jpg",
         desc: "Viking Age Repository: Lead clans and forge alliances in Dark Age England. Complete digital edition with post-launch content integration.",
-        tags: "assassins creed valhalla viking rpg open world",
+        tags: "assassins creed valhalla, viking, rpg, open world, eivor, ac valhalla download",
+        category: "Action",
         titleColorClass: "text-red-400"
     },
     {
@@ -179,7 +215,8 @@ const allGames = [
         link: "farcry1.html",
         img: "farcry1.jpg",
         desc: "Tactical FPS Archive: Tropical island survival simulation. Technical exploration of early open-world sandbox mechanics.",
-        tags: "far cry 1 fps shooter tropical islands action pc game classic",
+        tags: "far cry 1, fps shooter, tropical islands, action, pc game classic, jack carver",
+        category: "FPS",
         titleColorClass: "text-blue-400"
     },
     {
@@ -188,7 +225,8 @@ const allGames = [
         link: "farcry2.html",
         img: "farcry2.jpg",
         desc: "Survival Conflict Repository: Advanced fire propagation and weapon degradation simulation set in a digital African conflict zone.",
-        tags: "far cry 2 fps shooter open world africa mercenary survival pc game",
+        tags: "far cry 2, fps shooter, open world, africa, mercenary, survival pc game",
+        category: "FPS",
         titleColorClass: "text-red-400"
     },
     {
@@ -197,7 +235,8 @@ const allGames = [
         link: "farcry3.html",
         img: "farcry3.jpg",
         desc: "Open-World Action Archive: The Rook Islands digital repository. Features optimized combat mechanics and environmental AI.",
-        tags: "far cry 3 fps shooter tropical islands open world action pc game",
+        tags: "far cry 3, fps shooter, tropical islands, open world, action, pc game, vaas",
+        category: "FPS",
         titleColorClass: "text-blue-400"
     },
     {
@@ -206,7 +245,8 @@ const allGames = [
         link: "farcry4.html",
         img: "farcry4.jpg",
         desc: "Kyrat Digital Repository: Complete edition featuring Himalayan terrain simulation and advanced vertical exploration mechanics.",
-        tags: "far cry 4 gold edition fps shooter open world action ubisoft kyrat pc game",
+        tags: "far cry 4 gold edition, fps shooter, open world, action, ubisoft, kyrat, pagan min",
+        category: "FPS",
         titleColorClass: "text-red-400"
     },
     {
@@ -215,7 +255,8 @@ const allGames = [
         link: "farcry5.html",
         img: "farcry5.jpg",
         desc: "Hope County Digital Entry: Tactical liberation simulation. Includes complete mission data and environmental physics for PC hardware.",
-        tags: "far cry 5 fps shooter open world action ubisoft hope county pc game",
+        tags: "far cry 5, fps shooter, open world, action, ubisoft, hope county, joseph seed",
+        category: "FPS",
         titleColorClass: "text-blue-400"
     },
     {
@@ -224,7 +265,8 @@ const allGames = [
         link: "farcry6.html",
         img: "farcry6-1.jpg",
         desc: "Revolutionary Narrative Archive: Explore the Yara archipelago. Digital repository for high-resolution tropical environmental testing.",
-        tags: "far cry 6 ubisoft action shooter tropical open world",
+        tags: "far cry 6, ubisoft, action, shooter, tropical, open world, yara, dani rojas",
+        category: "FPS",
         titleColorClass: "text-red-400"
     },
     {
@@ -233,7 +275,8 @@ const allGames = [
         link: "uncharted.html",
         img: "uncharted.jpg",
         desc: "Cinematic Exploration Repository: Technical masterpiece featuring advanced global illumination and high-detail asset rendering.",
-        tags: "uncharted 4 nathan drake action adventure sony",
+        tags: "uncharted 4, nathan drake, action adventure, sony, uncharted pc download",
+        category: "Action",
         titleColorClass: "text-blue-400"
     },
     {
@@ -242,7 +285,8 @@ const allGames = [
         link: "cyberpunk2077.html",
         img: "cyberpunk2077.jpg",
         desc: "Night City Digital Simulation: A sprawling sci-fi repository featuring ray-tracing technology and deep narrative branches.",
-        tags: "cyberpunk 2077 cd projekt red sci-fi rpg open world",
+        tags: "cyberpunk 2077, cd projekt red, sci-fi, rpg, open world, night city, phantom liberty",
+        category: "RPG",
         titleColorClass: "text-red-400"
     },
     {
@@ -251,7 +295,8 @@ const allGames = [
         link: "maxpayne3.html",
         img: "maxpayne3.jpg",
         desc: "Tactical Combat Archive: Cinematic São Paulo simulation. Features Euphoria physics engine and advanced bullet-time mechanics.",
-        tags: "max payne 3 rockstar shooter action bullet time",
+        tags: "max payne 3, rockstar, shooter, action, bullet time, max payne download",
+        category: "Action",
         titleColorClass: "text-blue-400"
     },
     {
@@ -260,7 +305,8 @@ const allGames = [
         link: "watchdogs1.html",
         img: "watchdogs1.jpg",
         desc: "Networked City Repository: Chicago digital simulation featuring advanced hacking mechanics and urban environmental interaction.",
-        tags: "watch dogs 2014 aiden pearce hacking open world",
+        tags: "watch dogs 2014, aiden pearce, hacking game, open world, ubisoft",
+        category: "Action",
         titleColorClass: "text-red-400"
     },
     {
@@ -269,7 +315,8 @@ const allGames = [
         link: "igi2.html",
         img: "igi2.jpg",
         desc: "Espionage Digital Entry: Global stealth simulation. Archive of David Jones' tactical operations with optimized AI patterns.",
-        tags: "igi 2 covert strike david jones stealth action espionage",
+        tags: "igi 2 covert strike, david jones, stealth action, espionage, project igi 2 download",
+        category: "Stealth",
         titleColorClass: "text-blue-400"
     },
     {
@@ -278,7 +325,8 @@ const allGames = [
         link: "igi1.html",
         img: "igi1.jpg",
         desc: "Legacy Stealth Repository: The original infiltration simulation. Complete digital entry for performance testing on modern systems.",
-        tags: "igi 1 project igi i'm going in tactical fps stealth",
+        tags: "igi 1, project igi, i'm going in, tactical fps, stealth, igi 1 pc game",
+        category: "Stealth",
         titleColorClass: "text-red-400"
     },
     {
@@ -287,7 +335,8 @@ const allGames = [
         link: "hitman1.html",
         img: "hitman1.jpg",
         desc: "Strategic Infiltration Archive: Professional Agent 47 simulation. Digital entry for high-stakes environmental puzzle-solving.",
-        tags: "hitman blood money agent 47 stealth action assassination pc game",
+        tags: "hitman blood money, agent 47, stealth, action, assassination, pc game, hitman classic",
+        category: "Stealth",
         titleColorClass: "text-blue-400"
     },
     {
@@ -296,7 +345,8 @@ const allGames = [
         link: "dyinglight.html",
         img: "dyinglight.jpg",
         desc: "Harran Digital Simulation: Advanced parkour and day-night cycle repository. Features high-resolution asset testing for urban survival.",
-        tags: "dying light zombie survival parkour crafting",
+        tags: "dying light, zombie survival, parkour, crafting, dying light pc download",
+        category: "Horror",
         titleColorClass: "text-red-400"
     },
     {
@@ -305,7 +355,8 @@ const allGames = [
         link: "hogwartslegacy.html",
         img: "hogwartslegacy1.jpg",
         desc: "Wizarding World Repository: Sprawling 1800s simulation. Digital archive of magical environmental effects and character progression.",
-        tags: "hogwarts legacy harry potter wizard rpg magic",
+        tags: "hogwarts legacy, harry potter, wizard rpg, magic, hogwarts download pc",
+        category: "RPG",
         titleColorClass: "text-blue-400"
     },
     {
@@ -314,7 +365,8 @@ const allGames = [
         link: "maxpayne1.html",
         img: "maxpayne1.jpg",
         desc: "Noir Narrative Archive: The original New York City simulation. Legacy repository for Bullet Time performance metrics.",
-        tags: "max payne 1 pc download bullet time noir action",
+        tags: "max payne 1 pc download, bullet time, noir, action, max payne classic",
+        category: "Action",
         titleColorClass: "text-red-400"
     },
     {
@@ -323,16 +375,18 @@ const allGames = [
         link: "maxpayne2.html",
         img: "maxpayne2.jpg",
         desc: "Cinematic Sequel Repository: Enhanced physics-based storytelling. A deep technical archive of the iconic Fall of Max Payne.",
-        tags: "max payne 2 pc download bullet time noir action",
+        tags: "max payne 2 pc download, bullet time, noir, action, fall of max payne",
+        category: "Action",
         titleColorClass: "text-blue-400"
     },
     {
         id: 38,
-        title: "NFS II SPECIAL EDITION",
+        title: "NEED FOR SPEED II SPECIAL EDITION",
         link: "nfs2.html",
         img: "nfs.jpg",
         desc: "Retro Racing Archive: Legacy street racing simulation. Archive of exotic performance vehicles and high-speed track testing.",
-        tags: "nfs 2 se download pc racing car street speed",
+        tags: "need for speed 2, nfs 2 se download, nfs ii, pc racing, classic cars, street speed",
+        category: "Racing",
         titleColorClass: "text-red-400"
     },
     {
@@ -341,25 +395,28 @@ const allGames = [
         link: "nfsshift.html",
         img: "nfsshift1.jpg",
         desc: "Simulation Racing Entry: Authentic track-based physics repository. Cockpit-view asset testing for professional racing hardware.",
-        tags: "need for speed shift nfs shift racing pc download",
+        tags: "need for speed shift, nfs shift racing, nfs shift pc download, pro racing simulation",
+        category: "Racing",
         titleColorClass: "text-blue-400"
     },
     {
         id: 40,
-        title: "NFS MOST WANTED 2005",
+        title: "NEED FOR SPEED MOST WANTED 2005",
         link: "nfsmw.html",
         img: "nfsmw.jpg",
         desc: "Rockport Digital Archive: The definitive pursuit simulation. Legacy repository for open-world street racing and AI evade testing.",
-        tags: "nfs most wanted 2005 racing blacklist cars",
+        tags: "need for speed most wanted 2005, nfs mw, racing, blacklist cars, bmw m3 gtr, nfs mw download",
+        category: "Racing",
         titleColorClass: "text-red-400"
     },
     {
         id: 41,
-        title: "NFS MOST WANTED 2012",
+        title: "NEED FOR SPEED MOST WANTED 2012",
         link: "nfsmw2012.html",
         img: "nfsmw2012.jpg",
         desc: "Fairhaven Digital Repository: High-speed pursuit simulation with social integration and open-world vehicle exploration.",
-        tags: "nfs most wanted 2012 racing cops cars street",
+        tags: "need for speed most wanted 2012, nfs mw 2012, racing, cops, cars, street racing pc",
+        category: "Racing",
         titleColorClass: "text-blue-400"
     },
     {
@@ -368,7 +425,8 @@ const allGames = [
         link: "nfsrivals.html",
         img: "nfsrivals.jpg",
         desc: "Redview County Digital Entry: Asymmetric pursuit simulation. High-fidelity repository for performance vehicle testing.",
-        tags: "nfs rivals pc download street racing cops open world car customization",
+        tags: "need for speed rivals pc download, nfs rivals, street racing, cops, open world, car customization",
+        category: "Racing",
         titleColorClass: "text-red-400"
     },
     {
@@ -377,7 +435,8 @@ const allGames = [
         link: "forzahorizon5.html",
         img: "forzahorizon5.jpg",
         desc: "Mexico Digital Simulation: Photogrammetry-based environmental repository. Archive of premium performance vehicles and dynamic weather.",
-        tags: "forza horizon 5 pc download racing open world cars multiplayer mexico",
+        tags: "forza horizon 5 pc download, racing, open world, cars, multiplayer, mexico, forza 5 archive",
+        category: "Racing",
         titleColorClass: "text-blue-400"
     },
     {
@@ -386,7 +445,8 @@ const allGames = [
         link: "forzahorizon4.html",
         img: "forzahorizon4.jpg",
         desc: "UK Dynamic Season Repository: Seasonal environmental testing archive. Features complete vehicle catalog and landscape simulation.",
-        tags: "forza horizon 4 pc download racing open world multiplayer car customization uk seasons",
+        tags: "forza horizon 4 pc download, racing, open world, multiplayer, car customization, uk seasons, forza 4 archive",
+        category: "Racing",
         titleColorClass: "text-red-400"
     },
     {
@@ -395,7 +455,8 @@ const allGames = [
         link: "laracrofttos.html",
         img: "laracrofttos.jpg",
         desc: "Egyptian Archaeological Archive: Cooperative puzzle-solving simulation. Digital entry for ancient environmental asset testing.",
-        tags: "lara croft temple of osiris pc download adventure puzzles egypt treasures action",
+        tags: "lara croft temple of osiris pc download, adventure, puzzles, egypt, treasures, tomb raider co-op",
+        category: "Adventure",
         titleColorClass: "text-blue-400"
     },
     {
@@ -404,7 +465,9 @@ const allGames = [
         link: "re5.html",
         img: "re5.jpg", 
         desc: "Bio-Organic Thriller Archive: Experience the fear in full HD. Cooperation-based survival simulation set in a digital African environment.",
-        tags: "resident evil 5, re5, horror, action, capcom"
+        tags: "resident evil 5, re5 pc download, horror, action, capcom, chris redfield, sheva alomar",
+        category: "Horror",
+        titleColorClass: "text-green-400"
     },
     {
         id: 47, 
@@ -412,16 +475,18 @@ const allGames = [
         link: "re4remake.html",
         img: "re4.jpg", 
         desc: "Modernized Survival Repository: A reimagining of the classic 2005 simulation. Features terrifyingly detailed graphics and updated mission data.",
-        tags: "resident evil 4 remake, re4, horror, capcom, leon kennedy"
+        tags: "resident evil 4 remake, re4 pc download, horror, capcom, leon kennedy, re4 archive",
+        category: "Horror",
+        titleColorClass: "text-red-500"
     },
     {
-    id: 48, 
-    title: "Resident Evil Village",
-    link: "residentevilvillage.html",
-    img: "re8-1.jpg", 
-    desc: "Biohazard Survival Repository: Journey into a village haunted by ancient nightmares. Experience ultra-realistic horror powered by the RE Engine with high-fidelity mission data.",
-    tags: "resident evil village, re8, horror, capcom, ethan winters, lady dimitrescu"
-},
+        id: 48, 
+        title: "Resident Evil Village",
+        link: "residentevilvillage.html",
+        img: "re8-1.jpg", 
+        desc: "Biohazard Survival Repository: Journey into a village haunted by ancient nightmares. Experience ultra-realistic horror powered by the RE Engine with high-fidelity mission data.",
+        tags: "resident evil village, re8, horror, capcom, ethan winters, lady dimitrescu, re village pc",
+        category: "Horror",
+        titleColorClass: "text-blue-300"
+    }
 ];
-
-
