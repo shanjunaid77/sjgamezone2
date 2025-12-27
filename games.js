@@ -1,5 +1,14 @@
 const allGames = [
     {
+    id: 49,
+    title: "Battlefield VI",
+    img: "battlefield1.jpg", // Using the first image as the cover
+    link: "battlefield6.html",
+    category: "Action / Shooter",
+    titleColorClass: "text-blue-500", // Matches the blue theme
+    tags: ["battlefield 6", "bf6", "shooting", "war", "multiplayer", "battlefield vi pc download"]
+},
+    {
         id: 0,
         title: "Spider-Man: Miles Morales",
         link: "spidermanmiles.html",
@@ -490,4 +499,5 @@ const allGames = [
         titleColorClass: "text-blue-300"
     }
 ];
+
 
