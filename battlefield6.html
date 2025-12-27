@@ -40,36 +40,44 @@
             border-radius: 20px;
         }
 
+        /* FIXED: No more cropping. Shows full 16:9 widescreen images */
         .game-card-img {
             width: 100%;
-            height: 380px; 
-            object-fit: cover;
+            aspect-ratio: 16 / 9; 
+            object-fit: contain; /* Shows full image without cutting edges */
+            background: rgba(0,0,0,0.4);
             border: 2px solid rgba(59, 130, 246, 0.3);
             border-radius: 16px;
             transition: all 0.3s ease;
         }
 
+        .game-card-img:hover {
+            border-color: #3b82f6;
+            transform: scale(1.02);
+        }
+
+        /* FIXED: Larger Sidebar Thumbs */
         .sidebar-thumb {
-            width: 55px;
-            height: 75px;
+            width: 85px;  /* Increased from 55px */
+            height: 110px; /* Increased from 75px */
             object-fit: cover;
-            border-radius: 6px;
+            border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .sidebar-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 10px;
+            gap: 15px;
+            padding: 12px;
             background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
+            border-radius: 15px;
             transition: all 0.3s ease;
         }
 
         .sidebar-item:hover {
-            background: rgba(59, 130, 246, 0.1);
-            transform: translateX(8px);
+            background: rgba(59, 130, 246, 0.15);
+            transform: translateX(10px);
         }
 
         .spec-label {
@@ -108,17 +116,17 @@
         
         <div class="lg:w-[70%] w-full">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-                <img src="battlefield1.jpg" class="game-card-img" alt="Battlefield VI Gameplay">
-                <img src="battlefield2.jpg" class="game-card-img" alt="Battlefield VI Combat">
+                <img src="battlefield1.jpg" class="game-card-img" alt="BF6 Image 1">
+                <img src="battlefield2.jpg" class="game-card-img" alt="BF6 Image 2">
             </div>
 
             <div class="glass-panel p-8 md:p-12 text-center mb-10">
                 <h2 class="text-2xl font-black text-blue-500 mb-6 uppercase tracking-widest border-b border-blue-900/30 pb-4 inline-block">Tactical Analysis</h2>
                 <p class="text-gray-300 leading-relaxed text-lg mb-6">
-                    Battlefield VI marks the return to iconic all-out warfare on a scale never seen before in a digital simulation. This repository contains the next-gen tactical archive featuring advanced environmental destruction, massive 128-player map data, and high-fidelity physics rendering. Experience the chaos of modern combat as you navigate dynamic weather patterns and evolving battlefields.
+                    Battlefield VI marks the return to iconic all-out warfare on a scale never seen before in a digital simulation. This repository contains the next-gen tactical archive featuring advanced environmental destruction, massive 128-player map data, and high-fidelity physics rendering. Experience the chaos of modern combat as you navigate dynamic weather patterns and evolving battlefields. This archive is optimized for PC performance.
                 </p>
-                <p class="text-gray-400 text-sm mb-10 italic">
-                    Keywords: Battlefield 6 pc download, Battlefield VI  , BF6 tactical archive, next-gen shooter pc, EA Dice simulation, SJ Game Zone.
+                <p class="text-gray-400 text-xs mb-10 italic uppercase tracking-widest">
+                    Keywords: battlefield 6 pc archive, bf6 download, tactical shooter 2025, sj game zone warfare
                 </p>
                 
                 <a href="https://shrinkme.click/battlefield" target="_blank" 
@@ -151,15 +159,15 @@
                     <ul class="space-y-4 text-gray-200 text-sm">
                         <li class="flex items-start gap-3">
                             <span class="text-blue-500 font-bold">»</span>
-                            <span>Levolution 2.0: Real-time city-scale destruction.</span>
+                            <span>Levolution 2.0: Full environmental collapse.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <span class="text-blue-500 font-bold">»</span>
-                            <span>Dynamic Weather: Tornadoes and sandstorms simulation.</span>
+                            <span>128-Player Zones: Massive scale combat.</span>
                         </li>
                         <li class="flex items-start gap-3">
                             <span class="text-blue-500 font-bold">»</span>
-                            <span>Specialists: Custom technical loadouts for every squad.</span>
+                            <span>Real-time Weather: Tornadoes & Storms.</span>
                         </li>
                     </ul>
                 </div>
@@ -172,23 +180,23 @@
                 <div class="flex flex-col gap-4">
                     
                     <a href="spidermanmiles.html" class="sidebar-item">
-                        <img src="spidermanmorals1.jpg" class="sidebar-thumb">
-                        <span class="font-bold text-xs uppercase tracking-tighter">Spider-Man: MM</span>
+                        <img src="spidermanmorals1.jpg" class="sidebar-thumb" alt="Spiderman">
+                        <span class="font-bold text-xs uppercase">Spider-Man</span>
                     </a>
 
                     <a href="tekken8.html" class="sidebar-item">
-                        <img src="tekken8.jpg" class="sidebar-thumb">
-                        <span class="font-bold text-xs uppercase tracking-tighter">Tekken 8</span>
+                        <img src="tekken8.jpg" class="sidebar-thumb" alt="Tekken">
+                        <span class="font-bold text-xs uppercase">Tekken 8</span>
                     </a>
 
                     <a href="fifa23.html" class="sidebar-item">
-                        <img src="fifa23.jpg" class="sidebar-thumb">
-                        <span class="font-bold text-xs uppercase tracking-tighter">FIFA 23</span>
+                        <img src="fifa23.jpg" class="sidebar-thumb" alt="FIFA">
+                        <span class="font-bold text-xs uppercase">FIFA 23</span>
                     </a>
 
                     <a href="gta5.html" class="sidebar-item">
-                        <img src="gta5.jpg" class="sidebar-thumb">
-                        <span class="font-bold text-xs uppercase tracking-tighter">GTA V</span>
+                        <img src="gta5.jpg" class="sidebar-thumb" alt="GTA">
+                        <span class="font-bold text-xs uppercase">GTA V</span>
                     </a>
 
                 </div>
